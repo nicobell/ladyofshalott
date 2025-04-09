@@ -1,0 +1,9 @@
+services:
+  database:
+    restart: no
+
+  php:
+    restart: no
+
+  apache:
+    restart: no

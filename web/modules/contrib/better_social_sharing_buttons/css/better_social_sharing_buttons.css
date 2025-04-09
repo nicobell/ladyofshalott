@@ -1,0 +1,57 @@
+.social-sharing-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.social-sharing-buttons a,
+.social-sharing-buttons-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  text-decoration: none;
+}
+
+.btn-copy {
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+}
+
+.social-sharing-buttons-popup {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: none;
+  overflow: hidden;
+  height: 0;
+  padding: 4px;
+  transition: all 0.5s ease;
+  transform: translate(-50%, -100%);
+  color: white;
+  border-radius: 3px;
+  background-color: black;
+  font-size: small;
+}
+
+.social-sharing-buttons-popup.visible {
+  display: block;
+  overflow: unset;
+  height: auto;
+}
+
+.social-sharing-buttons-popup::before {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  transform: translate(-50%, 100%);
+  border-top: 10px solid black;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}

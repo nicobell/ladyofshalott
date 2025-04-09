@@ -1,0 +1,10 @@
+name: 'Better Social Sharing Buttons'
+type: module
+description: 'Provides a settings page, a field, a paragraph, and a block for social sharing buttons'
+configure: better_social_sharing_buttons.config
+core_version_requirement: ^9.3 || ^10 || ^11
+
+# Information added by Drupal.org packaging script on 2024-12-10
+version: '4.1.0'
+project: 'better_social_sharing_buttons'
+datestamp: 1733860860

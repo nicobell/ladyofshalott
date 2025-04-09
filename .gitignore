@@ -1,0 +1,35 @@
+# gitignore DRUPAL
+
+# Ignore composer packages
+vendor
+
+# Ignore configuration files that may contain sensitive information.
+web/sites/*/settings.php
+web/sites/*/settings.*.php
+web/sites/*/services.*.yml
+
+# Ignore paths that contain user-generated content.
+web/sites/*/files
+private*
+database/*.sql
+
+# Ignore paths that may contain user-generated content
+web/sites/*/files
+web/sites/*/public
+
+# Ignore paths that may contain temporary files
+web/sites/*/translations
+web/sites/*/tmp
+web/sites/*/cache
+/tmp
+
+# config
+.env
+docker-compose.yml
+docker-compose.override.yml
+
+**/.DS_Store
+**/.vscode
+
+web/sites/default/services.yml
+web/cookie.txt
