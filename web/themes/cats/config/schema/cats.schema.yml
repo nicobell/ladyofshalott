@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Cats theme.
+cats.settings:
+  type: theme_settings
+  label: 'Cats settings'
+  mapping:
+    example:
+      type: string
+      label: Example
