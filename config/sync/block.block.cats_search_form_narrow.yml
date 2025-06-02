@@ -1,0 +1,23 @@
+uuid: 34b47253-8de3-4efb-a9b0-9457efff1cd0
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - cats
+_core:
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: cats_search_form_narrow
+theme: cats
+region: header
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

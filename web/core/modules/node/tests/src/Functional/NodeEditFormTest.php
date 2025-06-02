@@ -41,9 +41,7 @@ class NodeEditFormTest extends NodeTestBase {
   protected $nodeStorage;
 
   /**
-   * Modules to enable.
-   *
-   * @var string[]
+   * {@inheritdoc}
    */
   protected static $modules = ['block', 'node', 'datetime'];
 
@@ -261,6 +259,16 @@ class NodeEditFormTest extends NodeTestBase {
   }
 
   /**
+   * Tests the node form when the author is NULL.
+   */
+  public function testNodeFormNullAuthor(): void {
+    \Drupal::service('module_installer')->install(['node_no_default_author']);
+    $this->drupalLogin($this->adminUser);
+    $this->drupalGet('node/add/page');
+    $this->assertSession()->statusCodeEquals(200);
+  }
+
+  /**
    * Checks that the "authored by" works correctly with various values.
    *
    * @param \Drupal\node\NodeInterface $node
@@ -268,7 +276,7 @@ class NodeEditFormTest extends NodeTestBase {
    * @param string $form_element_name
    *   The name of the form element to populate.
    */
-  protected function checkVariousAuthoredByValues(NodeInterface $node, $form_element_name) {
+  protected function checkVariousAuthoredByValues(NodeInterface $node, $form_element_name): void {
     // Try to change the 'authored by' field to an invalid user name.
     $edit = [
       $form_element_name => 'invalid-name',

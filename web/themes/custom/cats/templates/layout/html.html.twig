@@ -1,0 +1,190 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain one or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes }}>
+    {# <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }} #}
+    {{ page }}
+    {# {{ page_bottom }} #}
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
+
+{# <!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+	<body{{ attributes }}>
+
+		<header class="header">
+			<diiv class="logo">
+				<img class="toscroll" src="assets/logodef-w.png" alt="logo negative" />
+				<img class="scrolled" src="assets/logodef.png" alt="logo" />
+			</diiv>
+
+			<ul class="menu">
+				<li class="menu-link">Chi siamo</li>
+				<li class="menu-link">Cuccioli</li>
+				<li class="menu-link">Contatti</li>
+			</ul>
+		</header>
+
+		<section class="hero">
+			<h1 class="fadein">Lady of Shalott</h1>
+			<h3 class="fadein">Scottish & Highland</h3>
+		</section>
+
+		<section class="content">
+			<div class="container">
+				<div class="title">
+					<h2 class="tofadein"><span>Scopri</span> le nostre razze</h2>
+				</div>
+
+				<div class="grid">
+					<div class="card tofadein img-left">
+						<div class="card-img">
+							<img src="../images/splash/cucciolo1.jpg" alt="" />
+						</div>
+						<div class="card-content">
+							<div class="card-title">
+								<h4>Scottish fold</h4>
+								<p class="subtitle">Pelo corto</p>
+							</div>
+							<div class="card-body">
+								<p>
+									Iconico per le sue orecchie piegate in avanti e il musetto
+									rotondo, lo Scottish Fold è un gatto dal temperamento dolce e
+									tranquillo. Ama la compagnia, si adatta facilmente alla vita
+									in casa e conquista con il suo sguardo tenero e curioso.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card tofadein img-right">
+						<div class="card-img">
+							<img src="../images/splash/cucciolo2.jpg" alt="" />
+						</div>
+						<div class="card-content">
+							<div class="card-title">
+								<h4>Scottish straight</h4>
+								<p class="subtitle">Pelo corto</p>
+							</div>
+							<div class="card-body">
+								<p>
+									Simile allo Scottish Fold per aspetto e carattere, ma con le
+									orecchie dritte, lo Scottish Straight è affettuoso,
+									equilibrato e molto socievole. Intelligente e giocherellone, è
+									il compagno ideale per famiglie e ambienti sereni.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card tofadein img-left">
+						<div class="card-img">
+							<img src="../images/splash/cucciolo3.jpg" alt="" />
+						</div>
+						<div class="card-content">
+							<div class="card-title">
+								<h4>Highland fold</h4>
+								<p class="subtitle">Pelo lungo</p>
+							</div>
+							<div class="card-body">
+								<p>
+									Versione a pelo lungo dello Scottish Fold, il Highland Fold
+									unisce l'eleganza del manto soffice alle caratteristiche
+									orecchie piegate. È un gatto placido e affettuoso, che ama il
+									contatto umano e regala momenti di calma e dolcezza.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card tofadein img-right">
+						<div class="card-img">
+							<img src="../images/splash/cucciolo4.jpg" alt="" />
+						</div>
+						<div class="card-content">
+							<div class="card-title">
+								<h4>Highland straight</h4>
+								<p class="subtitle">Pelo lungo</p>
+							</div>
+							<div class="card-body">
+								<p>
+									Con il suo pelo lungo e le orecchie dritte, l'Highland
+									Straight è un gatto raffinato e affabile. Di indole tranquilla
+									e gentile, si lega profondamente alla famiglia, rivelando un
+									carattere sensibile e armonioso.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="banner">
+				<div class="banner-img tofadein">
+					<img src="../images/splash/scottish-fold-2.jpg" alt="" />
+				</div>
+
+				<div class="banner-body">
+					<p class="tofadein">
+						Dietro ogni cucciolo c'è un percorso fatto di attenzione, rispetto e
+						amore. I nostri allevatori dedicano tempo ed energia a ogni fase
+						della crescita, instaurando un rapporto profondo con ogni gatto,
+						considerato non solo come un animale, ma come un individuo unico,
+						con un carattere tutto suo — proprio come una persona. Ogni scelta,
+						dalla socializzazione alla salute, nasce dal desiderio di garantire
+						il benessere dei gatti e la felicità delle famiglie che li
+						accoglieranno.
+					</p>
+					<button class="banner-cta tofadein">Vieni a trovarci!</button>
+				</div>
+			</div>
+
+			<div style="margin-bottom: 20rem"></div>
+		</section>
+
+		<js-bottom-placeholder token="{{ placeholder_token }}">
+	</body>
+</html> #}

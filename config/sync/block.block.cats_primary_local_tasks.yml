@@ -1,0 +1,22 @@
+uuid: f46a7901-9182-483d-9f95-fbbab131606d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cats
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: cats_primary_local_tasks
+theme: cats
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

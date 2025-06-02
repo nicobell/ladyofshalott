@@ -1,0 +1,20 @@
+uuid: 16e5d039-30df-4cdf-8563-b401a2f08842
+langcode: en
+status: false
+dependencies:
+  theme:
+    - cats
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: cats_page_title
+theme: cats
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,6 @@
+theme:
+  js:
+    js/cats.js: {}
+  css:
+    component:
+      css/style.css: {}

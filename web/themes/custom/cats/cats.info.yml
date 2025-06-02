@@ -1,0 +1,20 @@
+name: Cats
+type: theme
+base theme: stark
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core_version_requirement: ^10 || ^11
+
+libraries:
+  - core/drupal
+  - core/drupalSettings
+  - cats/theme
+  
+regions:
+  header: "Header"
+  hero: "Hero"
+  breadcrumb: "Breadcrumb"
+  page_top: "Before Content"
+  content: "Main Content"
+  page_bottom: "After Content"
+  footer: "Footer"

@@ -1,0 +1,22 @@
+uuid: 618c467e-2554-4d3f-ab02-8e9a2712b942
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - cats
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: cats_help
+theme: cats
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }
