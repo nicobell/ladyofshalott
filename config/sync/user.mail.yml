@@ -1,8 +1,8 @@
 _core:
   default_config_hash: 6CZIzFifRq3qbdq3n3nDpEOO4hWIQtKOAQNPvGNGKeM
-langcode: en
+langcode: it
 cancel_confirm:
-  subject: 'Account cancellation request for [user:display-name] at [site:name]'
+  subject: 'Richiesta rimozione profilo per [user:display-name] su [site:name]'
   body: |-
     [user:display-name]
 
@@ -18,38 +18,13 @@ cancel_confirm:
 
     --  [site:name] team
 password_reset:
-  subject: 'Replacement login information for [user:display-name] at [site:name]'
-  body: |-
-    [user:display-name],
-
-    A request to reset the password for your account has been made at [site:name].
-
-    You may now log in by clicking this link or copying and pasting it into your browser:
-
-    [user:one-time-login-url]
-
-    This link can only be used once to log in and will lead you to a page where you can set your password. It expires after one day and nothing will happen if it's not used.
-
-    --  [site:name] team
+  subject: 'Informazioni di autenticazione sostitutive per [user:display-name] su [site:name]'
+  body: "[user:display-name],\r\n\r\nUna richiesta di reimpostazione password è stata effettuata per il tuo profilo su [site:name].\r\n\r\nPuoi autenticarti con un clic su questo collegamento oppure copiando ed incollando il collegamento nel tuo browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nQuesto collegamento può essere usato solo una volta per l'autenticazione e ti consentirà di scegliere la tua password. Il collegamento scadrà dopo un giorno e niente sarà modificato se non utilizzato.\r\n\r\n-- Il team di [site:name]"
 register_admin_created:
-  subject: 'An administrator created an account for you at [site:name]'
-  body: |-
-    [user:display-name],
-
-    A site administrator at [site:name] has created an account for you. You may now log in by clicking this link or copying and pasting it into your browser:
-
-    [user:one-time-login-url]
-
-    This link can only be used once to log in and will lead you to a page where you can set your password.
-
-    After setting your password, you will be able to log in at [site:login-url] in the future using:
-
-    username: [user:name]
-    password: Your password
-
-    --  [site:name] team
+  subject: 'Un amministratore ha creato un profilo utente per te su [site:name]'
+  body: "[user:display-name],\r\n\r\nUn amministratore ha creato il tuo profilo utente sul sito [site:name]. Puoi autenticarti con un clic su questo collegamento oppure copiando ed incollando il collegamento nel tuo browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nQuesto collegamento può essere usato solo una volta per l'autenticazione e ti consentirà di scegliere la tua password.\r\n\r\nDopo aver scelto la password, in futuro, per autenticarti su  [site:login-url] dovrai usare:\r\n\r\nnome utente: [user:name]\r\npassword: La password scelta da te\r\n\r\n-- Il team di [site:name]"
 register_no_approval_required:
-  subject: 'Account details for [user:display-name] at [site:name]'
+  subject: 'Dettagli profilo per [user:display-name] su [site:name]'
   body: |-
     [user:display-name],
 
@@ -66,7 +41,7 @@ register_no_approval_required:
 
     --  [site:name] team
 register_pending_approval:
-  subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
+  subject: "Dettagli del profilo per [user:display-name] su [site:name] (in attesa dell'approvazione dell'amministratore)"
   body: |-
     [user:display-name],
 
@@ -74,13 +49,13 @@ register_pending_approval:
 
     --  [site:name] team
 register_pending_approval_admin:
-  subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
+  subject: "Dettagli del profilo per [user:display-name] su [site:name] (in attesa dell'approvazione dell'amministratore)"
   body: |-
     [user:display-name] has applied for an account.
 
     [user:edit-url]
 status_activated:
-  subject: 'Account details for [user:display-name] at [site:name] (approved)'
+  subject: 'Dettagli profilo per [user:display-name] su [site:name] (approvato)'
   body: |-
     [user:display-name],
 
@@ -99,7 +74,7 @@ status_activated:
 
     --  [site:name] team
 status_blocked:
-  subject: 'Account details for [user:display-name] at [site:name] (blocked)'
+  subject: 'Dettagli profilo per [user:display-name] su [site:name] (bloccato)'
   body: |-
     [user:display-name],
 
@@ -107,10 +82,5 @@ status_blocked:
 
     --  [site:name] team
 status_canceled:
-  subject: 'Account details for [user:display-name] at [site:name] (canceled)'
-  body: |-
-    [user:display-name],
-
-    Your account on [site:name] has been canceled.
-
-    --  [site:name] team
+  subject: 'Dettagli profilo per [user:display-name] su [site:name] (eliminato)'
+  body: "[user:display-name],\r\n\r\nIl tuo profilo su [site:name] è stato eliminato.\r\n\r\n--  Il team [site:name]"

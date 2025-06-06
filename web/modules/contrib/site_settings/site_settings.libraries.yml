@@ -1,0 +1,4 @@
+navigation_icon:
+  css:
+    theme:
+      css/navigation_icon.css: { }

@@ -1,0 +1,20 @@
+name: Site Settings and Labels Sample Data
+type: module
+description: Provides a various of sample site settings entities and contents for them.
+core_version_requirement: ^10 || ^11
+package: Custom
+
+dependencies:
+  - site_settings:site_settings
+  - drupal:image
+  - drupal:file
+  - drupal:text
+  - drupal:entity_test
+  - drupal:language
+  - drupal:content_translation
+  - token:token
+
+# Information added by Drupal.org packaging script on 2025-02-24
+version: '2.0.2'
+project: 'site_settings'
+datestamp: 1740428893

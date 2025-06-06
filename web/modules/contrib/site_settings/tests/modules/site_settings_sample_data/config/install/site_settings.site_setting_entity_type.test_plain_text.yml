@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: test_plain_text
+label: 'Test plain text'
+group: other
+multiple: false

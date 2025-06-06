@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.site_setting_entity.teaser
+    - field.field.site_setting_entity.test_boolean.field_test_boolean_field
+    - site_settings.site_setting_entity_type.test_boolean
+  module:
+    - entity_test
+third_party_settings:
+  entity_test:
+    foo: bar
+_core:
+  default_config_hash: SaYgzDhkuKvYB2jK0aLfOz_gVsu_WQD3kzBpQSFzCAg
+id: site_setting_entity.test_boolean.teaser
+targetEntityType: site_setting_entity
+bundle: test_boolean
+mode: teaser
+content:
+  field_test_boolean_field:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  user_id: true

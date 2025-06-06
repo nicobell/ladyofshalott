@@ -1,0 +1,35 @@
+add site setting entities:
+  title: 'Create new Site Setting entities'
+
+administer site setting entities:
+  title: 'Administer Site Setting entities'
+  description: 'Allow to access the administration form to configure Site Setting entities.'
+  restrict access: true
+
+access site settings overview:
+  title: 'Access the Site Settings overview page'
+  description: 'Get an overview of all Site Settings. Note that this also shows the site settings content without needing "View published Site Setting entities".'
+  restrict access: true
+
+delete site setting entities:
+  title: 'Delete Site Setting entities'
+
+edit site setting entities:
+  title: 'Edit Site Setting entities'
+
+view published site setting entities:
+  title: 'View published Site Setting entities'
+  description: 'Note that users with "Access the Site Settings overview page" will also see the site settings content.'
+
+view unpublished site setting entities:
+  title: 'View unpublished Site Setting entities.'
+  description: 'Note that this also allows the user to view published Site Setting entities.'
+
+view all site setting entity revisions:
+  title: 'View all Site Setting entity revisions'
+
+revert all site setting entity revisions:
+  title: 'Revert all Site Setting entity revisions'
+
+delete all site setting entity revisions:
+  title: 'Delete Site Setting entity revisions'

@@ -1,10 +1,10 @@
 uuid: 0c76140a-e3d4-4876-b04a-8087cd45d6fd
-langcode: en
+langcode: it
 status: true
 dependencies: {  }
 _core:
   default_config_hash: og8sWXhBuHbLMw3CoiBEZjgqSyhFBFmcbUW_wLcfNbo
 id: long
-label: 'Default long date'
+label: 'Formato predefinito data lunga'
 locked: false
 pattern: 'l, F j, Y - H:i'

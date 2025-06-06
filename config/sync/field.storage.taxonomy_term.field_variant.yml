@@ -1,0 +1,21 @@
+uuid: 8e8f675a-2413-441d-a8e4-e591abe95f90
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_variant
+field_name: field_variant
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

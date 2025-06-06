@@ -1,0 +1,214 @@
+<?php
+
+/**
+ * @file
+ * Contains site_settings.module..
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function site_settings_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the site_settings module.
+    case 'help.page.site_settings':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a site settings entity') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function site_settings_theme(): array {
+  $theme = [];
+  $theme['site_setting_entity'] = [
+    'render element' => 'elements',
+    'file' => 'site_setting_entity.page.inc',
+    'template' => 'site_setting_entity',
+  ];
+  $theme['site_setting_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'site_setting_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function site_settings_theme_suggestions_site_setting_entity(array $variables): array {
+  $suggestions = [];
+  $entity = $variables['elements']['#site_setting_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'site_setting_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'site_setting_entity__' . $entity->bundle();
+  $suggestions[] = 'site_setting_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'site_setting_entity__' . $entity->id();
+  $suggestions[] = 'site_setting_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function site_settings_entity_type_alter(array &$entity_types): void {
+  // Override the field UI to provide twig function help text.
+  /** @var \Drupal\Core\Config\Entity\ConfigEntityType $entity */
+  $entity = &$entity_types['field_config'];
+  $entity->setListBuilderClass('Drupal\\site_settings\\SiteSettingsFieldUiListBuilder');
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function site_settings_preprocess(&$variables): void {
+
+  // Get template key. We give the admin control over this in case it conflicts
+  // with a particular module.
+  $config = \Drupal::config('site_settings.config');
+  $disable_auto_loading = $config->get('disable_auto_loading');
+  if (!$disable_auto_loading) {
+
+    /** @var \Drupal\site_settings\SiteSettingsLoaderPluginManager $plugin_manager */
+    $plugin_manager = \Drupal::service('plugin.manager.site_settings_loader');
+    $loader = $plugin_manager->getActiveLoaderPlugin();
+    if ($loader && $loader->allowAutoload()) {
+
+      // Load the site settings into the specified key.
+      $template_key = $config->get('template_key');
+      $variables[$template_key] = $loader->loadAll();
+    }
+  }
+}
+
+/**
+ * Process callback for the batch created in the replicate form.
+ */
+function _site_settings_replicate_process_batch($settings, &$context): void {
+  $replicator = \Drupal::service('site_settings.replicator');
+  $replicator->processBatch($settings, $context);
+}
+
+/**
+ * Finish callback for the batch created in the replicate form.
+ */
+function _site_settings_replicate_finish_batch($success, $results, $operations) {
+  $replicator = \Drupal::service('site_settings.replicator');
+  $replicator->finishBatch($success, $results, $operations);
+}
+
+/**
+ * Implements hook_entity_operation().
+ */
+function site_settings_entity_operation(EntityInterface $entity): array {
+  $operations = [];
+  $bundle = \Drupal::entityTypeManager()
+    ->getStorage('site_setting_entity_type')
+    ->load($entity->bundle());
+  if ($bundle && $bundle->multiple) {
+
+    // 'Add another' operation if the site setting supports multiple.
+    $url = new Url('entity.site_setting_entity.add_form', [
+      'site_setting_entity_type' => $entity->bundle(),
+    ]);
+    if ($url->access()) {
+      $operations['add'] = [
+        'title' => t('Add another'),
+        'url' => $url,
+        'weight' => 15,
+      ];
+    }
+  }
+  return $operations;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function site_settings_form_alter(&$form, &$form_state, $form_id) {
+  $config = \Drupal::config('site_settings.config');
+  $hide_description = $config->get('hide_description');
+  $hide_group = $config->get('hide_group');
+  $hide_advanced = $config->get('hide_advanced');
+  if (
+    ($hide_description || $hide_group || $hide_advanced)
+    && str_starts_with($form_id, 'site_setting_entity_')
+    && str_ends_with($form_id, '_form')
+  ) {
+    if (isset($form['description']) && $hide_description) {
+      hide($form['description']);
+    }
+    if (isset($form['advanced']) && $hide_advanced) {
+      hide($form['advanced']);
+    }
+    if (isset($form['group']) && $hide_group) {
+      hide($form['group']);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_field_access_alter().
+ */
+function site_settings_entity_field_access_alter(array &$grants, array $context) {
+  /** @var \Drupal\Core\Field\FieldDefinitionInterface $field_definition */
+  $field_definition = $context['field_definition'];
+  if (!$field_definition instanceof FieldDefinitionInterface || $field_definition->getFieldStorageDefinition()->getTargetEntityTypeId() !== 'site_setting_entity') {
+    return;
+  }
+  if ($field_definition->getName() == 'description' && isset($grants[':default'])) {
+
+    // Check if the description field is meant to be hidden.
+    $config = \Drupal::config('site_settings.config');
+    $hide_description = $config->get('hide_description');
+    if (!$hide_description) {
+      return;
+    }
+
+    // Forbid access to the description field if hidden.
+    $grants[':default'] = AccessResult::forbidden()->inheritCacheability($grants[':default']);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function site_settings_site_setting_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if (!isset($build['#view_mode'])) {
+    return;
+  }
+  if ($build['#view_mode'] == 'teaser') {
+
+    // Maybe override the teaser to provide an extremely simple summary
+    // for a more admin-table friendly display of results.
+    $config = \Drupal::config('site_settings.config');
+    if ($config->get('simple_summary')) {
+      /** @var \Drupal\site_settings\SiteSettingSimpleTeaserService $simple_teaser */
+      $simple_teaser = \Drupal::service('site_settings.simple_teaser');
+      $build = $simple_teaser->generateTeaser($build);
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function site_settings_page_attachments(array &$page) {
+  if (\Drupal::moduleHandler()->moduleExists('navigation') && \Drupal::currentUser()->hasPermission('access navigation')) {
+    $page['#attached']['library'][] = 'site_settings/navigation_icon';
+  }
+}

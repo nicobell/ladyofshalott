@@ -46,13 +46,15 @@
  */
 #}
 
+{% set hero_image = site_setting_field('hero_homepage', 'field_ss_main_image')['#items'].0 %}
+
 <div class="layout-container">
 
-  {# <header role="banner">
+  <header class="header" role="banner">
     {{ page.header }}
-  </header> #}
+  </header>
 
-  <header class="header">
+  {# <header class="header">
 		<div class="logo">
 			<img class="toscroll" src="/themes/custom/cats/assets/logodef-w.png" alt="logo negative" />
 			<img class="scrolled" src="/themes/custom/cats/assets/logodef.png" alt="logo" />
@@ -63,9 +65,11 @@
 			<li class="menu-link">Cuccioli</li>
 			<li class="menu-link">Contatti</li>
 		</ul>
-	</header>
+	</header> #}
 
-	<section class="hero">
+	{# {{ dump(file_url(hero_image.entity.uri.value)) }} #}
+
+	<section class="hero" style="background-image: url( {{ file_url(hero_image.entity.uri.value) }} );">
 		<h1 class="fadein">Lady of Shalott</h1>
 		<h3 class="fadein">Scottish & Highland</h3>
 	</section>
@@ -73,108 +77,18 @@
   <main role="main">
    <section class="content">
 			<div class="container">
-				<div class="title">
-					<h2 class="tofadein"><span>Scopri</span> le nostre razze</h2>
-				</div>
-
-				<div class="grid">
-					<div class="card tofadein img-left">
-						<div class="card-img">
-							<img src="/themes/custom/cats/assets/cucciolo1.jpg" alt="" />
-						</div>
-						<div class="card-content">
-							<div class="card-title">
-								<h4>Scottish fold</h4>
-								<p class="subtitle">Pelo corto</p>
-							</div>
-							<div class="card-body">
-								<p>
-									Iconico per le sue orecchie piegate in avanti e il musetto
-									rotondo, lo Scottish Fold è un gatto dal temperamento dolce e
-									tranquillo. Ama la compagnia, si adatta facilmente alla vita
-									in casa e conquista con il suo sguardo tenero e curioso.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="card tofadein img-right">
-						<div class="card-img">
-							<img src="/themes/custom/cats/assets/cucciolo2.jpg" alt="" />
-						</div>
-						<div class="card-content">
-							<div class="card-title">
-								<h4>Scottish straight</h4>
-								<p class="subtitle">Pelo corto</p>
-							</div>
-							<div class="card-body">
-								<p>
-									Simile allo Scottish Fold per aspetto e carattere, ma con le
-									orecchie dritte, lo Scottish Straight è affettuoso,
-									equilibrato e molto socievole. Intelligente e giocherellone, è
-									il compagno ideale per famiglie e ambienti sereni.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="card tofadein img-left">
-						<div class="card-img">
-							<img src="/themes/custom/cats/assets/cucciolo3.jpg" alt="" />
-						</div>
-						<div class="card-content">
-							<div class="card-title">
-								<h4>Highland fold</h4>
-								<p class="subtitle">Pelo lungo</p>
-							</div>
-							<div class="card-body">
-								<p>
-									Versione a pelo lungo dello Scottish Fold, il Highland Fold
-									unisce l'eleganza del manto soffice alle caratteristiche
-									orecchie piegate. È un gatto placido e affettuoso, che ama il
-									contatto umano e regala momenti di calma e dolcezza.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="card tofadein img-right">
-						<div class="card-img">
-							<img src="/themes/custom/cats/assets/cucciolo4.jpg" alt="" />
-						</div>
-						<div class="card-content">
-							<div class="card-title">
-								<h4>Highland straight</h4>
-								<p class="subtitle">Pelo lungo</p>
-							</div>
-							<div class="card-body">
-								<p>
-									Con il suo pelo lungo e le orecchie dritte, l'Highland
-									Straight è un gatto raffinato e affabile. Di indole tranquilla
-									e gentile, si lega profondamente alla famiglia, rivelando un
-									carattere sensibile e armonioso.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				{{ page.content }}
 			</div>
 
-			<div class="banner">
+			<div class="banner" id="chi-siamo">
 				<div class="banner-img tofadein">
-					<img src="/themes/custom/cats/assets/scottish-fold-2.jpg" alt="" />
+					{# <img src="/th7emes/custom/cats/assets/scottish-fold-2.jpg" alt="" /> #}
+					{{ site_setting_field('banner_homepage', 'field_ss_banner_image') }}
 				</div>
 
 				<div class="banner-body">
 					<p class="tofadein">
-						Dietro ogni cucciolo c'è un percorso fatto di attenzione, rispetto e
-						amore. I nostri allevatori dedicano tempo ed energia a ogni fase
-						della crescita, instaurando un rapporto profondo con ogni gatto,
-						considerato non solo come un animale, ma come un individuo unico,
-						con un carattere tutto suo — proprio come una persona. Ogni scelta,
-						dalla socializzazione alla salute, nasce dal desiderio di garantire
-						il benessere dei gatti e la felicità delle famiglie che li
-						accoglieranno.
+						{{ site_setting_field('banner_homepage', 'field_ss_banner_text') }}
 					</p>
 					<button class="banner-cta tofadein">Vieni a trovarci!</button>
 				</div>
@@ -189,5 +103,17 @@
       {{ page.footer }}
     </footer>
   {% endif %} #}
+
+	<footer>
+		<section class="container footer-container">
+
+			<p class="footer-title">© Lady of Shalott</p>
+
+			{# <p class="footer-text">Work in progress ...</p> #}
+
+			<p class="author footer-text">crafted by <a target="_blank" href="https://github.com/nicobell">github/nicobell</a></p>
+
+		</section>
+	</footer>
 
 </div>

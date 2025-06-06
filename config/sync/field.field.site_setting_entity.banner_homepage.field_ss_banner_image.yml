@@ -1,0 +1,38 @@
+uuid: f7cea98f-cc95-4b84-8bc8-d0fe8e3db200
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_ss_banner_image
+    - site_settings.site_setting_entity_type.banner_homepage
+  module:
+    - image
+id: site_setting_entity.banner_homepage.field_ss_banner_image
+field_name: field_ss_banner_image
+entity_type: site_setting_entity
+bundle: banner_homepage
+label: 'Immagine banner'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: site-settings
+  file_extensions: 'png jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

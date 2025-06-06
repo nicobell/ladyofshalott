@@ -1,0 +1,8 @@
+template_key: site_settings
+disable_auto_loading: false
+loader_plugin: full
+hide_description: true
+hide_advanced: true
+hide_group: true
+simple_summary: true
+show_groups_in_menu: true

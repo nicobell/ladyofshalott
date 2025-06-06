@@ -1,6 +1,6 @@
 uuid: ba42257b-db3a-470d-9431-9fd8fa3da229
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - cats
@@ -9,7 +9,7 @@ _core:
 id: cats_secondary_local_tasks
 theme: cats
 region: header
-weight: -2
+weight: 1
 provider: null
 plugin: local_tasks_block
 settings:

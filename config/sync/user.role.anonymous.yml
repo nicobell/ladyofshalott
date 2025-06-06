@@ -1,19 +1,17 @@
 uuid: bf659ae9-ac2f-415d-86bb-f6ad4d7dad27
-langcode: en
+langcode: it
 status: true
 dependencies:
-  config:
-    - filter.format.restricted_html
   module:
     - comment
     - contact
-    - filter
     - search
+    - site_settings
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
-label: 'Anonymous user'
+label: 'Utente anonimo'
 weight: 0
 is_admin: false
 permissions:
@@ -21,4 +19,4 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'search content'
-  - 'use text format restricted_html'
+  - 'view published site setting entities'

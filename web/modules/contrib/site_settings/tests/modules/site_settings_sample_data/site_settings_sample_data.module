@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Site settings sample data file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\site_settings_sample_data\Entity\TestMultipleEntriesSiteSetting;
+
+/**
+ * Implements hook_help().
+ */
+function site_settings_sample_data_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the site_settings sample data module.
+    case 'help.page.site_settings_sample_data':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides site settings entity sample data') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function site_settings_sample_data_theme($existing, $type, $theme, $path) {
+  return [
+    'test_site_settings_not_loaded' => [
+      'variables' => [],
+    ],
+    'test_twig_extension' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_views_view_table().
+ *
+ * This adds the 'site-setting-{ID}' to each views row
+ * to facilitate tests.
+ */
+function site_settings_sample_data_preprocess_views_view_table(&$variables) {
+  if (!empty($variables['rows'])) {
+    foreach ($variables['rows'] as &$row) {
+      if (!isset($row['columns']['id']['content'][0]['field_output']['#markup'])) {
+        continue;
+      }
+      $id_row = $row['columns']['id']['content'][0]['field_output']['#markup'];
+      $id = (int) preg_replace("/[^0-9]/", '', $id_row);
+      if ($row['attributes'] instanceof Attribute) {
+        $row['attributes']->setAttribute('id', 'site-setting-' . $id);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function site_settings_sample_data_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['site_setting_entity']['test_multiple_entries'])) {
+    $bundles['site_setting_entity']['test_multiple_entries']['class'] = TestMultipleEntriesSiteSetting::class;
+  }
+}

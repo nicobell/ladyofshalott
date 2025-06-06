@@ -1,0 +1,45 @@
+uuid: 32bbb247-786d-490c-bc34-d15666a2285f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.token
+    - field.field.taxonomy_term.breed.field_main_photo
+    - field.field.taxonomy_term.breed.field_variant
+    - taxonomy.vocabulary.breed
+  module:
+    - image
+    - text
+id: taxonomy_term.breed.token
+targetEntityType: taxonomy_term
+bundle: breed
+mode: token
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_main_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_variant:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

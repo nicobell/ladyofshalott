@@ -1,19 +1,19 @@
 uuid: 18a4e560-1dc5-475b-b430-96b2f42fb122
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
-    - node.type.article
+    - filter.format.basic_html
+    - filter.format.restricted_html
     - node.type.page
-    - taxonomy.vocabulary.tags
   module:
     - comment
     - contextual
     - file
+    - filter
     - node
     - path
     - system
-    - taxonomy
     - toolbar
 _core:
   default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
@@ -28,20 +28,16 @@ permissions:
   - 'access files overview'
   - 'access toolbar'
   - 'administer url aliases'
-  - 'create article content'
   - 'create page content'
-  - 'create terms in tags'
   - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
   - 'delete own files'
   - 'delete own page content'
   - 'delete page revisions'
-  - 'edit own article content'
   - 'edit own comments'
   - 'edit own page content'
-  - 'edit terms in tags'
   - 'revert all revisions'
+  - 'use text format basic_html'
+  - 'use text format restricted_html'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

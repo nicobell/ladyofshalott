@@ -1,0 +1,29 @@
+uuid: 815ecc16-9601-4122-964c-c20488dc61a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_breed
+    - node.type.cat
+    - taxonomy.vocabulary.breed
+id: node.cat.field_ref_breed
+field_name: field_ref_breed
+entity_type: node
+bundle: cat
+label: Razza
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      breed: breed
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

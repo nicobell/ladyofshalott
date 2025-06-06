@@ -1,12 +1,12 @@
 uuid: 519f2b8c-927f-42e5-872a-d61000c709f0
-langcode: en
+langcode: it
 status: true
 dependencies:
   module:
     - editor
 _core:
   default_config_hash: mclCbTlJwWJORez4Y1eX2MqA0aGjSMAoJb3TaBABcK8
-name: 'Basic HTML'
+name: 'HTML di base'
 format: basic_html
 weight: 0
 filters:
@@ -34,7 +34,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <a hreflang href> <blockquote cite> <ul type> <ol start type> <strong> <em> <code> <li> <img src alt data-entity-uuid data-entity-type height width data-caption data-align>'
+      allowed_html: '<br> <p> <h3 id> <h4 id> <cite> <dl> <dt> <dd> <a hreflang href> <blockquote cite> <ul type> <ol type start> <h2 id> <h5 id> <h6 id> <strong> <em> <u> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_html_image_secure:

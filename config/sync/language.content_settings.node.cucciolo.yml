@@ -1,0 +1,16 @@
+uuid: e8767e41-e543-4188-9d77-417c01ce2e18
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.cucciolo
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.cucciolo
+target_entity_type_id: node
+target_bundle: cucciolo
+default_langcode: site_default
+language_alterable: false

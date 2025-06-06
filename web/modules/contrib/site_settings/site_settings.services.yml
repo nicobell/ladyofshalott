@@ -1,0 +1,25 @@
+services:
+  site_settings.replicator:
+    class: Drupal\site_settings\SiteSettingsReplicator
+    arguments: ['@entity_type.manager', '@messenger']
+
+  cache.site_settings:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: cache_factory:get
+    arguments: [site_settings]
+
+  plugin.manager.site_settings_loader:
+    class: Drupal\site_settings\SiteSettingsLoaderPluginManager
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@config.factory']
+
+  site_settings.twig_extension:
+    class: Drupal\site_settings\Twig\TwigExtension
+    arguments: ['@entity_type.manager', '@plugin.manager.site_settings_loader']
+    tags:
+      - { name: twig.extension }
+
+  site_settings.simple_teaser:
+    class: Drupal\site_settings\SiteSettingSimpleTeaserService
+    arguments: []

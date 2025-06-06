@@ -1,0 +1,10 @@
+site_settings.site_setting_group_entity_type.*:
+  type: config_entity
+  label: 'Site Setting group type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'

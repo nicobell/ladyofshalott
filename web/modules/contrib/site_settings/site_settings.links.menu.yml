@@ -1,0 +1,51 @@
+# Site setting structure menu group
+site_settings.structure.overview:
+  title: 'Site Settings'
+  route_name: site_settings.structure.overview
+  description: 'Manage the Site Setting structure'
+  parent: system.admin_structure
+  weight: 99
+
+# Site Setting type menu items definition
+entity.site_setting_entity_type.collection:
+  title: 'Site Settings types'
+  route_name: entity.site_setting_entity_type.collection
+  description: 'Manage the available Site Setting types. This controls the fields available for the content editor to fill in when creating the site setting.'
+  parent: site_settings.structure.overview
+  weight: 1
+
+# Site Setting groups menu items definition
+entity.site_setting_group_entity_type.collection:
+  title: 'Site Settings groups'
+  route_name: entity.site_setting_group_entity_type.collection
+  description: 'Manage Site Settings Group entities. This allows the site builder to group multiple site settings together, e.g. "Footer settings", and allows the theme builder to then load all settings in a group at once.'
+  parent: site_settings.structure.overview
+  weight: 2
+
+# Site Settings configuration page menu items definition
+site_settings.site_settings_config_form:
+  title: 'Site Settings Configuration'
+  route_name: site_settings.site_settings_config_form
+  description: 'Configure how Site Settings behaves'
+  parent: system.admin_config_system
+  weight: 99
+
+# Site Settings overview.
+entity.site_setting_entity.collection:
+  title: 'Site Settings'
+  description: 'Create and edit Site Settings and Labels.'
+  route_name: entity.site_setting_entity.collection
+  parent: system.admin_content
+
+# Site Settings - Navigation content menu item.
+site_settings.navigation.content:
+  title: 'Site Settings'
+  description: 'Create and edit Site Settings and Labels.'
+  route_name: entity.site_setting_entity.collection
+  menu_name: content
+  weight: 10
+
+# Site Settings menu links.
+site_settings.setting_menu_links:
+  parent: entity.site_setting_entity.collection
+  deriver: Drupal\site_settings\Plugin\Derivative\SiteSettingsMenuItemsDeriver

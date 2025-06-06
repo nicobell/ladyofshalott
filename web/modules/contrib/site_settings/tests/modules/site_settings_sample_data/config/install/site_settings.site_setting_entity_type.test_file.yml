@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: test_file
+label: 'Test file'
+group: images
+multiple: false

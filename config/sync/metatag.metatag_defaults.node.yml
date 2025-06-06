@@ -1,11 +1,11 @@
 uuid: 4cbb3b20-126c-48da-8b72-4631db4a14f0
-langcode: en
+langcode: it
 status: true
 dependencies: {  }
 _core:
   default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
 id: node
-label: Content
+label: Contenuto
 tags:
   title: '[node:title] | [site:name]'
   description: '[node:summary]'

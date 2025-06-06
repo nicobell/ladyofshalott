@@ -1,0 +1,76 @@
+# Site settings entity.
+entity.site_setting_entity.collection:
+  path: '/admin/content/site-settings'
+  defaults:
+    _entity_list: 'site_setting_entity'
+    _title: 'Site settings'
+  requirements:
+    _permission: 'access site settings overview'
+
+# General settings configuration.
+site_settings.site_settings_config_form:
+  path: '/admin/config/site-settings/config'
+  defaults:
+    _form: '\Drupal\site_settings\Form\SiteSettingsConfigForm'
+    _title: 'Site Settings Configuration Form'
+  requirements:
+    _permission: 'administer site setting entities'
+  options:
+    _admin_route: TRUE
+
+# Site settings structure overview page.
+site_settings.structure.overview:
+  path: '/admin/structure/site-settings'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Site settings'
+  requirements:
+    _permission: 'administer site setting entities'
+
+# Site settings entity type - overview.
+entity.site_setting_entity_type.collection:
+  path: '/admin/structure/site_setting_entity_type'
+  defaults:
+    _entity_list: 'site_setting_entity_type'
+    _title: 'Site Settings Types'
+  requirements:
+    _permission: 'administer site setting entities'
+
+# Site settings entity type - add.
+entity.site_setting_entity_type.add_form:
+  path: '/admin/structure/site_setting_entity_type/add'
+  defaults:
+    _entity_form: 'site_setting_entity_type.add'
+    _title: 'Add site settings type'
+  requirements:
+    _permission: 'administer site setting entities'
+
+# Site settings entity type - edit.
+entity.site_setting_entity_type.edit_form:
+  path: '/admin/structure/site_setting_entity_type/{site_setting_entity_type}'
+  defaults:
+    _entity_form: 'site_setting_entity_type.edit'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  requirements:
+    _permission: 'administer site setting entities'
+
+# Site settings entity type - delete.
+entity.site_setting_entity_type.delete_form:
+  path: '/admin/structure/site_setting_entity_type/{site_setting_entity_type}/delete'
+  defaults:
+    _entity_form: 'site_setting_entity_type.delete'
+    _title: 'Delete'
+  requirements:
+    _entity_access: 'site_setting_entity_type.delete'
+
+# Site settings entity type - replicate.
+site_settings.site_setting_replicate_form:
+  path: '/admin/structure/site_setting_entity_type/{setting}/replicate'
+  defaults:
+    _form: '\Drupal\site_settings\Form\SiteSettingReplicateForm'
+    _title: 'Site Settings Replication Form'
+  requirements:
+    _permission: 'administer site setting entities'
+    setting: ^[a-zA-Z0-9_]+
+  options:
+    _admin_route: TRUE

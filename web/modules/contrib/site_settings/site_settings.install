@@ -1,0 +1,515 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update hooks.
+ */
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Utility\UpdateException;
+use Drupal\user\RoleInterface;
+use Symfony\Component\Yaml\Yaml;
+
+/**
+ * Implements hook_install().
+ */
+function site_settings_install(): void {
+
+  // On initial install, use the full loader without autoload.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+  $config->set('template_key', 'site_settings');
+  $config->set('loader_plugin', 'full');
+  $config->set('disable_auto_loading', TRUE);
+  $config->save();
+
+  // Grant view site settings permissions.
+  if (\Drupal::moduleHandler()->moduleExists('user')) {
+    user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['view published site setting entities']);
+    user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['view published site setting entities']);
+  }
+}
+
+/**
+ * Warn if 'settings' is used as a key and display suite is enabled.
+ */
+function site_settings_requirements($phase): array {
+  $requirements = [];
+  if (in_array($phase, ['runtime', 'update'])) {
+
+    // Get template key. We give the admin control over this in case it
+    // conflicts with a particular module.
+    $config = \Drupal::config('site_settings.config');
+    $template_key = $config->get('template_key');
+
+    // If we are using settings as the template key.
+    if ($template_key == 'settings') {
+
+      // If Display Suite is enabled.
+      if (\Drupal::moduleHandler()->moduleExists('ds')) {
+        $requirements['site_settings'] = [
+          'title' => t('Site settings'),
+          'value' => t('Your site uses Display Suite and your template key for Site Settings is "settings". This is likely to conflict with Display Suite\'s use of "settings". Please visit "/admin/config/site-settings/config".'),
+          'severity' => REQUIREMENT_WARNING,
+        ];
+      }
+    }
+  }
+  return $requirements;
+}
+
+/**
+ * Set the default template key if upgrading.
+ */
+function site_settings_update_8001() {
+
+  // On initial install set template_key to site_settings.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+  $template_key = $config->get('template_key');
+  if (!$template_key) {
+
+    // If we don't have a template key, we are updating, maintain existing
+    // template key of 'settings' to avoid breaking update path. New installs
+    // will have template_key set in hook_install.
+    $config->set('template_key', 'settings');
+    $config->save();
+  }
+}
+
+/**
+ * Clear the old cache as we now have separate caches for multilingual.
+ */
+function site_settings_update_8002() {
+  \Drupal::cache()->delete('site_settings:settings');
+}
+
+/**
+ * Delete orphaned site settings.
+ *
+ * There may be orphaned site settings where the site setting entity type was
+ * deleted but the site settings of that entity type were left behind. Clean
+ * those up.
+ */
+function site_settings_update_8003() {
+  // If this update hasn't run, ensure update 8004 runs before this.
+  site_settings_update_8004();
+
+  // Get all existing site setting types.
+  $query = \Drupal::entityQuery('site_setting_entity_type');
+  $query->accessCheck(TRUE);
+  if ($entity_type_ids = $query->execute()) {
+
+    // Find any site settings that don't belong to an existing type.
+    $query = \Drupal::entityQuery('site_setting_entity');
+    $query->accessCheck(TRUE);
+    $query->condition('type', $entity_type_ids, 'NOT IN');
+    if ($entity_ids = $query->execute()) {
+
+      // Delete the orphaned site settings.
+      $controller = \Drupal::entityTypeManager()->getStorage('site_setting_entity');
+      $entities = $controller->loadMultiple($entity_ids);
+      $controller->delete($entities);
+    }
+  }
+}
+
+/**
+ * Create the entity data_table and migrate existing entities.
+ */
+function site_settings_update_8004() {
+  $data_table_exists = \Drupal::database()->schema()->tableExists('site_setting_entity_field_data');
+  if (!$data_table_exists) {
+    // Create the missing data table.
+    $entity_type_id = 'site_setting_entity';
+    $entity_type_manager = \Drupal::entityTypeManager();
+    $entity_type_manager->clearCachedDefinitions();
+    $entity_type = $entity_type_manager->getDefinition($entity_type_id);
+    $entity_update_manager = \Drupal::entityDefinitionUpdateManager();
+    $entity_update_manager->installEntityType($entity_type);
+
+    // Copy the relevant values from base table to data table.
+    $query = \Drupal::database()->select('site_setting_entity', 'sse');
+    $query->fields('sse');
+    $sse_items = $query->execute()->fetchAll();
+    foreach ($sse_items as $item) {
+      $insert_values = [
+        'id' => $item->id,
+        'type' => $item->type,
+        'langcode' => $item->langcode,
+        'user_id' => $item->user_id,
+        'name' => $item->name,
+        'group' => $item->group,
+        'status' => $item->status,
+        'created' => $item->created,
+        'changed' => $item->changed,
+        'default_langcode' => '1',
+      ];
+
+      \Drupal::database()->insert('site_setting_entity_field_data')
+        ->fields($insert_values)
+        ->execute();
+    }
+
+    // Remove base table fields that are no longer needed.
+    $schema = \Drupal::database()->schema();
+    $drop_fields = ['name', 'group', 'status', 'created', 'changed'];
+    foreach ($drop_fields as $drop_field) {
+      $schema->dropField('site_setting_entity', $drop_field);
+    }
+  }
+}
+
+/**
+ * Apply entity updates.
+ */
+function site_settings_update_8005() {
+  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = $definition_update_manager->getEntityType('site_setting_entity');
+  $definition_update_manager->updateEntityType($entity_type);
+}
+
+/**
+ * Move the user_id field from the entity into the entity data table.
+ */
+function site_settings_update_8006() {
+  $schema = \Drupal::database()->schema();
+
+  if ($schema->fieldExists('site_setting_entity', 'user_id')) {
+    $schema->dropField('site_setting_entity', 'user_id');
+  }
+}
+
+/**
+ * Set the default auto-loading if upgrading.
+ */
+function site_settings_update_8007() {
+
+  // On initial install set disable_auto_loading for site_settings.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+  $disable_auto_loading = $config->get('disable_auto_loading');
+  if (!$disable_auto_loading) {
+    $config->set('disable_auto_loading', FALSE);
+    $config->save();
+  }
+}
+
+/**
+ * Add description column to the site settings table.
+ */
+function site_settings_update_10003(&$sandbox) {
+  $field_storage_definition = BaseFieldDefinition::create('string')
+    ->setLabel(t('Description'))
+    ->setDescription(t('Administrative description of the Site Setting(s). This description is not shown to the visitor.'))
+    ->setSettings([
+      'max_length' => 255,
+      'text_processing' => 0,
+    ])
+    ->setDefaultValue('')
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'string',
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'string_textfield',
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('description', 'site_setting_entity', 'site_setting_entity', $field_storage_definition);
+}
+
+/**
+ * Set the default site settings loader to flattened if upgrading.
+ */
+function site_settings_update_10004() {
+
+  // On initial install set loader plugin to full.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+  $loader_plugin = $config->get('loader_plugin');
+  if (!$loader_plugin) {
+
+    // If we don't have a loader plugin, we are updating, maintain existing
+    // loader plugin key of 'flattened' to avoid breaking update path. New
+    // installs will have loader plugin set in hook_install.
+    $config->set('loader_plugin', 'flattened');
+    $config->save();
+  }
+
+  // This is also the first update hook for 8.x-1.x, so anyone coming from
+  // 8.x-1.x could have different defaults set to match a fresh 2.x install.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+  $config->set('hide_description', TRUE);
+  $config->set('hide_advanced', TRUE);
+  $config->set('hide_group', TRUE);
+  $config->set('simple_summary', TRUE);
+  $config->set('show_groups_in_menu', TRUE);
+  $config->save();
+}
+
+/**
+ * Install teaser view mode for site settings entity.
+ */
+function site_settings_update_10005(&$sandbox) {
+  $config_ids = [
+    'core.entity_view_mode.site_setting_entity.teaser',
+    'views.view.site_settings',
+  ];
+  $site_settings_path = \Drupal::service('extension.list.module')->getPath('site_settings');
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_ids as $config_id) {
+    $config_path = $site_settings_path . '/config/install/' . $config_id . '.yml';
+    $data = Yaml::parseFile($config_path);
+    $config_factory->getEditable($config_id)
+      ->setData($data)
+      ->save(TRUE);
+  }
+}
+
+/**
+ * Convert fieldset string to group with machine name.
+ */
+function site_settings_update_10006(&$sandbox) {
+
+  $update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type_manager = \Drupal::entityTypeManager();
+
+  // Install the group entity type.
+  try {
+    $entity_type_manager->clearCachedDefinitions();
+    $entity_type = $entity_type_manager->getDefinition('site_setting_group_entity_type');
+    $update_manager->installEntityType($entity_type);
+    $update_manager->updateEntityType($update_manager->getEntityType('site_setting_group_entity_type'));
+  }
+  catch (\Exception $exception) {
+    throw new UpdateException($exception->getMessage());
+  }
+
+  // Adds a new Group field to the Site Settings entity.
+  $field_storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Group'))
+    ->setDescription(t('The Site Setting Group type.'))
+    ->setSetting('target_type', 'site_setting_group_entity_type')
+    ->setDisplayOptions('view', [
+      'label' => 'hidden',
+      'type' => 'author',
+      'weight' => 0,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => 5,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'autocomplete_type' => 'tags',
+        'placeholder' => '',
+      ],
+    ])
+    ->setRequired(TRUE)
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+  $update_manager->installFieldStorageDefinition('group', 'site_setting_entity', 'site_setting_entity', $field_storage_definition);
+
+  // Generates new Site Settings Group entities.
+  $site_settings_group = $entity_type_manager->getStorage('site_setting_group_entity_type');
+  $groups_entities = $site_settings_group->loadMultiple();
+  $site_settings = $entity_type_manager->getStorage('site_setting_entity')
+    ->loadMultiple();
+
+  // Converts index array to associative array to correct check
+  // if Site Settings group entity on unique.
+  $groups = [];
+  foreach ($groups_entities as $entity) {
+    if (!isset($groups[$entity->id()])) {
+      $groups[$entity->id()] = $entity;
+    }
+  }
+
+  // Removed the Fieldset field if still exists as it is no longer applicable.
+  $update_manager = \Drupal::entityDefinitionUpdateManager();
+  $definition = $update_manager->getFieldStorageDefinition('fieldset', 'site_setting_entity');
+  if ($definition instanceof FieldStorageDefinitionInterface) {
+    $update_manager->uninstallFieldStorageDefinition($definition);
+  }
+
+  /** @var \Drupal\Component\Transliteration\TransliterationInterface $transliteration */
+  $transliteration = \Drupal::service('transliteration');
+  foreach ($site_settings as $site_setting) {
+
+    // In case of failures, if fieldset is already moved, skip row.
+    if (empty($site_setting->fieldset)) {
+      continue;
+    }
+
+    $fieldset = reset($site_setting->fieldset);
+
+    $new_value = $transliteration->transliterate($fieldset, LanguageInterface::LANGCODE_DEFAULT, '_');
+    $new_value = strtolower($new_value);
+    $new_value = preg_replace('/[^a-z0-9_]+/', '_', $new_value);
+    $generated_id = preg_replace('/_+/', '_', $new_value);
+
+    // Checks availability the SS Group Entity with generated id.
+    // Creates if it does not exist.
+    if (isset($groups[$generated_id])) {
+      $group = $groups[$generated_id];
+    }
+    else {
+      $new_group = $site_settings_group->create([
+        'id' => $generated_id,
+        'label' => $fieldset,
+        'description' => '',
+      ]);
+      $new_group->save();
+      $group = $new_group;
+      $groups[$new_group->id()] = $new_group;
+    }
+
+    // Updates the Site Settings Type Entity.
+    $ref_entities = $site_setting->referencedEntities();
+    foreach ($ref_entities as $ref_entity) {
+      if ($ref_entity->bundle() == 'site_setting_entity_type') {
+        /** @var \Drupal\site_settings\SiteSettingEntityTypeInterface $ref_entity */
+        if (!$ref_entity->get('group')) {
+          $ref_entity->set('group', $group->id());
+          $ref_entity->save();
+        }
+        break;
+      }
+    }
+
+    // Updates the Site Settings Entity.
+    $site_setting->set('group', $group->id());
+    $site_setting->save();
+  }
+
+  // If we have site setting types not yet created, these
+  // need updates too.
+  $connection = \Drupal::service('database');
+  $bundles = $entity_type_manager->getStorage('site_setting_entity_type')->loadMultiple();
+  $query = $connection->select('site_setting_entity', 'sse');
+  $query->addField('sse', 'type');
+  $used_bundles = $query->distinct()->execute()->fetchCol();
+  $used_bundles = $used_bundles ?: [];
+  $missing_bundles = array_diff(array_keys($bundles), $used_bundles);
+  if ($missing_bundles) {
+    foreach ($missing_bundles as $missing) {
+      $site_setting_type = $bundles[$missing];
+      $fieldset = $site_setting_type->fieldset;
+
+      $new_value = $transliteration->transliterate($fieldset, LanguageInterface::LANGCODE_DEFAULT, '_');
+      $new_value = strtolower($new_value);
+      $new_value = preg_replace('/[^a-z0-9_]+/', '_', $new_value);
+      $generated_id = preg_replace('/_+/', '_', $new_value);
+
+      // Checks availability the SS Group Entity with generated id.
+      // Creates if it does not exist.
+      if (isset($groups[$generated_id])) {
+        $group = $groups[$generated_id];
+      }
+      else {
+        $new_group = $site_settings_group->create([
+          'id' => $generated_id,
+          'label' => $fieldset,
+          'description' => '',
+        ]);
+        $new_group->save();
+        $group = $new_group;
+        $groups[$new_group->id()] = $new_group;
+      }
+
+      $site_setting_type->set('group', $group->id());
+      $site_setting_type->save();
+    }
+  }
+}
+
+/**
+ * Re-install view.
+ */
+function site_settings_update_10007(&$sandbox) {
+  $config_id = 'views.view.site_settings';
+  $site_settings_path = \Drupal::service('extension.list.module')->getPath('site_settings');
+  $config_factory = \Drupal::configFactory();
+  $config_path = $site_settings_path . '/config/install/' . $config_id . '.yml';
+  $data = Yaml::parseFile($config_path);
+  $config_factory->getEditable($config_id)
+    ->setData($data)
+    ->save(TRUE);
+}
+
+/**
+ * Main existing admin > content display settings if upgrading.
+ */
+function site_settings_update_10008() {
+
+  // Maintain status quo for existing sites. New installations get the new
+  // settings.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+  $config->set('hide_description', FALSE);
+  $config->set('hide_advanced', FALSE);
+  $config->set('hide_group', FALSE);
+  $config->set('simple_summary', FALSE);
+  $config->save();
+}
+
+/**
+ * Add Groups menu links.
+ */
+function site_settings_update_10009() {
+
+  // Maintain status quo for existing sites.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+  $config->set('show_groups_in_menu', FALSE);
+  $config->save();
+}
+
+/**
+ * Add the view_mode configuration to the single rendered site settings block.
+ */
+function site_settings_update_10010(&$sandbox) {
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('block.block.') as $block_config_name) {
+    $block = $config_factory->getEditable($block_config_name);
+    $plugin = $block->get('plugin');
+    if ($plugin === 'single_rendered_site_settings_block') {
+      $settings = $block->get('settings');
+      if (is_array($settings) && !isset($settings['view_mode'])) {
+        $block->set('settings.view_mode', 'default');
+        $block->save(TRUE);
+      }
+    }
+  }
+}
+
+/**
+ * Grant view site settings permissions to anonymous and authenticated users.
+ *
+ * Now that the site settings view published status is enforced, set the
+ * default to allow view like node install does. For the vast majority of sites
+ * this should be the status quo; however, this will be noted in release notes
+ * in case. If the site settings type permissions is enabled, view permissions
+ * where already restricted and controlled per type, so leave that untouched.
+ */
+function site_settings_update_10011(&$sandbox) {
+  if (
+    \Drupal::moduleHandler()->moduleExists('user')
+    && !\Drupal::moduleHandler()->moduleExists('site_settings_type_permissions')
+  ) {
+    user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['view published site setting entities']);
+    user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['view published site setting entities']);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function site_settings_uninstall() {
+  // Load the configuration object.
+  $config = \Drupal::configFactory()->getEditable('site_settings.config');
+
+  // Delete the configuration if it exists.
+  if ($config) {
+    $config->delete();
+  }
+}

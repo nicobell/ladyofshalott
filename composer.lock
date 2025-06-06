@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1dab700187c8554b4e099e8d063f079",
+    "content-hash": "0d79224d0be573118bf7f9b9ee573aff",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2388,6 +2388,69 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/simple_sitemap",
                 "issues": "https://drupal.org/project/issues/simple_sitemap"
+            }
+        },
+        {
+            "name": "drupal/site_settings",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/site_settings.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/site_settings-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "df5a4e1ae51b0ab9709d3dd86cb27e7e34ff44e8"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/token": "1.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1740428892",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "bobi-mel",
+                    "homepage": "https://www.drupal.org/user/3741631"
+                },
+                {
+                    "name": "bohart",
+                    "homepage": "https://www.drupal.org/user/289861"
+                },
+                {
+                    "name": "dieterholvoet",
+                    "homepage": "https://www.drupal.org/user/3567222"
+                },
+                {
+                    "name": "scott_euser",
+                    "homepage": "https://www.drupal.org/user/3267594"
+                }
+            ],
+            "description": "Provides a site settings entity",
+            "homepage": "https://www.drupal.org/project/site_settings",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/site_settings",
+                "issues": "http://drupal.org/project/issues/site_settings"
             }
         },
         {

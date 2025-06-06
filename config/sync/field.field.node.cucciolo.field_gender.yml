@@ -1,0 +1,21 @@
+uuid: 3c33242a-dddb-4fd4-a276-2ef1f58e3c3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.cucciolo
+  module:
+    - options
+id: node.cucciolo.field_gender
+field_name: field_gender
+entity_type: node
+bundle: cucciolo
+label: Sesso
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,18 @@
+uuid: 8dee6487-ff0c-4f09-9ef5-a9cb1813f307
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.cucciolo
+id: node.cucciolo.title
+field_name: title
+entity_type: node
+bundle: cucciolo
+label: Nome
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

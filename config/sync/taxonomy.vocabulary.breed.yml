@@ -1,0 +1,9 @@
+uuid: 32afaa8f-7828-4034-8b8a-fc5be3362bc0
+langcode: und
+status: true
+dependencies: {  }
+name: Razza
+vid: breed
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+      'card tofadein',
+      loop.index % 2 == 0 ? 'img-right' : 'img-left',
+    ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    <div class="card-img">
+      <img src="{{ file_url(row.content['#taxonomy_term'].field_main_photo[0].entity.uri.value) }}" alt="" />
+    </div>
+    <div class="card-content">
+      <div class="card-title">
+        <h4>{{ row.content['#taxonomy_term'].name.value }}</h4>
+        <h5 class="subtitle">{{ row.content['#taxonomy_term'].field_variant.value }}</h5>
+      </div>
+      <div class="card-body">
+        {{ row.content['#taxonomy_term'].description.value|raw }}
+      </div>
+    </div>
+
+  </div>
+{% endfor %}

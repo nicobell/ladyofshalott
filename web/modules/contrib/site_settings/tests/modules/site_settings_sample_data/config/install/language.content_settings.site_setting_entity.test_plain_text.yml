@@ -1,0 +1,17 @@
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_entity_type.test_plain_text
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: site_setting_entity.test_plain_text
+target_entity_type_id: site_setting_entity
+target_bundle: test_plain_text
+default_langcode: site_default
+language_alterable: true

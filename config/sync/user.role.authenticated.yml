@@ -1,21 +1,19 @@
 uuid: dfed68d0-61ab-4b0a-9bc8-11c885bb1ad7
-langcode: en
+langcode: it
 status: true
 dependencies:
-  config:
-    - filter.format.basic_html
   module:
     - comment
     - contact
     - file
-    - filter
     - search
     - shortcut
+    - site_settings
     - system
 _core:
   default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
 id: authenticated
-label: 'Authenticated user'
+label: 'Utente autenticato'
 weight: 1
 is_admin: false
 permissions:
@@ -27,4 +25,4 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
-  - 'use text format basic_html'
+  - 'view published site setting entities'

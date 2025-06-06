@@ -1,5 +1,5 @@
 uuid: ba380a5d-e3af-44a6-8bd5-169db40beae5
-langcode: en
+langcode: it
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: KgGJDZFpMaz_8bTv6fN1bXS3Qi5LWmRJI9R53kEGsNQ
 id: node.teaser
-label: Teaser
+label: Anteprima
 description: ''
 targetEntityType: node
 cache: true

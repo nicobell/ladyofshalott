@@ -1,0 +1,47 @@
+site_settings.config:
+  type: config_object
+  label: 'Site Settings config'
+  mapping:
+    template_key:
+      type: string
+      label: 'The key at which site settings should be made available in templates'
+    loader_plugin:
+      type: string
+      label: 'The loader plugin to load site settings entities'
+    disable_auto_loading:
+      type: boolean
+      label: 'Whether the default auto-loading of site settings into all templates should be disabled'
+    hide_description:
+      type: boolean
+      label: 'Hide the administrative description'
+    hide_advanced:
+      type: boolean
+      label: 'Hide the administrative advanced section'
+    hide_group:
+      type: boolean
+      label: 'Hide the administrative group editing'
+    simple_summary:
+      type: boolean
+      label: 'Use a simple auto-administrative summary'
+    show_groups_in_menu:
+      type: boolean
+      label: 'Automatically show Groups in the admin menu'
+
+block.settings.simple_site_settings_block:
+  type: block_settings
+  label: 'Simple site settings block'
+  mapping:
+    setting:
+      type: string
+      label: 'The site setting entity type'
+
+block.settings.single_rendered_site_settings_block:
+  type: block_settings
+  label: 'Single site settings block'
+  mapping:
+    setting:
+      type: string
+      label: 'The site setting entity type'
+    view_mode:
+      type: string
+      label: 'The view mode for the site settings entity type'

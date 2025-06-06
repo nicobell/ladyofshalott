@@ -1,0 +1,21 @@
+uuid: a3e28143-4edf-4b01-aecf-ec8264a323c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_date
+    - node.type.cucciolo
+  module:
+    - datetime
+id: node.cucciolo.field_birth_date
+field_name: field_birth_date
+entity_type: node
+bundle: cucciolo
+label: 'Data di nascita'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,6 +1,6 @@
 uuid: e47c9b55-b5fe-4aac-bc45-05e0c60b2b8c
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -11,7 +11,7 @@ _core:
 id: cats_site_branding
 theme: cats
 region: header
-weight: 0
+weight: 5
 provider: null
 plugin: system_branding_block
 settings:

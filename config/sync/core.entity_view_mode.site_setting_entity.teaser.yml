@@ -1,0 +1,16 @@
+uuid: bc8a47e3-7e9b-4a03-acad-45571496a806
+langcode: it
+status: true
+dependencies:
+  module:
+    - site_settings
+  enforced:
+    module:
+      - site_settings
+_core:
+  default_config_hash: wpMV42AGCHbBxS1pqhdRzYdi_1L4ykw45282CWoi9Qg
+id: site_setting_entity.teaser
+label: Anteprima
+description: null
+targetEntityType: site_setting_entity
+cache: true

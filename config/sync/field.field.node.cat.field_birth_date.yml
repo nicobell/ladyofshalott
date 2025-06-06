@@ -1,0 +1,21 @@
+uuid: baf7bbfe-71cf-400b-80ac-e85ef54625d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_date
+    - node.type.cat
+  module:
+    - datetime
+id: node.cat.field_birth_date
+field_name: field_birth_date
+entity_type: node
+bundle: cat
+label: 'Data di nascita'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

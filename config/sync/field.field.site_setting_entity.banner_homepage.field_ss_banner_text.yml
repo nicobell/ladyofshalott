@@ -1,0 +1,24 @@
+uuid: 1d6da971-d4dc-4524-b662-eef3ec4d2740
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_ss_banner_text
+    - filter.format.basic_html
+    - site_settings.site_setting_entity_type.banner_homepage
+  module:
+    - text
+id: site_setting_entity.banner_homepage.field_ss_banner_text
+field_name: field_ss_banner_text
+entity_type: site_setting_entity
+bundle: banner_homepage
+label: 'Testo banner'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

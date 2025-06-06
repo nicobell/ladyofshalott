@@ -1,0 +1,16 @@
+name: Site Settings and Labels
+type: module
+description: Provides a site settings entity for non-admin controlled settings and labels
+core_version_requirement: ^10 || ^11
+configure: site_settings.site_settings_config_form
+package: Site Settings
+dependencies:
+  - drupal:views
+  - drupal:user
+test_dependencies:
+  - token:token
+
+# Information added by Drupal.org packaging script on 2025-02-24
+version: '2.0.2'
+project: 'site_settings'
+datestamp: 1740428893

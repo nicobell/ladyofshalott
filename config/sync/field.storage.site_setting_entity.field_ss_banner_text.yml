@@ -1,0 +1,19 @@
+uuid: f82742b9-a3ef-4047-b68a-50eb6ab0ada0
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+    - text
+id: site_setting_entity.field_ss_banner_text
+field_name: field_ss_banner_text
+entity_type: site_setting_entity
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

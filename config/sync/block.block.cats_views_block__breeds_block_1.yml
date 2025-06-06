@@ -1,0 +1,29 @@
+uuid: a6924b41-8c75-4667-bf43-007f5be9bf89
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.breeds
+  module:
+    - system
+    - views
+  theme:
+    - cats
+id: cats_views_block__breeds_block_1
+theme: cats
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:breeds-block_1'
+settings:
+  id: 'views_block:breeds-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/3

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: test_multiple_entries_and_fields
+label: 'Test multiple entries and fields'
+group: other
+multiple: true

@@ -1,0 +1,28 @@
+footer {
+  padding: 0;
+  background-color: #6d4f45;
+}
+
+footer .footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .footer-title {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: white;
+  font-style: italic;
+}
+
+footer .footer-text,
+footer .footer-text a {
+  color: white;
+  font-size: 1rem;
+}
+
+footer .footer-text.author {
+  opacity: .5;
+}

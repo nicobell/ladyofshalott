@@ -1,6 +1,6 @@
 uuid: 9974d4b0-d857-4544-9fae-5ba67eced192
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - cats
@@ -9,7 +9,7 @@ _core:
 id: cats_primary_admin_actions
 theme: cats
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:

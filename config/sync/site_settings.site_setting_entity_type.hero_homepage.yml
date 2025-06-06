@@ -1,0 +1,10 @@
+uuid: 10a6b3ab-f0bc-43c0-9c39-4899d5c853bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.lady_of_shalott
+id: hero_homepage
+label: 'Hero Homepage'
+group: lady_of_shalott
+multiple: false

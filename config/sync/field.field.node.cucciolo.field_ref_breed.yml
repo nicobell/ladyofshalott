@@ -1,0 +1,29 @@
+uuid: ad0b378e-1309-4d82-ae0c-83b089ae17ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_breed
+    - node.type.cucciolo
+    - taxonomy.vocabulary.breed
+id: node.cucciolo.field_ref_breed
+field_name: field_ref_breed
+entity_type: node
+bundle: cucciolo
+label: Razza
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      breed: breed
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

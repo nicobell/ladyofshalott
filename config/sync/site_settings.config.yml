@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: '-BegT3yX5pXCxKq0rLul2nLieboFnnHIs1PR2qLcrq0'
+template_key: site_settings
+loader_plugin: full
+disable_auto_loading: true
+hide_description: true
+hide_advanced: true
+hide_group: true
+simple_summary: true
+show_groups_in_menu: true

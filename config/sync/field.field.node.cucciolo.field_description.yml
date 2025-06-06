@@ -1,0 +1,24 @@
+uuid: 15a4ed06-6518-4f10-a6a2-abad387a2954
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - filter.format.basic_html
+    - node.type.cucciolo
+  module:
+    - text
+id: node.cucciolo.field_description
+field_name: field_description
+entity_type: node
+bundle: cucciolo
+label: Descrizione
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

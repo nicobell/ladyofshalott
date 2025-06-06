@@ -1,0 +1,10 @@
+uuid: 3d9630f5-3cde-4674-8f92-0148172782e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.lady_of_shalott
+id: banner_homepage
+label: 'Banner homepage'
+group: lady_of_shalott
+multiple: false

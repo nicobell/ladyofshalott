@@ -1,5 +1,5 @@
 uuid: f035312e-6f4e-4fa4-9aa2-50c1efdef497
-langcode: en
+langcode: it
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: C7X8h9FWlwkQ9y5mnU2JzgaZICAdc6HFbPVbhvjlAYE
 id: node_unpublish_action
-label: 'Unpublish content'
+label: 'Rimuovere contenuto dalla pubblicazione'
 type: node
 plugin: 'entity:unpublish_action:node'
 configuration: {  }

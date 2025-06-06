@@ -1,5 +1,5 @@
 uuid: 2730753d-06e0-4e2e-9d29-231b42f29c0c
-langcode: en
+langcode: it
 status: true
 dependencies:
   theme:
@@ -14,7 +14,7 @@ provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'Secondary tabs'
+  label: 'Schede secondarie'
   label_display: '0'
   provider: core
   primary: false

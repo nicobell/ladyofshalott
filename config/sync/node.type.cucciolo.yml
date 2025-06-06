@@ -1,0 +1,17 @@
+uuid: 29d94eda-93a4-4811-8f3f-a9db4372802c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Cucciolo
+type: cucciolo
+description: null
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

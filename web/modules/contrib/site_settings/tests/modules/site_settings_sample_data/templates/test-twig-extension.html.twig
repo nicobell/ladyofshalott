@@ -1,0 +1,52 @@
+HERE123123
+{# Test multiple entries and fields name 1 #}
+<div id="render-5">
+  PRE RENDER-5
+  {{ site_setting(5) }}
+  OUTPUTTED RENDER-5
+</div>
+
+{# Test multiple entries and fields name 1 #}
+<div id="render-6">
+  {{ site_setting(6) }}
+</div>
+
+{# Test boolean #}
+<div id="render-12">
+  {{ site_setting(12) }}
+</div>
+
+{% set all_site_settings = all_site_settings() %}
+<div id="render-all">
+  {{ all_site_settings }}
+</div>
+
+{% set group_site_settings = site_settings_by_group('Boolean') %}
+<div id="render-group">
+  {{ group_site_settings }}
+</div>
+
+{% set name_multiple_site_settings = site_settings_by_name('test_multiple_entries') %}
+<div id="render-name-multiple">
+  {{ name_multiple_site_settings }}
+</div>
+
+{% set name_single_site_setting = site_settings_by_name('test_plain_text') %}
+<div id="render-name-single">
+  {{ name_single_site_setting }}
+</div>
+
+{% set site_setting_field = site_setting_field('test_plain_text', 'field_testing') %}
+<div id="render-field">
+  {{ site_setting_field }}
+</div>
+
+{% set site_setting_field = site_setting_field('test_multiple_entries', 'field_testing') %}
+<div id="render-single-field-from-multiple">
+  {{ site_setting_field }}
+</div>
+
+{% set site_setting_entity = site_setting_entity_by_name('test_plain_text') %}
+<div id="render-single-object-label">
+  {{ site_setting_entity.getName() }}
+</div>
