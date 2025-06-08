@@ -1,0 +1,16 @@
+uuid: 5428a469-a8b0-4701-9efa-be7cc4b7419c
+langcode: en
+status: true
+dependencies: {  }
+name: editor_login
+label: 'Editor login'
+triggers:
+  login: login
+destination_path: 'internal:/admin'
+pages_type: 0
+pages: ''
+language: ''
+roles:
+  content_editor: content_editor
+weight: 0
+enabled: true

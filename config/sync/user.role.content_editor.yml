@@ -4,16 +4,26 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.full_html
     - filter.format.restricted_html
+    - node.type.cat
+    - node.type.cucciolo
     - node.type.page
+    - taxonomy.vocabulary.breed
   module:
     - comment
+    - content_translation
     - contextual
     - file
     - filter
+    - help
+    - metatag
     - node
     - path
+    - search
+    - site_settings
     - system
+    - taxonomy
     - toolbar
 _core:
   default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
@@ -23,21 +33,60 @@ weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access content'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access help pages'
+  - 'access site settings overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access user profiles'
+  - 'add site setting entities'
+  - 'administer menu'
+  - 'administer meta tags'
+  - 'administer taxonomy'
   - 'administer url aliases'
+  - 'change own username'
+  - 'create cat content'
+  - 'create content translations'
+  - 'create cucciolo content'
   - 'create page content'
+  - 'create terms in breed'
   - 'create url aliases'
+  - 'delete any cat content'
+  - 'delete any cucciolo content'
+  - 'delete any file'
+  - 'delete any page content'
+  - 'delete own cat content'
+  - 'delete own cucciolo content'
   - 'delete own files'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'delete site setting entities'
+  - 'delete terms in breed'
+  - 'edit any cat content'
+  - 'edit any cucciolo content'
+  - 'edit any page content'
+  - 'edit own cat content'
   - 'edit own comments'
+  - 'edit own cucciolo content'
   - 'edit own page content'
-  - 'revert all revisions'
+  - 'edit site setting entities'
+  - 'edit terms in breed'
+  - 'search content'
+  - 'translate breed taxonomy_term'
+  - 'translate cat node'
+  - 'translate cucciolo node'
+  - 'translate editable entities'
+  - 'update content translations'
+  - 'use advanced search'
   - 'use text format basic_html'
+  - 'use text format full_html'
   - 'use text format restricted_html'
-  - 'view all revisions'
   - 'view own unpublished content'
+  - 'view published site setting entities'
   - 'view the administration theme'
+  - 'view unpublished site setting entities'
+  - 'view user email addresses'
+  - 'view vocabulary labels'
