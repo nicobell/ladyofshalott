@@ -1,9 +1,9 @@
-uuid: 5428a469-a8b0-4701-9efa-be7cc4b7419c
+uuid: 23242e19-8404-4155-b35e-4ff2a2494961
 langcode: en
 status: true
 dependencies: {  }
-name: editor_login
-label: 'Editor login'
+name: master_login
+label: 'Master Login'
 triggers:
   login: login
 destination_path: 'internal:/admin'
@@ -12,5 +12,6 @@ pages: ''
 language: ''
 roles:
   content_editor: content_editor
+  administrator: administrator
 weight: 0
 enabled: true
