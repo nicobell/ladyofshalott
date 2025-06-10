@@ -1,0 +1,75 @@
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 20vh;
+  height: 100vh;
+  /* background-image: url(../assets/cucciolo2.jpg); */
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #423932 0%, rgba(66, 57, 50, 0.5) 10vh, transparent 20vh);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: Lobster;
+  width: 100%;
+  padding-left: 2rem;
+  line-height: 1em;
+  font-size: 3rem;
+  color: white;
+}
+
+.hero h3 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-left: 2rem;
+  text-align: left;
+  color: #fadb9e;
+  margin: 0;
+  line-height: 1em;
+  font-family: Outfit;
+  font-weight: 400;
+  animation-delay: 400ms;
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    background-image: url(../assets/scottish-fold-4.jpg);
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-left: 10%;
+    padding-bottom: 17.5%;
+  }
+
+  .hero h1 {
+    width: fit-content;
+    font-size: 7vw;
+    padding-left: 1rem;
+  }
+
+  .hero h3 {
+    margin-top: 1em;
+    padding-left: 1rem;
+    font-size: 1.8vw;
+    width: fit-content;
+    margin-left: 6.5rem;
+  }
+}

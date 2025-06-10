@@ -4,5 +4,11 @@ theme:
   css:
     component:
       css/style.css: {}
-      css/hp-breeds.css: {}
+      css/typography.css: {}
+      css/fadein.css: {}
+      css/header.css: {}
       css/footer.css: {}
+      css/hero.css: {}
+      css/banner.css: {}
+      css/hp-breeds.css: {}
+      css/scacchiera.css: {}

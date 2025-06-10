@@ -14,12 +14,21 @@
         } else {
           header.classList.remove("scrolled");
         }
-
         checktofadein();
       });
+
+      window.addEventListener("load", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 0) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+        checktofadein();
+      });
+      
     },
   };
-  
 })(Drupal);
 
 function checktofadein() {

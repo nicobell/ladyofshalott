@@ -1,0 +1,6 @@
+services:
+  custom_redirect.subscriber:
+    class: Drupal\custom_redirect\EventSubscriber\CustomRedirectSubscriber
+    arguments: ['@router.admin_context']
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,60 @@
+p,
+li {
+  margin: 1rem 0;
+  line-height: 1.5em;
+  color: #423932;
+  font-family: Outfit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0;
+  line-height: 1.2em;
+  color: #423932;
+  font-family: Outfit;
+}
+
+
+@font-face {
+  font-family: Outfit;
+  font-weight: 100;
+  src: url(../fonts/Outfit/static/Outfit-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Outfit;
+  font-weight: 300;
+  src: url(../fonts/Outfit/static/Outfit-Light.ttf);
+}
+
+@font-face {
+  font-family: Outfit;
+  font-weight: 400;
+  src: url(../fonts/Outfit/static/Outfit-Regular.ttf);
+}
+
+@font-face {
+  font-family: Outfit;
+  font-weight: 500;
+  src: url(../fonts/Outfit/static/Outfit-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Outfit;
+  font-weight: 700;
+  src: url(../fonts/Outfit/static/Outfit-Bold.ttf);
+}
+
+@font-face {
+  font-family: Petit;
+  src: url(../fonts/Petit_Formal_Script/PetitFormalScript-Regular.ttf);
+}
+
+@font-face {
+  font-family: Lobster;
+  src: url(../fonts/Lobster/Lobster-Regular.ttf);
+}

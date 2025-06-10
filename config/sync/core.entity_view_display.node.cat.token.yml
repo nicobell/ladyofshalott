@@ -1,0 +1,90 @@
+uuid: 87380761-eca0-4db0-b748-fcd4cc0cd2a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.token
+    - field.field.node.cat.field_age
+    - field.field.node.cat.field_birth_date
+    - field.field.node.cat.field_description
+    - field.field.node.cat.field_gender
+    - field.field.node.cat.field_main_photo
+    - field.field.node.cat.field_ref_breed
+    - field.field.node.cat.field_weight
+    - node.type.cat
+  module:
+    - datetime
+    - image
+    - options
+    - text
+    - user
+id: node.cat.token
+targetEntityType: node
+bundle: cat
+mode: token
+content:
+  field_age:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_birth_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_gender:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_main_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_ref_breed:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_weight:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,73 @@
+uuid: a7132122-2b32-411d-bda1-6c7eceed2611
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cat.field_age
+    - field.field.node.cat.field_birth_date
+    - field.field.node.cat.field_description
+    - field.field.node.cat.field_gender
+    - field.field.node.cat.field_main_photo
+    - field.field.node.cat.field_ref_breed
+    - field.field.node.cat.field_weight
+    - image.style.large
+    - node.type.cat
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.cat.teaser
+targetEntityType: node
+bundle: cat
+mode: teaser
+content:
+  field_birth_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: olivero_medium
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_main_photo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ref_breed:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_weight:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_age: true
+  field_gender: true
+  langcode: true
+  links: true

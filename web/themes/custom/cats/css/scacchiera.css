@@ -1,0 +1,214 @@
+.scacchiera {
+  display: flex;
+  flex-direction: column;
+  background-color: #6d4f45;
+}
+
+.kings {
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.kings .gatto-title,
+.kings .gatto-descrizione * {
+  color: white;
+}
+
+.queens {
+  padding: 2rem;
+  background-color: white;
+}
+
+.kings,
+.queens {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-top: 2rem;
+}
+
+.kings header h2,
+.queens header h2 {
+  margin: 0;
+  font-size: 5rem;
+  font-family: Lobster;
+}
+
+.kings header h2 {
+  color: white;
+}
+
+
+.kings header,
+.queens header {
+  position: relative;
+}
+
+.queens .paw-1,
+.kings .paw-1 {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  rotate: 70deg;
+}
+
+.queens .paw-2,
+.kings .paw-2 {
+  position: absolute;
+  top: 10%;
+  right: 8%;
+  rotate: 60deg;
+}
+
+.queens .paw-3,
+.kings .paw-3 {
+  position: absolute;
+  top: 60%;
+  right: 15%;
+  rotate: 100deg;
+}
+
+.queens .paw-4,
+.kings .paw-4 {
+  position: absolute;
+  top: 12%;
+  right: 23%;
+  rotate: 70deg;
+}
+
+
+/* .queens header h2 {
+  color: white;
+} */
+
+/* .kings::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-color: #6d4f45;
+} */
+
+.gatto-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gatto-title {
+  font-size: 1.75rem;
+  color: #423932;
+  margin: .5rem 0 0 -2rem;
+  font-weight: 500;
+}
+
+.gatto-razza h5 {
+  font-family: Lobster;
+  font-size: 1.5rem;
+  color: #af7a5b;
+  margin: .25rem 0 1rem -1rem;
+  font-weight: 500;
+}
+
+.kings .gatto-razza h5 {
+  color: #fbc474;
+}
+
+.gatto-descrizione {
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-weight: 300;
+}
+
+.gatto-immagine {
+  overflow: hidden;
+  border-radius: 99%;
+}
+
+
+.gatto-immagine img {
+  width: 100%;
+  aspect-ratio: 1;
+  transition: all ease 500ms;
+  scale: 1;
+  height: auto;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.gatto-peso,
+.gatto-data {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-bottom: .25rem;
+  font-size: 1rem;
+}
+
+.teaser-label {
+  font-family: Lobster;
+}
+
+.kings .teaser-label,
+.kings .teaser-value {
+  color: white;
+}
+
+@media (min-width: 1200px) {
+  .scacchiera {
+    flex-direction: row;
+  }
+
+  .scacchiera>div {
+    width: 50%;
+  }
+
+  .kings {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .queens {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .gatto-title {
+    font-size: 2rem;
+  }
+
+  .gatto-razza h5 {
+    font-size: 1.5rem;
+  }
+
+  .gatto-card {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .gatto-card:hover .gatto-immagine img {
+    scale: 1.1;
+    transition: all ease 500ms;
+    cursor: pointer;
+  }
+
+  .gatto-immagine {
+    width: 40%;
+    height: fit-content;
+    
+  }
+
+  .gatto-peso,
+  .gatto-data,
+  .gatto-descrizione {
+    font-size: 1.2rem;
+  }
+
+  .gatto-body {
+    width: 60%;
+
+  }
+}

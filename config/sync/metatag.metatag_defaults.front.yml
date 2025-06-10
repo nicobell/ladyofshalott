@@ -7,5 +7,18 @@ _core:
 id: front
 label: 'Prima pagina'
 tags:
+  abstract: '[node:body]'
   canonical_url: '[site:url]'
+  description: '[node:nody]'
+  og_description: '[node:body]'
+  og_image: '[site:url][node:field_main_image]'
+  og_site_name: 'Lady of Shalott'
+  og_title: 'Lady of Shalott'
+  og_url: 'https://ladyofshalott.it/'
+  schema_web_page_author: 'a:2:{s:5:"@type";s:13:"LocalBusiness";s:4:"name";s:15:"Lady of Shalott";}'
+  schema_web_page_description: '[node:body]'
+  schema_web_page_in_language: '[language:name]'
+  schema_web_page_publisher: 'a:2:{s:5:"@type";s:13:"LocalBusiness";s:4:"name";s:15:"Lady of Shalott";}'
+  schema_web_page_type: WebPage
   shortlink: '[site:url]'
+  title: Homepage

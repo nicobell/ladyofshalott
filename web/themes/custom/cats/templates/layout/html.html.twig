@@ -34,13 +34,13 @@
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
   </head>
-  <body{{ attributes }}>
+  <body{{ attributes }} style="padding-top: 0 !important">
     {# <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
-    </a>
-    {{ page_top }} #}
+    </a> #}
+    {{ page_top }}
     {{ page }}
-    {# {{ page_bottom }} #}
+    {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>

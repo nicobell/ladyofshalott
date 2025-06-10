@@ -76,13 +76,13 @@
 
   <main role="main">
    <section class="content">
+
 			<div class="container">
-				{{ page.content }}
+				{{ drupal_view('breeds', 'block_1') }}
 			</div>
 
 			<div class="banner" id="chi-siamo">
 				<div class="banner-img tofadein">
-					{# <img src="/th7emes/custom/cats/assets/scottish-fold-2.jpg" alt="" /> #}
 					{{ site_setting_field('banner_homepage', 'field_ss_banner_image') }}
 				</div>
 
@@ -94,25 +94,24 @@
 				</div>
 			</div>
 
+			<div class="scacchiera">
+			
+				{{ drupal_view('cats', 'kings') }}
+
+				{{ drupal_view('cats', 'queens') }}
+
+			</div>
+
 			<div style="margin-bottom: 20rem"></div>
 		</section>
   </main>
 
-  {# {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %} #}
+	{# {{ page.footer }} #}
 
 	<footer>
 		<section class="container footer-container">
-
 			<p class="footer-title">© Lady of Shalott</p>
-
-			{# <p class="footer-text">Work in progress ...</p> #}
-
 			<p class="author footer-text">crafted by <a target="_blank" href="https://github.com/nicobell">github/nicobell</a></p>
-
 		</section>
 	</footer>
 
