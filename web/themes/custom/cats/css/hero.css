@@ -52,7 +52,7 @@
 
 @media (min-width: 1200px) {
   .hero {
-    background-image: url(../assets/scottish-fold-4.jpg);
+    /* background-image: url(../assets/scottish-fold-4.jpg); */
     align-items: flex-start;
     justify-content: flex-end;
     padding-left: 10%;

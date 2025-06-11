@@ -22,20 +22,20 @@
   {%
     set row_classes = [
       default_row_class ? 'views-row',
-      'card tofadein',
+      'razza-card tofadein',
       loop.index % 2 == 0 ? 'img-right' : 'img-left',
     ]
   %}
   <div{{ row.attributes.addClass(row_classes) }}>
-    <div class="card-img">
+    <div class="razza-image">
       <img src="{{ file_url(row.content['#taxonomy_term'].field_main_photo[0].entity.uri.value) }}" alt="" />
     </div>
-    <div class="card-content">
-      <div class="card-title">
-        <h4>{{ row.content['#taxonomy_term'].name.value }}</h4>
-        <h5 class="subtitle">{{ row.content['#taxonomy_term'].field_variant.value }}</h5>
+    <div class="razza-body">
+      <div class="razza-title">
+        <h4 class="big-title darker">{{ row.content['#taxonomy_term'].name.value }}</h4>
+        <h5 class="subtitle big-subtitle medium">{{ row.content['#taxonomy_term'].field_variant.value }}</h5>
       </div>
-      <div class="card-body">
+      <div class="razza-descrizione text">
         {{ row.content['#taxonomy_term'].description.value|raw }}
       </div>
     </div>

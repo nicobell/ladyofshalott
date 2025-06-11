@@ -1,0 +1,65 @@
+/* ------------ CARD ------------ */
+.gatto-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* immagine */
+.gatto-immagine {
+  overflow: hidden;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 350px;
+  height: fit-content;
+}
+
+.gatto-immagine img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top center;
+  transition: all ease 500ms;
+  scale: 1;
+}
+
+/* body */
+.gatto-body {}
+
+.teaser-label {
+  font-family: Lobster;
+}
+
+.gatto-peso,
+.gatto-data {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-bottom: .25rem;
+}
+
+@media (min-width: 1200px) {
+  .gatto-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .gatto-immagine {
+    width: 30%;
+  }
+  .gatto-body {
+    width: 70%;
+  }
+
+  .gatto-card:hover .gatto-immagine img {
+    scale: 1.1;
+    transition: all ease 500ms;
+  }
+
+  .gatto-title {
+    margin-top: 0;
+  }
+}

@@ -8,6 +8,28 @@ body {
   padding: 0;
 }
 
+img {
+  display: block;
+}
+
+.only-desk {
+  display: none;
+}
+
+.onlyl-mobile {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .only-desk {
+    display: block;
+  }
+
+  .only-mobile {
+    display: none;
+  }
+}
+
 body.toolbar-fixed {
   padding-top: 0 !important;
   margin-top: 39px !important;
@@ -37,26 +59,28 @@ body.toolbar-fixed #toolbar-bar li {
   padding: 1rem;
 }
 
-.container .title h2 {
-  font-size: 2rem;
-  color: #423932;
-}
 
-.container .title h2 span {
-  margin-right: 0.1em;
-  font-family: Lobster;
-  color: #af7a5b;
-}
 
 @media (min-width: 1200px) {
   .container {
     width: 80%;
     margin: 0 auto;
   }
-
-  .container .title h2 {
-    font-size: 2.75vw;
-  }
 }
 
-/*# sourceMappingURL=style.css.map */
+
+
+
+
+
+.anchor {
+  visibility: hidden;
+  position: absolute;
+  top: -100px;
+  display: block;
+}
+
+.scacchiera,
+.banner {
+  position: relative;
+}

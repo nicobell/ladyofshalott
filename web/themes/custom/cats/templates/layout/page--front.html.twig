@@ -54,21 +54,6 @@
     {{ page.header }}
   </header>
 
-  {# <header class="header">
-		<div class="logo">
-			<img class="toscroll" src="/themes/custom/cats/assets/logodef-w.png" alt="logo negative" />
-			<img class="scrolled" src="/themes/custom/cats/assets/logodef.png" alt="logo" />
-		</div>
-
-		<ul class="menu">
-			<li class="menu-link">Chi siamo</li>
-			<li class="menu-link">Cuccioli</li>
-			<li class="menu-link">Contatti</li>
-		</ul>
-	</header> #}
-
-	{# {{ dump(file_url(hero_image.entity.uri.value)) }} #}
-
 	<section class="hero" style="background-image: url( {{ file_url(hero_image.entity.uri.value) }} );">
 		<h1 class="fadein">Lady of Shalott</h1>
 		<h3 class="fadein">Scottish & Highland</h3>
@@ -81,25 +66,24 @@
 				{{ drupal_view('breeds', 'block_1') }}
 			</div>
 
-			<div class="banner" id="chi-siamo">
+			<div class="banner bg-lighter">
+				<div class="anchor" id="chi-siamo"></div>
 				<div class="banner-img tofadein">
 					{{ site_setting_field('banner_homepage', 'field_ss_banner_image') }}
 				</div>
 
 				<div class="banner-body">
-					<p class="tofadein">
+					<div class="tofadein">
 						{{ site_setting_field('banner_homepage', 'field_ss_banner_text') }}
-					</p>
+					</div>
 					<button class="banner-cta tofadein">Vieni a trovarci!</button>
 				</div>
 			</div>
 
-			<div class="scacchiera">
-			
+			<div class="scacchiera bg-dark">
+				<div class="anchor" id="i-gatti"></div>
 				{{ drupal_view('cats', 'kings') }}
-
 				{{ drupal_view('cats', 'queens') }}
-
 			</div>
 
 			<div style="margin-bottom: 20rem"></div>
@@ -107,7 +91,6 @@
   </main>
 
 	{# {{ page.footer }} #}
-
 	<footer>
 		<section class="container footer-container">
 			<p class="footer-title">© Lady of Shalott</p>

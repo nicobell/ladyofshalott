@@ -1,118 +1,106 @@
-
-.grid {
+.breeds-view {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 0;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
-.card {
-  width: 100%;
+.breeds-view .title h2 {
+  font-size: 2.5rem;
+  color: #423932;
+  text-align: center;
+  line-height: 1em;
   margin: 0;
+}
+
+.breeds-view .title h2 span {
+  margin-right: 0.1em;
+  font-family: Lobster;
+  color: #af7a5b;
+}
+
+.razza-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-.card.img-right .card-title {
-  text-align: right;
-}
-/* .card.img-right .card-title .subtitle {
-  color: #fbc474;
-} */
-.card.img-right .card-body {
-  text-align: right;
-}
-.card.img-right .card-img {
-  margin: 0 auto -6rem 0;
-}
-.card .card-title h4 {
-  font-size: 1.75rem;
-  margin: 0;
-  font-weight: 500;
-}
-.card .card-title .subtitle {
-  font-family: Lobster;
-  font-size: 1.5rem;
-  /* margin: .5rem 0 0 0; */
-  color: #af7a5b;
-  font-weight: 500;
-}
-.card .card-body {
-  font-size: 1rem;
-  line-height: 1.5em;
-  font-weight: 300;
-}
-.card .card-body p {
-  margin: 1rem 0;
-}
-.card .card-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  margin: 0 0 -6rem auto;
-}
-.card .card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all ease 500ms;
-}
-.card .card-img:hover img {
-  scale: 1.1;
-  transition: all ease 500ms;
-}
-.card .card-content {
-  position: relative;
-  z-index: 1;
+  gap: 1rem;
   width: 100%;
 }
 
+.razza-image {
+  overflow: hidden;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 350px;
+  height: fit-content;
+}
+
+.razza-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center center;
+  transition: all ease 500ms;
+  scale: 1;
+}
+
+.razza-title>* {
+  margin: 0;
+}
+
+/* variazioni IMG-RIGHT */
+.razza-card.img-right {
+  align-items: flex-end;
+}
+
+.razza-card.img-right .razza-title {
+  text-align: right;
+}
+
+.razza-card.img-right .razza-descrizione {
+  text-align: right;
+}
+
+
 @media (min-width: 1200px) {
-  .card {
-    width: 80%;
+  .breeds-view .title h2 {
+    font-size: 3rem;
+    margin: 0 0 2rem 0;
+    text-align: left;
+  }
+
+  .razza-card {
     flex-direction: row;
-    gap: 4rem;
+    align-items: flex-start;
+    gap: 2rem;
   }
-  /* .card:not(:last-child) {
-    margin: 0 0 -4rem 0;
-  } */
-  .card .card-title h4 {
-    font-size: 2.5rem;
-  }
-  .card .card-title .subtitle {
-    font-size: 1.8rem;
-  }
-  .card.img-right {
+
+  .razza-card.img-right {
     flex-direction: row-reverse;
-    margin-left: auto;
-    margin-right: 0;
+    align-items: flex-start;
   }
-  .card.img-right .card-img {
-    margin: 0;
+
+  .razza-image {
+    width: 30%;
   }
-  .card .card-img {
-    width: 45%;
-    height: auto;
-    /* border-radius: 40px; */
-    border-radius: 99%;
-    margin: 0;
-    aspect-ratio: 1;
+
+  .razza-body {
+    width: 70%;
   }
-  .card .card-content {
-    width: calc(100% - 250px - 2rem);
-  }
-  .card .card-body {
-    font-size: 1.2rem;
+
+  .razza-image:hover img {
+    scale: 1.1;
+    transition: all ease 500ms;
   }
 }
+
 @media (min-width: 1600px) {
-  .grid {
-    padding: 0 10%;
+  .breeds-view {
+    padding: 0 10vw;
+  }
+
+  .breeds-view .title h2 {
+    font-size: 4rem;
   }
 }

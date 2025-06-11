@@ -1,9 +1,17 @@
 p,
-li {
+li,
+.text,
+.text * {
   margin: 1rem 0;
+  font-size: 1rem;
   line-height: 1.5em;
   color: #423932;
   font-family: Outfit;
+  font-weight: 300;
+}
+
+li.menu-link {
+  margin: 0;
 }
 
 h1,
@@ -14,10 +22,49 @@ h5,
 h6 {
   margin: 1rem 0;
   line-height: 1.2em;
-  color: #423932;
   font-family: Outfit;
 }
 
+.small-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.big-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.big-subtitle,
+.small-subtitle {
+  font-size: 1.5rem;
+  font-family: Lobster;
+}
+
+@media (min-width: 1200px) {
+  .small-title {
+    font-size: 2rem;
+  }
+
+  .big-title {
+    font-size: 2.5rem;
+  }
+
+  .big-subtitle {
+    font-size: 1.8rem;
+  }
+
+  p,
+  li,
+  .text,
+  .text * {
+    font-size: 1.2rem;
+  }
+
+  .small {
+    font-size: 1rem;
+  }
+}
 
 @font-face {
   font-family: Outfit;
@@ -57,4 +104,46 @@ h6 {
 @font-face {
   font-family: Lobster;
   src: url(../fonts/Lobster/Lobster-Regular.ttf);
+}
+
+/* COLORS */
+
+.lighter {
+  color: #fadb9e;
+}
+
+.light {
+  color: #fbc474;
+}
+
+.medium {
+  color: #af7a5b;
+}
+
+.dark {
+  color: #6d4f45;
+}
+
+.darker {
+  color: #423932;
+}
+
+.bg-lighter {
+  background-color: #fadb9e;
+}
+
+.bg-light {
+  background-color: #fbc474;
+}
+
+.bg-medium {
+  background-color: #af7a5b;
+}
+
+.bg-dark {
+  background-color: #6d4f45;
+}
+
+.bg-darker {
+  background-color: #423932;
 }

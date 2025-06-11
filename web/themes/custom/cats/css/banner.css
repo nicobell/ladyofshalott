@@ -1,37 +1,31 @@
 .banner {
-  width: 100%;
-  background-color: #fadb9e;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 4rem 0;
-  margin: 4rem 0 0 0;
-  position: relative;
-  z-index: 2;
+  width: 100%;
+  margin: 2rem 0 0 0;
 }
 
 .banner-img {
   width: 100%;
-  max-height: 60vh;
+  height: fit-content;
 }
 
 .banner-img img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: 40vh;
+  object-fit: cover;
   object-position: center center;
 }
 
 .banner-body {
   width: 100%;
-  padding: 1.5rem;
+  padding: 2rem 2rem 4rem 2rem;
 }
 
 .banner-body p {
-  font-size: 1.2rem;
   margin: 0;
-  font-weight: 300;
-  line-height: 1.8em;
+  font-size: 1.2rem;
+  line-height: 1.75em;
 }
 
 .banner-body .banner-cta {
@@ -56,57 +50,44 @@
   .banner {
     display: flex;
     flex-direction: row;
+    margin: 4rem 0 0 0;
   }
-
-  /* .banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'><path fill='%23ffffff' fill-opacity='1 ' d='M0,0 C480,80 960,0 1440,80 L1440,0 L0,0 Z'></path></svg>") no-repeat top center;
-    background-size: cover;
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden;
-  } */
-
-  /* .banner::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'><path fill='%23ffffff' d='M0,80 C360,0 1080,160 1440,0 L1440,80 L0,80 Z'/></svg>") no-repeat bottom center;
-    background-size: cover;
-    z-index: 1;
-    pointer-events: none;
-  } */
 
   .banner-img {
     width: 60%;
-    height: 80vh;
-    max-height: unset;
+    margin: 4rem 0 6rem 0;
   }
 
   .banner-img img {
-    object-fit: contain;
-    object-position: left center;
+    height: 60vh;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
   }
 
   .banner-body {
     width: 40%;
-    padding: 4rem;
-  }
-
-  .banner-body p {
-    font-size: 1.25vw;
+    padding: 4rem 2rem;
   }
 
   .banner-body .banner-cta {
-    margin-top: 8vh;
-    font-size: 1.5vw;
+    margin-top: 6rem;
+    width: fit-content;
+  }
+}
+
+@media (min-width: 1600px) {
+  .banner {
+    margin: 6rem 0 0 0;
+  }
+
+  .banner-body {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .banner-body p {
+    font-size: 1.5rem;
   }
 }

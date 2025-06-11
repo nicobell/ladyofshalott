@@ -60,50 +60,31 @@
  * @ingroup themeable
  */
 #}
+
 <article{{ attributes.addClass('gatto-card', 'tofadein') }}>
 
-  {# {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }} #}
-
-  {# {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-      </div>
-    </footer>
-  {% endif %} #}
+  <div class="gatto-header only-mobile">
+    <h4 class="gatto-title big-title darker">
+      {{ label }}
+    </h4>
+  </div>
 
   <div class="gatto-immagine">
     {{ content.field_main_photo }}
   </div>
 
   <div class="gatto-body">
-
-    <h4 class="gatto-title">
+    <h4 class="gatto-title big-title darker only-desk">
       {{ label }}
     </h4>
-
+    <div class="gatto-descrizione text">
+      {{ content.field_description }}
+    </div>
     <div class="gatto-razza">
       {{ content.field_ref_breed }}
     </div>
-
-    <div class="gatto-descrizione">
-      {{ content.field_description }}
-    </div>
-
     {{ content.field_weight }}
-
     {{ content.field_birth_date }}
-
-    {# <div{{ content_attributes }}>
-      {{ content }}
-    </div> #}
   </div>
 
 </article>
