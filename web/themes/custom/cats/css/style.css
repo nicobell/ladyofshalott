@@ -85,6 +85,7 @@ body.toolbar-fixed #toolbar-bar li {
 }
 
 .scacchiera,
-.banner {
+.banner,
+.cuccioli {
   position: relative;
 }
