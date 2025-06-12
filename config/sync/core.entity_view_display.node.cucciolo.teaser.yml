@@ -1,8 +1,9 @@
-uuid: 8aa0e85d-d380-4f8a-be92-86ab390d2a7e
+uuid: 199748e4-e1db-4e3b-8bb2-0c1b1b1e138e
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.cucciolo.field_age
     - field.field.node.cucciolo.field_birth_date
     - field.field.node.cucciolo.field_color
@@ -16,92 +17,75 @@ dependencies:
   module:
     - datetime
     - image
-    - options
     - text
     - user
-id: node.cucciolo.default
+id: node.cucciolo.teaser
 targetEntityType: node
 bundle: cucciolo
-mode: default
+mode: teaser
 content:
-  field_age:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
-    region: content
   field_birth_date:
     type: datetime_default
-    label: above
+    label: inline
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: olivero_medium
     third_party_settings: {  }
-    weight: 102
+    weight: 5
     region: content
   field_color:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 108
+    weight: 3
     region: content
   field_description:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 106
-    region: content
-  field_gender:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   field_main_photo:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 105
+    weight: 0
     region: content
   field_ref_breed:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 107
+    weight: 1
     region: content
   field_ref_parents:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: token
+      link: false
     third_party_settings: {  }
-    weight: 107
+    weight: 6
     region: content
   field_weight:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 104
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 4
     region: content
 hidden:
+  field_age: true
+  field_gender: true
   langcode: true
+  links: true

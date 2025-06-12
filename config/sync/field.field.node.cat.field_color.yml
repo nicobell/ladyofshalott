@@ -1,0 +1,19 @@
+uuid: 449e1543-b2f7-42e9-a435-cd4d1da4a1ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color
+    - node.type.cat
+id: node.cat.field_color
+field_name: field_color
+entity_type: node
+bundle: cat
+label: Colore
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -63,29 +63,26 @@
 
 <article{{ attributes.addClass('gatto-card', 'tofadein') }}>
 
-  <div class="gatto-header only-mobile">
-    <h4 class="gatto-title big-title darker">
-      {{ label }}
-    </h4>
-  </div>
-
   <div class="gatto-immagine">
     {{ content.field_main_photo }}
   </div>
 
   <div class="gatto-body">
-    <h4 class="gatto-title big-title darker only-desk">
+    <h4 class="gatto-title big-title darker">
       {{ label }}
     </h4>
+
+    {% if node.field_description.value %}
     <div class="gatto-descrizione text">
       {{ content.field_description }}
     </div>
-    <div class="gatto-razza">
-      {{ content.field_ref_breed }}
-    </div>
+    {% endif %}
+
+    {{ content.field_ref_breed }}
     {{ content.field_color }}
     {{ content.field_weight }}
     {{ content.field_birth_date }}
+    {{ content.field_ref_parents }}
   </div>
 
 </article>

@@ -5,13 +5,20 @@ li,
   margin: 1rem 0;
   font-size: 1rem;
   line-height: 1.5em;
-  color: #423932;
+  /* color: #423932; */
   font-family: Outfit;
   font-weight: 300;
 }
 
 li.menu-link {
   margin: 0;
+}
+
+.teaser-value,
+.teaser-label {
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-weight: 300;
 }
 
 h1,
@@ -58,6 +65,11 @@ h6 {
   li,
   .text,
   .text * {
+    font-size: 1.2rem;
+  }
+
+  .teaser-value,
+  .teaser-label {
     font-size: 1.2rem;
   }
 

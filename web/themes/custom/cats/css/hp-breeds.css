@@ -33,6 +33,9 @@
   width: 100%;
   max-width: 350px;
   height: fit-content;
+
+  border-radius: 0 40px 40px 0;
+  margin: 0 0 0 -1rem;
 }
 
 .razza-image img {
@@ -52,6 +55,11 @@
 /* variazioni IMG-RIGHT */
 .razza-card.img-right {
   align-items: flex-end;
+}
+
+.razza-card.img-right .razza-image {
+  border-radius: 40px 0 0 40px;
+  margin: 0 -1rem 0 0;
 }
 
 .razza-card.img-right .razza-title {
@@ -83,6 +91,11 @@
 
   .razza-image {
     width: 30%;
+    border-radius: 40px 0 40px 40px;
+  }
+
+  .razza-card.img-right .razza-image {
+    border-radius: 0 40px 40px 40px;
   }
 
   .razza-body {

@@ -10,8 +10,9 @@
   overflow: hidden;
   border-radius: 40px;
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   height: fit-content;
+  margin: 0 auto -1rem auto;
 }
 
 .gatto-immagine img {
@@ -31,7 +32,14 @@
   font-family: Lobster;
 }
 
+.gatto-title {
+  margin: 1rem 0 0 0;
+  text-align: center;
+}
+
 .gatto-peso,
+.gatto-razza-k,
+.gatto-colore,
 .gatto-data {
   display: flex;
   flex-direction: row;
@@ -48,10 +56,13 @@
   }
 
   .gatto-immagine {
-    width: 30%;
+    width: 45%;
+    max-width: unset;
+    border-radius: 40px 0 40px 40px;
   }
+
   .gatto-body {
-    width: 70%;
+    width: 55%;
   }
 
   .gatto-card:hover .gatto-immagine img {
@@ -60,6 +71,7 @@
   }
 
   .gatto-title {
-    margin-top: 0;
+    margin: 0 0 1rem 0;
+    text-align: left;
   }
 }

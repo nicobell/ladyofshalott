@@ -1,18 +1,20 @@
-uuid: b9cbb404-c083-4611-ac58-dc22623f84ea
+uuid: 0f2de6b1-ff8e-4792-8811-c3cc8cdfdb1a
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_ref_parents
-field_name: field_ref_parents
+id: node.field_color
+field_name: field_color
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: node
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
-cardinality: 2
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

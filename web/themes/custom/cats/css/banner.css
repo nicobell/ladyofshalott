@@ -12,7 +12,7 @@
 
 .banner-img img {
   width: 100%;
-  height: 40vh;
+  height: 40svh;
   object-fit: cover;
   object-position: center center;
 }
@@ -59,7 +59,7 @@
   }
 
   .banner-img img {
-    height: 60vh;
+    height: 60svh;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
   }

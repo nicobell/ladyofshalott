@@ -13,3 +13,5 @@ theme:
       css/hp-breeds.css: {}
       css/gatto-teaser.css: {}
       css/scacchiera.css: {}
+      css/token.css: {}
+      css/kittens.css: {}

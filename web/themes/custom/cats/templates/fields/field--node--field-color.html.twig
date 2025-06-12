@@ -45,34 +45,7 @@
   ]
 %}
 
-{# {% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %} #}
-
-<div{{ attributes.addClass('gatto-peso') }}>
+<div{{ attributes.addClass('gatto-colore') }}>
   <div{{ title_attributes.addClass(title_classes, 'teaser-label') }}>{{ label }}</div>
   {% for item in items %}
     <div{{ item.attributes.addClass('teaser-value') }}>{{ item.content }}</div>
