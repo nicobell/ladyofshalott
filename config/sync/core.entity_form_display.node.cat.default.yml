@@ -31,7 +31,7 @@ content:
     third_party_settings: {  }
   field_birth_date:
     type: datetime_default
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -45,7 +45,7 @@ content:
     third_party_settings: {  }
   field_description:
     type: text_textarea
-    weight: 16
+    weight: 17
     region: content
     settings:
       rows: 5
@@ -72,6 +72,14 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -144,4 +152,3 @@ content:
     third_party_settings: {  }
 hidden:
   field_age: true
-  field_weight: true
