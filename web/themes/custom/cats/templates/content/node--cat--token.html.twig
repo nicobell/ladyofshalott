@@ -61,31 +61,16 @@
  */
 #}
 
-<article{{ attributes.addClass('gatto-card', 'tofadein') }}>
+<article{{ attributes.addClass('gatto-token') }}>
 
-  <div class="gatto-header only-mobile">
-    <h4 class="gatto-title big-title darker">
-      {{ label }}
-    </h4>
-  </div>
-
-  <div class="gatto-immagine">
+  <div class="token-immagine">
     {{ content.field_main_photo }}
   </div>
 
-  <div class="gatto-body">
-    <h4 class="gatto-title big-title darker only-desk">
+  <div class="token-body">
+     <h5 class="token-title darker">
       {{ label }}
-    </h4>
-    <div class="gatto-descrizione text">
-      {{ content.field_description }}
-    </div>
-    <div class="gatto-razza">
-      {{ content.field_ref_breed }}
-    </div>
-    {{ content.field_color }}
-    {{ content.field_weight }}
-    {{ content.field_birth_date }}
+    </h5>
   </div>
 
 </article>

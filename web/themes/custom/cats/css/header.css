@@ -117,7 +117,7 @@
 
   .header.scrolled {
     margin: 1rem auto;
-    padding: 1.25vh;
+    padding: 1.25svh;
     width: 80%;
     left: 50%;
     background-color: white;
@@ -126,7 +126,7 @@
 
   .header.scrolled .menu {
     margin-top: unset;
-    margin-right: 1.25vh;
+    margin-right: 1.25svh;
   }
 
   .header.scrolled .menu .menu-link {

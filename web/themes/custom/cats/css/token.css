@@ -1,0 +1,46 @@
+.gatto-token {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+  width: 50%;
+}
+
+.token-immagine {
+  width: 50px;
+  height: fit-content;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.token-immagine img {
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.token-title {
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 120px;
+  margin: 0;
+}
+
+.parents-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+@media (min-width: 1200px) {
+
+  /* .parents-list {
+    flex-direction: column;
+  } */
+  .gatto-token {
+    width: unset;
+  }
+}

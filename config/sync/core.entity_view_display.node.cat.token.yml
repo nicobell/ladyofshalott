@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.token
     - field.field.node.cat.field_age
     - field.field.node.cat.field_birth_date
+    - field.field.node.cat.field_color
     - field.field.node.cat.field_description
     - field.field.node.cat.field_gender
     - field.field.node.cat.field_main_photo
@@ -87,4 +88,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_color: true
   langcode: true

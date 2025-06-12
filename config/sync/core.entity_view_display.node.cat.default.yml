@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.cat.field_age
     - field.field.node.cat.field_birth_date
+    - field.field.node.cat.field_color
     - field.field.node.cat.field_description
     - field.field.node.cat.field_gender
     - field.field.node.cat.field_main_photo
@@ -38,6 +39,14 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_color:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_description:
     type: text_default

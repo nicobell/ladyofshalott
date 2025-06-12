@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.cat.field_age
     - field.field.node.cat.field_birth_date
+    - field.field.node.cat.field_color
     - field.field.node.cat.field_description
     - field.field.node.cat.field_gender
     - field.field.node.cat.field_main_photo
@@ -30,7 +31,15 @@ content:
       timezone_override: ''
       format_type: olivero_medium
     third_party_settings: {  }
-    weight: 4
+    weight: 5
+    region: content
+  field_color:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_description:
     type: text_default
@@ -64,7 +73,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden:
   field_age: true
