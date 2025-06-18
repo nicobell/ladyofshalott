@@ -1,12 +1,13 @@
 _core:
   default_config_hash: cteYTFHsidc-jJ8t9bxaGGe-7bRbvOMIH9vWxWm977k
 favicon:
-  path: ''
+  mimetype: image/vnd.microsoft.icon
+  path: 'public://catsicon.ico'
   use_default: false
 features:
   comment_user_picture: false
   comment_user_verification: false
-  favicon: false
+  favicon: true
   node_user_picture: false
 logo:
   path: ''
