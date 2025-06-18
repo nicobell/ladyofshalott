@@ -1,0 +1,12 @@
+uuid: 42a8b85c-a887-4720-b6fb-de9fdf5f37db
+langcode: en
+status: true
+dependencies: {  }
+label: 'Hero crop'
+id: hero_crop
+description: ''
+aspect_ratio: '1920:1080'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: 1920
+hard_limit_height: 1080

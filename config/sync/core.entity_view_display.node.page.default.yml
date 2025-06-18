@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.field_main_image
     - node.type.page
   module:
-    - image
     - text
     - user
 _core:
@@ -22,21 +21,13 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 100
-    region: content
-  field_main_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 102
+    weight: 0
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
+  field_main_image: true
   langcode: true

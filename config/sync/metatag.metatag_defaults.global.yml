@@ -7,5 +7,20 @@ _core:
 id: global
 label: Globale
 tags:
-  canonical_url: '[current-page:url]'
-  title: '[current-page:title] | [site:name]'
+  abstract: 'Allevamento di gatti Scottish e Highland a Vicenza. Cuccioli selezionati, certificati e cresciuti in un ambiente familiare.'
+  canonical_url: 'https://ladyofshalott.it/'
+  description: 'Allevamento di gatti Scottish e Highland a Vicenza. Cuccioli selezionati, certificati e cresciuti in un ambiente familiare.'
+  geo_placename: Vicenza
+  geo_position: 45.574686540639796;11.560632387874321
+  geo_region: IT-VI
+  icbm: '45.574686540639796, 11.560632387874321'
+  keywords: 'gatti Scottish, Scottish Fold, Scottish Straight, gatti Highland, cuccioli Vicenza, allevamento gatti certificati'
+  og_description: 'Allevamento di gatti Scottish e Highland a Vicenza. Cuccioli selezionati, certificati e cresciuti in un ambiente familiare.'
+  og_site_name: 'Lady of Shalott'
+  og_title: 'Lady of Shalott - Allevamento gatti Scottish e Highland a Vicenza'
+  og_type: website
+  og_url: 'https://ladyofshalott.it/'
+  robots: 'index, follow'
+  schema_web_site_name: 'Lady of Shalott - Allevamento gatti Scottish e Highland a Vicenza'
+  schema_web_site_url: 'https://ladyofshalott.it/'
+  title: 'Lady of Shalott'

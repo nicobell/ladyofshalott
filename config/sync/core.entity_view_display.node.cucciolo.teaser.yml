@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.cucciolo.field_ref_breed
     - field.field.node.cucciolo.field_ref_parents
     - field.field.node.cucciolo.field_weight
+    - image.style.cat_style
     - node.type.cucciolo
   module:
     - datetime
@@ -46,14 +47,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_main_photo:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: cat_style
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -65,7 +66,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_ref_parents:
     type: entity_reference_entity_view

@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
     - field.field.node.cat.field_weight
-    - image.style.large
+    - image.style.cat_style
     - node.type.cat
   module:
     - datetime
@@ -53,7 +53,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: cat_style
       image_loading:
         attribute: lazy
     third_party_settings: {  }

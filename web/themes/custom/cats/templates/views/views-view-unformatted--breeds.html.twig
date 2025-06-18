@@ -28,7 +28,7 @@
   %}
   <div{{ row.attributes.addClass(row_classes) }}>
     <div class="razza-image">
-      <img src="{{ file_url(row.content['#taxonomy_term'].field_main_photo[0].entity.uri.value) }}" alt="" />
+      <img src="{{ row.content['#taxonomy_term'].field_main_photo[0].entity.uri.value | image_style('cat_style') }}" alt="" />
     </div>
     <div class="razza-body">
       <div class="razza-title">

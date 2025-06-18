@@ -1,0 +1,18 @@
+uuid: a192b0ba-7f81-44b7-9cba-83736a7fee39
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.cat_profile
+  module:
+    - crop
+name: cat_style
+label: 'Cat style'
+effects:
+  f9e4c4e5-9c7d-456b-a7cb-514a3e63e12f:
+    uuid: f9e4c4e5-9c7d-456b-a7cb-514a3e63e12f
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: cat_profile
+      automatic_crop_provider: null

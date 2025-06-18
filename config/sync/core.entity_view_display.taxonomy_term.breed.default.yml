@@ -23,7 +23,7 @@ content:
     region: content
   field_main_photo:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
@@ -34,7 +34,7 @@ content:
     region: content
   field_variant:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

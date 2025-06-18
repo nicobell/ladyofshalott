@@ -1,18 +1,21 @@
-uuid: 2ee7c0e0-7a5f-4f69-8cdf-321737b7eff2
+uuid: 75440380-ec4a-4064-8092-5ecd314f8a1a
 langcode: en
 status: true
 dependencies: {  }
 id: node__page
 label: 'Content: Basic page'
 tags:
-  abstract: '[node:body]'
+  canonical_url: '[node:url:absolute]'
   description: '[node:body]'
   og_description: '[node:body]'
   og_image: '[site:url][node:field_main_image]'
   og_site_name: 'Lady of Shalott'
-  og_title: '[node:title]'
-  og_type: '[node:content-type]'
-  schema_web_page_author: 'a:2:{s:5:"@type";s:13:"LocalBusiness";s:4:"name";s:15:"Lady of Shalott";}'
-  schema_web_page_publisher: 'a:2:{s:5:"@type";s:13:"LocalBusiness";s:4:"name";s:15:"Lady of Shalott";}'
-  schema_web_page_type: AboutPage
-  title: '[node:title]'
+  og_title: '[node:title] | Lady of Shalott'
+  og_type: article
+  og_url: '[node:url:absolute]'
+  robots: 'index, follow'
+  schema_web_page_author: 'a:3:{s:5:"@type";s:13:"LocalBusiness";s:4:"name";s:15:"Lady of Shalott";s:3:"url";s:25:"https://ladyofshalott.it/";}'
+  schema_web_page_description: '[node:body]'
+  schema_web_page_id: '[node:url:absolute]'
+  schema_web_page_type: WebPage
+  title: '[node:title] | Lady of Shalott'
