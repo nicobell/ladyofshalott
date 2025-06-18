@@ -7,18 +7,26 @@ _core:
 id: front
 label: 'Prima pagina'
 tags:
-  abstract: '[node:body]'
-  canonical_url: '[site:url]'
-  description: '[node:nody]'
-  og_description: '[node:body]'
+  abstract: 'Allevamento di gatti Scottish e Highland a Vicenza. Cuccioli selezionati, certificati e cresciuti in un ambiente familiare.'
+  canonical_url: 'https://ladyofshalott.it/'
+  description: 'Allevamento di gatti Scottish e Highland a Vicenza. Cuccioli selezionati, certificati e cresciuti in un ambiente familiare.'
+  geo_placename: Vicenza
+  geo_position: 45.574686540639796;11.560632387874321
+  geo_region: IT-VI
+  icbm: '45.574686540639796, 11.560632387874321'
+  keywords: 'gatti Scottish, Scottish Fold, Scottish Straight, gatti Highland, cuccioli Vicenza, allevamento gatti certificati'
+  og_description: 'Allevamento di gatti Scottish e Highland a Vicenza. Cuccioli selezionati, certificati e cresciuti in un ambiente familiare.'
   og_image: '[site:url][node:field_main_image]'
   og_site_name: 'Lady of Shalott'
-  og_title: 'Lady of Shalott'
+  og_title: 'Lady of Shalott - Allevamento gatti Scottish e Highland a Vicenza'
+  og_type: website
   og_url: 'https://ladyofshalott.it/'
-  schema_web_page_author: 'a:2:{s:5:"@type";s:13:"LocalBusiness";s:4:"name";s:15:"Lady of Shalott";}'
-  schema_web_page_description: '[node:body]'
-  schema_web_page_in_language: '[language:name]'
-  schema_web_page_publisher: 'a:2:{s:5:"@type";s:13:"LocalBusiness";s:4:"name";s:15:"Lady of Shalott";}'
-  schema_web_page_type: WebPage
-  shortlink: '[site:url]'
-  title: Homepage
+  schema_organization_address: 'a:6:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:19:"Stradella Zocca, 29";s:15:"addressLocality";s:7:"Vicenza";s:13:"addressRegion";s:2:"VI";s:10:"postalCode";s:5:"36100";s:14:"addressCountry";s:3:"ITA";}'
+  schema_organization_description: 'Allevamento di gatti Scottish e Highland a Vicenza. Cuccioli selezionati, certificati e cresciuti in un ambiente familiare.'
+  schema_organization_geo: 'a:3:{s:5:"@type";s:14:"GeoCoordinates";s:8:"latitude";s:18:"45.574686540639796";s:9:"longitude";s:18:"11.560632387874321";}'
+  schema_organization_id: 'https://ladyofshalott.it/'
+  schema_organization_image: 'a:3:{s:5:"@type";s:11:"ImageObject";s:20:"representativeOfPage";s:4:"True";s:3:"url";s:33:"[site:url][node:field_main_image]";}'
+  schema_organization_name: 'Lady of Shalott'
+  schema_organization_type: LocalBusiness
+  schema_organization_url: 'https://ladyofshalott.it/'
+  title: 'Lady of Shalott | Allevamento gatti Scottish e Highland a Vicenza'

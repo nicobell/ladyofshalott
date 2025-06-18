@@ -11,11 +11,11 @@ dependencies:
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
     - field.field.node.cat.field_weight
-    - image.style.thumbnail
+    - image.style.cat_preview
     - node.type.cat
   module:
     - datetime
-    - image
+    - image_widget_crop
     - path
     - text
 id: node.cat.default
@@ -58,12 +58,20 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_main_photo:
-    type: image_image
+    type: image_widget_crop
     weight: 11
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: cat_preview
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - cat_profile
+      crop_types_required:
+        - cat_profile
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
     third_party_settings: {  }
   field_ref_breed:
     type: entity_reference_autocomplete

@@ -46,7 +46,17 @@
  */
 #}
 
-{% set hero_image = site_setting_field('hero_homepage', 'field_ss_main_image')['#items'].0 %}
+{# 
+{% set hero_image = site_setting_field('hero_homepage', 'field_ss_main_image')['#items'].0 %} 
+<section class="hero" style="background-image: url( {{ file_url(hero_image.entity.uri.value) }} );">
+#}
+
+{# 
+{% set hero_image = node.field_main_image.entity.uri.value %} 
+file_url(hero_image)
+#}
+
+{% set hero_url = node.field_main_image.entity.uri.value %}
 
 <div class="layout-container">
 
@@ -54,7 +64,7 @@
     {{ page.header }}
   </header>
 
-	<section class="hero" style="background-image: url( {{ file_url(hero_image.entity.uri.value) }} );">
+	<section class="hero" style="background-image: url( {{ hero_url | image_style('hero_style') }} );">
 		<h1 class="fadein">Lady of Shalott</h1>
 		<h3 class="fadein lighter">Scottish & Highland</h3>
 	</section>

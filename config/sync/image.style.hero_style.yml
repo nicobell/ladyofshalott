@@ -1,0 +1,18 @@
+uuid: 9e5deb11-e34b-446f-ae78-6898effcb129
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_crop
+  module:
+    - crop
+name: hero_style
+label: 'Hero style'
+effects:
+  35417c90-2bb9-4bd3-8cdb-57caa8bb1b1b:
+    uuid: 35417c90-2bb9-4bd3-8cdb-57caa8bb1b1b
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero_crop
+      automatic_crop_provider: null

@@ -12,81 +12,41 @@ dependencies:
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
     - field.field.node.cat.field_weight
+    - image.style.cat_style
     - node.type.cat
   module:
-    - datetime
     - image
-    - options
-    - text
     - user
 id: node.cat.token
 targetEntityType: node
 bundle: cat
 mode: token
 content:
-  field_age:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
-    region: content
-  field_birth_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 102
-    region: content
-  field_description:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 106
-    region: content
-  field_gender:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 103
-    region: content
   field_main_photo:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: cat_style
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 105
+    weight: 1
     region: content
   field_ref_breed:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 107
-    region: content
-  field_weight:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 104
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_age: true
+  field_birth_date: true
   field_color: true
+  field_description: true
+  field_gender: true
+  field_weight: true
   langcode: true
+  links: true

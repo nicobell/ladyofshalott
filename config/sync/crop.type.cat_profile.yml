@@ -1,0 +1,12 @@
+uuid: 730c6e56-e97a-458d-9cc5-78e1f404fa79
+langcode: en
+status: true
+dependencies: {  }
+label: 'Cat profile'
+id: cat_profile
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: 350
+soft_limit_height: 350
+hard_limit_width: null
+hard_limit_height: null

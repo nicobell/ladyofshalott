@@ -1,0 +1,26 @@
+uuid: 2cffaacc-c367-4cd2-8878-350a1be6b3a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.cat_profile
+  module:
+    - crop
+name: cat_preview
+label: 'Cat preview'
+effects:
+  af76b985-0161-4f2f-8e22-ce1f607f73df:
+    uuid: af76b985-0161-4f2f-8e22-ce1f607f73df
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: cat_profile
+      automatic_crop_provider: null
+  7382ed20-7c7b-483e-a08d-2dc8254eda22:
+    uuid: 7382ed20-7c7b-483e-a08d-2dc8254eda22
+    id: image_scale
+    weight: 2
+    data:
+      width: 350
+      height: 350
+      upscale: false

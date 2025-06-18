@@ -25,6 +25,7 @@
         "drupal/core-recommended": "^11.0",
         "drupal/devel": "^5.3",
         "drupal/entity_redirect": "^2.3",
+        "drupal/image_widget_crop": "^3.0",
         "drupal/login_destination": "^2.0@beta",
         "drupal/metatag": "^2.1",
         "drupal/pathauto": "^1.13",

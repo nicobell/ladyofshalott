@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.card
     - field.field.taxonomy_term.breed.field_main_photo
     - field.field.taxonomy_term.breed.field_variant
+    - image.style.cat_style
     - taxonomy.vocabulary.breed
   module:
     - image
@@ -17,7 +18,7 @@ mode: card
 content:
   description:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
@@ -27,7 +28,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: cat_style
       image_loading:
         attribute: lazy
     third_party_settings: {  }

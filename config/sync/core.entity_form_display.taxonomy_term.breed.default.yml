@@ -5,10 +5,10 @@ dependencies:
   config:
     - field.field.taxonomy_term.breed.field_main_photo
     - field.field.taxonomy_term.breed.field_variant
-    - image.style.thumbnail
+    - image.style.cat_preview
     - taxonomy.vocabulary.breed
   module:
-    - image
+    - image_widget_crop
     - path
     - text
 id: taxonomy_term.breed.default
@@ -25,12 +25,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_main_photo:
-    type: image_image
+    type: image_widget_crop
     weight: 2
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: cat_preview
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - cat_profile
+      crop_types_required:
+        - cat_profile
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
     third_party_settings: {  }
   field_variant:
     type: string_textfield
