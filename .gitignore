@@ -13,6 +13,9 @@ web/sites/*/files
 private*
 database/*.sql
 
+!web/sites/*/files/translations/
+!web/sites/*/files/translations/*.po
+
 # Ignore paths that may contain user-generated content
 web/sites/*/files
 web/sites/*/public

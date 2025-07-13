@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "drupal/address": "^2.0",
         "drupal/admin_toolbar": "^3.6",
         "drupal/auto_entitylabel": "^3.4",
         "drupal/better_exposed_filters": "^7.0",
@@ -25,6 +26,8 @@
         "drupal/core-recommended": "^11.0",
         "drupal/devel": "^5.3",
         "drupal/entity_redirect": "^2.3",
+        "drupal/geofield": "^1.64",
+        "drupal/geolocation": "^3.14",
         "drupal/image_widget_crop": "^3.0",
         "drupal/login_destination": "^2.0@beta",
         "drupal/metatag": "^2.1",
