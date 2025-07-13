@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.cucciolo.field_color
     - field.field.node.cucciolo.field_description
     - field.field.node.cucciolo.field_gender
+    - field.field.node.cucciolo.field_is_available
     - field.field.node.cucciolo.field_main_photo
     - field.field.node.cucciolo.field_ref_breed
     - field.field.node.cucciolo.field_ref_parents
@@ -48,6 +49,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_is_available:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_main_photo:
     type: image

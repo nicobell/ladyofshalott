@@ -6,7 +6,7 @@ label: 'Hero crop'
 id: hero_crop
 description: ''
 aspect_ratio: '1920:1080'
-soft_limit_width: null
-soft_limit_height: null
-hard_limit_width: 1920
-hard_limit_height: 1080
+soft_limit_width: 1920
+soft_limit_height: 1080
+hard_limit_width: null
+hard_limit_height: null

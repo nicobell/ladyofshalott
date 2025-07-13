@@ -189,10 +189,48 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: Disponibili
     display_plugin: block
     position: 1
     display_options:
+      defaults:
+        header: false
+      display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: 'Cuccioli <span>disponibili</span>'
+          tokenize: false
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+        simple_sitemap_display_extender: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: Precedenti
+    display_plugin: block
+    position: 1
+    display_options:
+      defaults:
+        header: false
+      display_description: ''
+      header: {  }
       display_extenders:
         metatag_display_extender:
           metatags: {  }

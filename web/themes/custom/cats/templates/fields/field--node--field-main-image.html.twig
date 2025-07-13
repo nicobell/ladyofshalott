@@ -39,15 +39,6 @@
  */
 #}
 
-{%
-  set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
-
-<div{{ attributes.addClass('gatto-peso') }}>
-  <div{{ title_attributes.addClass(title_classes, 'teaser-label', 'lobster') }}>{{ label }}</div>
-  {% for item in items %}
-    <div{{ item.attributes.addClass('teaser-value') }}>{{ item.content }}</div>
-  {% endfor %}
-</div>
+{% for item in items %}
+  {{ item.content }}
+{% endfor %}

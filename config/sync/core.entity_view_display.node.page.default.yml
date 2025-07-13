@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_main_image
+    - image.style.hero_style
     - node.type.page
   module:
+    - image
     - text
     - user
 _core:
@@ -21,13 +23,19 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
+  field_main_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: hero_style
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
-  field_main_image: true
   langcode: true
+  links: true

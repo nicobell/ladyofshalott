@@ -1,0 +1,52 @@
+.page-banner {
+  height: 35svh;
+  overflow: hidden;
+}
+
+.page-banner img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: top center;
+}
+
+.page-title {
+  font-size: 5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-layout {
+  position: relative;
+  margin-top: -6.9rem;
+}
+
+.page-layout::before {
+  content: "";
+  display: block;
+  width: calc(100% + 8rem);
+  height: 8rem;
+  position: absolute;
+  bottom: calc(100% - 6.9rem);
+  left: 50%;
+  background-color: white;
+  border-top-left-radius: 0;
+  border-top-right-radius: 40px;
+  translate: -50% 0;
+  z-index: 0;
+}
+
+.page-body {
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 1200px) {
+
+}
+
+
+@media (min-width: 1600px) {
+  
+}
+

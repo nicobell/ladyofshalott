@@ -27,7 +27,7 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  font-family: Lobster;
+  /* font-family: Lobster; */
   width: 100%;
   padding-left: 2rem;
   line-height: 1em;
@@ -43,7 +43,7 @@
   text-align: left;
   margin: 0;
   line-height: 1em;
-  font-family: Outfit;
+  /* font-family: Outfit; */
   font-weight: 400;
   animation-delay: 400ms;
 }

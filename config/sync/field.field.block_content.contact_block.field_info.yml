@@ -1,0 +1,26 @@
+uuid: 97b6003d-bf55-4ede-8fb5-549ae2663c2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_block
+    - field.storage.block_content.field_info
+    - filter.format.basic_html
+    - filter.format.restricted_html
+  module:
+    - text
+id: block_content.contact_block.field_info
+field_name: field_info
+entity_type: block_content
+bundle: contact_block
+label: Informazioni
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - restricted_html
+field_type: text_long

@@ -50,13 +50,18 @@
 
 .header .menu .menu-link a {
   color: white;
-  font-family: Outfit;
+  /* font-family: Outfit; */
   text-decoration: none;
 }
 
-.header .menu .menu-link a:hover {
+.header .menu .menu-link a:hover,
+.header .menu .menu-link a.is-active {
   color: #fadb9e;
   cursor: pointer;
+}
+
+.header .menu .menu-link a.is-active {
+  font-weight: 500;
 }
 
 .header.scrolled {
@@ -78,8 +83,13 @@
   color: #423932;
 }
 
-.header.scrolled .menu .menu-link a:hover {
+.header.scrolled .menu .menu-link a:hover,
+.header.scrolled .menu .menu-link a.is-active {
   color: #af7a5b;
+}
+
+.header.scrolled .menu .menu-link a.is-active {
+  font-weight: 500;
 }
 
 .header.scrolled .logo {
@@ -100,7 +110,7 @@
     left: 50%;
     translate: -50% 0;
     padding: 1rem;
-    width: 90%;
+    width: 88%;
   }
 
   .header .logo {

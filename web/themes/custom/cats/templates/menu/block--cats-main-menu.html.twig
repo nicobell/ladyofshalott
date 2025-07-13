@@ -37,10 +37,10 @@
 
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 
-<div class="logo">
+<a class="logo" href="/">
   <img class="toscroll" src="/themes/custom/cats/assets/logodef-w.png" alt="logo negative" />
   <img class="scrolled" src="/themes/custom/cats/assets/logodef.png" alt="logo" />
-</div>
+</a>
 
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}

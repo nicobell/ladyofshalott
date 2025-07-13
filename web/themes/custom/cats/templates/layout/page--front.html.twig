@@ -65,7 +65,7 @@ file_url(hero_image)
   </header>
 
 	<section class="hero" style="background-image: url( {{ hero_url | image_style('hero_style') }} );">
-		<h1 class="fadein">Lady of Shalott</h1>
+		<h1 class="fadein lobster">Lady of Shalott</h1>
 		<h3 class="fadein lighter">Scottish & Highland</h3>
 	</section>
 
@@ -86,15 +86,15 @@ file_url(hero_image)
 					<div class="tofadein">
 						{{ site_setting_field('banner_homepage', 'field_ss_banner_text') }}
 					</div>
-					<button class="banner-cta tofadein">Vieni a trovarci!</button>
+					{# <button class="banner-cta tofadein">Vieni a trovarci!</button> #}
 				</div>
 			</div>
 
-			<div class="scacchiera bg-dark">
+			{# <div class="scacchiera bg-dark">
 				<div class="anchor" id="i-gatti"></div>
 				{{ drupal_view('cats', 'kings') }}
 				{{ drupal_view('cats', 'queens') }}
-			</div>
+			</div> #}
 
 			<div class="container cuccioli">
 				<div class="anchor" id="i-cuccioli"></div>
@@ -107,7 +107,7 @@ file_url(hero_image)
   </main>
 
 	{# {{ page.footer }} #}
-	<footer>
+	<footer class="bg-darker">
 		<section class="container footer-container">
 			<p class="footer-title">© Lady of Shalott</p>
 			<p class="author footer-text">crafted by <a target="_blank" href="https://github.com/nicobell">github/nicobell</a></p>

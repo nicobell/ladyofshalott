@@ -1,0 +1,8 @@
+uuid: 359b621a-acca-46e6-853e-b43be943c2bc
+langcode: en
+status: true
+dependencies: {  }
+id: contact_block
+label: 'Blocco contatti'
+revision: false
+description: null

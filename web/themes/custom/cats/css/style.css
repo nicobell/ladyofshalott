@@ -1,6 +1,7 @@
 :root * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: Outfit;
 }
 
 html, body {
@@ -56,7 +57,7 @@ body.toolbar-fixed #toolbar-bar li {
 
 .content {
   background: white;
-  font-family: Outfit;
+  /* font-family: Outfit; */
 }
 
 .container {
@@ -72,6 +73,13 @@ body.toolbar-fixed #toolbar-bar li {
   }
 }
 
+
+
+
+.w-50 { width: 50%; }
+.w-66 { width: 66.66%; }
+.w-80 { width: 80%; }
+.w-100 { width: 100%; }
 
 
 

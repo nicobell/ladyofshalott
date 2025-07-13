@@ -48,10 +48,14 @@
 
 <div class="layout-container">
 
-  {{ page.breadcrumb }}
+  <header class="header" role="banner">
+    {{ page.header }}
+  </header>
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {{ page.breadcrumb }}
 
     <div class="layout-content">
       {{ page.content }}
@@ -59,7 +63,7 @@
 
   </main>
 
-	<footer>
+	<footer class="bg-darker">
 		<section class="container footer-container">
 			<p class="footer-title">© Lady of Shalott</p>
 			<p class="author footer-text">crafted by <a target="_blank" href="https://github.com/nicobell">github/nicobell</a></p>
