@@ -221,7 +221,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: Kings
+          content: Maschi
           tokenize: false
       display_extenders:
         metatag_display_extender:
@@ -327,7 +327,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: Queens
+          content: Femmine
           tokenize: false
       display_extenders:
         metatag_display_extender:
