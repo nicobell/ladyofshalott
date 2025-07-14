@@ -5,11 +5,12 @@
   padding: 1rem;
   display: grid;
   grid-template-areas: 
-    'title title empty'
-    'info info empty'
-    'address phone empty'
-    'address email empty'
-    'map map map';
+    'title'
+    'info'
+    'address'
+    'phone'
+    'email'
+    'map';
 }
 
 .contact-block .contact-title {
@@ -53,6 +54,12 @@
 @media (min-width: 1200px) {
   .contact-block {
     padding: 2rem;
+    grid-template-areas: 
+      'title title empty'
+      'info info empty'
+      'address phone empty'
+      'address email empty'
+      'map map map';
   }
 }
 
