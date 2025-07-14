@@ -37,6 +37,7 @@
         "drupal/simple_sitemap": "^4.2",
         "drupal/simplelogin": "^7.1",
         "drupal/site_settings": "^2.0",
+        "drupal/styled_google_map": "^2.7",
         "drupal/twig_tweak": "^3.4",
         "drush/drush": "^13.5"
     },

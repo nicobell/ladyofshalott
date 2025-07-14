@@ -1,0 +1,9 @@
+uuid: 500ff4ff-654e-4eff-8ad5-fe750f7384b1
+langcode: und
+status: true
+dependencies: {  }
+name: Ente
+vid: organization
+description: null
+weight: 0
+new_revision: false

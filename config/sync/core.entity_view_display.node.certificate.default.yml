@@ -1,0 +1,53 @@
+uuid: 188f85cd-8027-4d66-840b-cc4d291d943f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.certificate.field_certificate_copy
+    - field.field.node.certificate.field_participation_date
+    - field.field.node.certificate.field_ref_organization
+    - node.type.certificate
+  module:
+    - datetime
+    - image
+    - user
+id: node.certificate.default
+targetEntityType: node
+bundle: certificate
+mode: default
+content:
+  field_certificate_copy:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_participation_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_ref_organization:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

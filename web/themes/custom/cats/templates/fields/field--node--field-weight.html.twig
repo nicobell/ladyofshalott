@@ -46,7 +46,7 @@
 %}
 
 <div{{ attributes.addClass('gatto-peso') }}>
-  <div{{ title_attributes.addClass(title_classes, 'teaser-label', 'lobster') }}>{{ label }}</div>
+  <div{{ title_attributes.addClass(title_classes, 'teaser-label semibold') }}>{{ label }}</div>
   {% for item in items %}
     <div{{ item.attributes.addClass('teaser-value') }}>{{ item.content }}</div>
   {% endfor %}

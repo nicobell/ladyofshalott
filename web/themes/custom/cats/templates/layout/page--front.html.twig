@@ -46,16 +46,6 @@
  */
 #}
 
-{# 
-{% set hero_image = site_setting_field('hero_homepage', 'field_ss_main_image')['#items'].0 %} 
-<section class="hero" style="background-image: url( {{ file_url(hero_image.entity.uri.value) }} );">
-#}
-
-{# 
-{% set hero_image = node.field_main_image.entity.uri.value %} 
-file_url(hero_image)
-#}
-
 {% set hero_url = node.field_main_image.entity.uri.value %}
 
 <div class="layout-container">
@@ -76,7 +66,7 @@ file_url(hero_image)
 				{{ drupal_view('breeds', 'block_1') }}
 			</div>
 
-			<div class="banner bg-lighter">
+			<div class="banner bg-dark">
 				<div class="anchor" id="chi-siamo"></div>
 				<div class="banner-img tofadein">
 					{{ site_setting_field('banner_homepage', 'field_ss_banner_image') }}
@@ -86,11 +76,8 @@ file_url(hero_image)
 					<div class="tofadein">
 						{{ site_setting_field('banner_homepage', 'field_ss_banner_text') }}
 					</div>
-					{# <button class="banner-cta tofadein">Vieni a trovarci!</button> #}
 				</div>
 			</div>
-
-			{{ drupal_entity('block_content', '1') }}
 
 			{# <div class="scacchiera bg-dark">
 				<div class="anchor" id="i-gatti"></div>
@@ -98,12 +85,16 @@ file_url(hero_image)
 				{{ drupal_view('cats', 'queens') }}
 			</div> #}
 
-			<div class="container cuccioli">
-				<div class="anchor" id="i-cuccioli"></div>
-				{{ drupal_view('kittens', 'block_1') }}
-			</div>
+			{% if drupal_view_result('kittens', 'block_1')|length > 0 %}
+				<div class="container cuccioli">
+					<div class="anchor" id="i-cuccioli"></div>
+					{{ drupal_view('kittens', 'block_1') }}
+				</div>
+			{% endif %}
 
-			<div style="margin-bottom: 4rem"></div>
+			<div class="contact-block w-80 tofadein"> {# container #}
+				{{ drupal_entity('block_content', 1) }}
+			</div>
 
 		</section>
   </main>

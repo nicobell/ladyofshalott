@@ -1,6 +1,6 @@
 .kittens {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -26,10 +26,10 @@
   content: '';
   display: block;
   position: absolute;
+  background-color: #fadb9e;
   top: 70%;
   left: -50%;
   translate: -50vw -50%;
-  background-color: #fadb9e;
   width: 200vw;
   height: 150px;
   z-index: 0;
@@ -46,9 +46,9 @@
   max-width: 350px;
 }
 
-.kittens .gatto-body {
+/* .kittens .gatto-body {
   padding: 0 1rem;
-}
+} */
 
 .kittens .gatto-title {
   margin: 1rem 0;
@@ -56,7 +56,7 @@
 
 @media (min-width: 1200px) {
   .yellow {
-    margin: 2rem 0;
+    margin: 4rem 0;
   }
 
   .kittens .title h2 {
@@ -66,10 +66,11 @@
   .yellow::before {
     height: 200px;
     rotate: -4deg;
+    top: 70%;
   }
 
   .kittens .gatto-card {
-    gap: 1rem
+    gap: 2rem
   }
 
   .kittens .gatto-immagine {
@@ -78,9 +79,31 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
+  .kittens {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
   .yellow::before {
     top: 80%;
-    height: 200px;
+  }
+
+  .kittens header {
+      grid-column: span 2;
+  }
+
+  .kittens .gatto-card {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .yellow::before {
+    top: 85%;
+  }
+
+  .kittens .gatto-card {
+    gap: 2rem;
   }
 }

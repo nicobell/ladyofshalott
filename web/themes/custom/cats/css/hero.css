@@ -63,10 +63,10 @@
   }
 
   .hero h3 {
-    margin-top: 1em;
+    /* margin-top: 1em; */
     padding-left: 1rem;
     font-size: 1.8vw;
     width: fit-content;
-    margin-left: 6.5rem;
+    margin-left: 27.5vw;
   }
 }

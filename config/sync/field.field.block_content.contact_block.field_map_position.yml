@@ -1,0 +1,21 @@
+uuid: 56286196-a421-4740-89b3-534f1bffe006
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_block
+    - field.storage.block_content.field_map_position
+  module:
+    - geofield
+id: block_content.contact_block.field_map_position
+field_name: field_map_position
+entity_type: block_content
+bundle: contact_block
+label: Posizione
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

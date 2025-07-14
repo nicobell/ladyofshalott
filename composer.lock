@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec01aeab71eaba16506cce7fe0191ba1",
+    "content-hash": "366f9ae69a6ba3ce1f6931df750311c5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3470,6 +3470,68 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/site_settings",
                 "issues": "http://drupal.org/project/issues/site_settings"
+            }
+        },
+        {
+            "name": "drupal/styled_google_map",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/styled_google_map.git",
+                "reference": "8.x-2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/styled_google_map-8.x-2.7.zip",
+                "reference": "8.x-2.7",
+                "shasum": "806d62407a1a10f6935aecfa30a24713a9639dff"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11",
+                "drupal/geofield": "*"
+            },
+            "conflict": {
+                "drupal/core": "<8.6"
+            },
+            "require-dev": {
+                "drupal/styled_google_map_demo": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.7",
+                    "datestamp": "1741768599",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Artem Dmitriiev (a.dmitriiev)",
+                    "homepage": "https://www.drupal.org/u/a.dmitriiev",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Nicky Vandevoorde (iampuma)",
+                    "homepage": "https://www.drupal.org/u/iampuma",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "majid.ali",
+                    "homepage": "https://www.drupal.org/user/1271330"
+                }
+            ],
+            "description": "Will provide a Geofield field formatter for adding a Styled Google Map.",
+            "homepage": "https://www.drupal.org/project/styled_google_map",
+            "support": {
+                "source": "http://cgit.drupalcode.org/styled_google_map",
+                "issues": "http://drupal.org/project/issues/styled_google_map"
             }
         },
         {

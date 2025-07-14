@@ -1,0 +1,38 @@
+uuid: efdd77e3-10b4-4937-a4ed-e08862df3612
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_logo
+    - taxonomy.vocabulary.organization
+  module:
+    - image
+id: taxonomy_term.organization.field_logo
+field_name: field_logo
+entity_type: taxonomy_term
+bundle: organization
+label: Logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: certificates/logos
+  file_extensions: 'png jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

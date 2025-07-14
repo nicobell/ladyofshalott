@@ -21,6 +21,26 @@ settings:
   available_countries:
     IT: IT
   langcode_override: ''
-  field_overrides: {  }
+  field_overrides:
+    givenName:
+      override: optional
+    additionalName:
+      override: hidden
+    familyName:
+      override: optional
+    organization:
+      override: optional
+    addressLine1:
+      override: optional
+    addressLine2:
+      override: hidden
+    addressLine3:
+      override: hidden
+    postalCode:
+      override: optional
+    sortingCode:
+      override: hidden
+    locality:
+      override: hidden
   fields: {  }
 field_type: address

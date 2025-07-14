@@ -1,19 +1,17 @@
-uuid: 0998f243-95f2-4dca-92c2-488c9378a225
-langcode: en
 status: true
 dependencies:
   module:
     - file
     - image
-    - site_settings
-id: site_setting_entity.field_ss_main_image
-field_name: field_ss_main_image
-entity_type: site_setting_entity
+    - taxonomy
+  enforced:
+    module:
+      - styled_google_map_demo
+id: taxonomy_term.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
 type: image
 settings:
-  target_type: file
-  display_field: false
-  display_default: true
   uri_scheme: public
   default_image:
     uuid: ''
@@ -21,6 +19,9 @@ settings:
     title: ''
     width: null
     height: null
+  target_type: file
+  display_field: false
+  display_default: false
 module: image
 locked: false
 cardinality: 1

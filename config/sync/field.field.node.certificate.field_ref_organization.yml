@@ -1,0 +1,33 @@
+uuid: 0121e678-162f-43b8-8fa6-1f5e70809954
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_organization
+    - node.type.certificate
+    - taxonomy.vocabulary.organization
+  content:
+    - 'taxonomy_term:organization:b6488c1c-4d16-4ab8-b00e-78f4d453ca81'
+id: node.certificate.field_ref_organization
+field_name: field_ref_organization
+entity_type: node
+bundle: certificate
+label: Ente
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: b6488c1c-4d16-4ab8-b00e-78f4d453ca81
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      organization: organization
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

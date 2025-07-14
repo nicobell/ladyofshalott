@@ -1,0 +1,20 @@
+uuid: c63fda11-0a64-4384-a9b9-4f6843948c4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - geofield
+id: block_content.field_map_position
+field_name: field_map_position
+entity_type: block_content
+type: geofield
+settings:
+  backend: geofield_backend_default
+module: geofield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

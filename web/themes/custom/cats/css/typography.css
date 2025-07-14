@@ -17,7 +17,7 @@ li.menu-link {
 .teaser-value,
 .teaser-label {
   font-size: 1rem;
-  line-height: 1.5em;
+  line-height: 1.2em;
   font-weight: 300;
 }
 
@@ -30,6 +30,14 @@ h6 {
   margin: 1rem 0;
   line-height: 1.2em;
   /* font-family: Outfit; */
+}
+
+.semibold {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .small-title {

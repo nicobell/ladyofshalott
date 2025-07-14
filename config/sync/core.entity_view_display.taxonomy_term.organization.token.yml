@@ -1,0 +1,27 @@
+uuid: 8d82f328-7c6e-4926-8236-84d37d00f43d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.token
+    - field.field.taxonomy_term.organization.field_link
+    - field.field.taxonomy_term.organization.field_logo
+    - taxonomy.vocabulary.organization
+  module:
+    - text
+id: taxonomy_term.organization.token
+targetEntityType: taxonomy_term
+bundle: organization
+mode: token
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link: true
+  field_logo: true
+  langcode: true

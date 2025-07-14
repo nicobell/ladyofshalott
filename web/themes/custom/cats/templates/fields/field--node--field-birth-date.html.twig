@@ -46,7 +46,8 @@
 %}
 
 <div{{ attributes.addClass('gatto-data') }}>
-  <div{{ title_attributes.addClass(title_classes, 'teaser-label', 'lobster') }}>{{ label }}</div>
+  <div{{ title_attributes.addClass(title_classes, 'teaser-label semibold spread') }}>{{ label }}</div>
+  <div{{ title_attributes.addClass(title_classes, 'teaser-label semibold narrow') }}>{{ "Data di n."|t }}</div>
   {% for item in items %}
     <div{{ item.attributes.addClass('teaser-value') }}>{{ item.content }}</div>
   {% endfor %}

@@ -1,0 +1,42 @@
+uuid: 0bcbb475-dc9f-4f5a-beef-855c38d2a3b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.organization.field_link
+    - field.field.taxonomy_term.organization.field_logo
+    - taxonomy.vocabulary.organization
+  module:
+    - image
+    - link
+id: taxonomy_term.organization.default
+targetEntityType: taxonomy_term
+bundle: organization
+mode: default
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  description: true
+  langcode: true

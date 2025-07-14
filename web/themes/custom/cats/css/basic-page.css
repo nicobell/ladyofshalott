@@ -1,5 +1,6 @@
 .page-banner {
   height: 35svh;
+  min-height: 300px;
   overflow: hidden;
 }
 
@@ -11,15 +12,14 @@
 }
 
 .page-title {
-  font-size: 5rem;
-  margin-bottom: 4rem;
+  font-size: 3rem;
   position: relative;
   z-index: 1;
 }
 
 .page-layout {
   position: relative;
-  margin-top: -6.9rem;
+  margin-top: -5rem;
 }
 
 .page-layout::before {
@@ -37,12 +37,19 @@
   z-index: 0;
 }
 
-.page-body {
-  margin-bottom: 4rem;
-}
-
 @media (min-width: 1200px) {
+  .page-title {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+  }
 
+  .page-body {
+    margin-bottom: 4rem;
+  }
+
+  .page-layout {
+    margin-top: -6.9rem;
+  }
 }
 
 

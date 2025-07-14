@@ -1,0 +1,27 @@
+uuid: 3cbdd40c-1f71-4b0f-8eec-4ae33171bf03
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.card
+    - field.field.taxonomy_term.organization.field_link
+    - field.field.taxonomy_term.organization.field_logo
+    - taxonomy.vocabulary.organization
+  module:
+    - text
+id: taxonomy_term.organization.card
+targetEntityType: taxonomy_term
+bundle: organization
+mode: card
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link: true
+  field_logo: true
+  langcode: true

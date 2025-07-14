@@ -1,26 +1,33 @@
-uuid: 6c91f972-575c-46eb-8dc5-8e377942a3ac
+uuid: 4513b745-f524-49b6-b4b9-baadd562dc7a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.site_setting_entity.field_ss_main_image
-    - site_settings.site_setting_entity_type.hero_homepage
+    - field.storage.node.field_certificate_copy
+    - node.type.certificate
   module:
+    - content_translation
     - image
-id: site_setting_entity.hero_homepage.field_ss_main_image
-field_name: field_ss_main_image
-entity_type: site_setting_entity
-bundle: hero_homepage
-label: 'Immagine principale'
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
+id: node.certificate.field_certificate_copy
+field_name: field_certificate_copy
+entity_type: node
+bundle: certificate
+label: 'Dispositiva attestato'
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: site-settings
+  file_directory: certificates
   file_extensions: 'png jpg jpeg webp'
   max_filesize: ''
   max_resolution: ''
