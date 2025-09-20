@@ -1,0 +1,16 @@
+uuid: c4966fd0-fe9c-4466-8669-9d58917d93aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.cat
+id: node.cat
+targetEntityType: node
+bundle: cat
+action: page_redirect
+no_bypass: false
+bypass_message: false
+configuration:
+  redirect: '<front>'
+  redirect_code: 301
+  redirect_fallback_action: page_not_found

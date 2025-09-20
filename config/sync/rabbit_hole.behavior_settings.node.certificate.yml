@@ -1,0 +1,16 @@
+uuid: 8a865a08-7f6b-4785-b4d3-91c550b3b07c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.certificate
+id: node.certificate
+targetEntityType: node
+bundle: certificate
+action: page_redirect
+no_bypass: false
+bypass_message: false
+configuration:
+  redirect: '<front>'
+  redirect_code: 301
+  redirect_fallback_action: page_not_found

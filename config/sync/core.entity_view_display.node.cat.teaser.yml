@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
     - field.field.node.cat.field_weight
+    - field.field.node.cat.rabbit_hole__settings
     - image.style.cat_style
     - node.type.cat
   module:
@@ -80,3 +81,4 @@ hidden:
   field_gender: true
   langcode: true
   links: true
+  rabbit_hole__settings: true

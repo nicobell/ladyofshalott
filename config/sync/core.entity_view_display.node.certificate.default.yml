@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.certificate.field_description
     - field.field.node.certificate.field_participation_date
     - field.field.node.certificate.field_ref_organization
+    - field.field.node.certificate.rabbit_hole__settings
     - node.type.certificate
   module:
     - datetime
@@ -60,3 +61,4 @@ content:
     region: content
 hidden:
   langcode: true
+  rabbit_hole__settings: true

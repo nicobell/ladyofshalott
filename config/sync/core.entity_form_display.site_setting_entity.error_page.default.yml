@@ -1,0 +1,67 @@
+uuid: 23eb7995-8cc2-4e72-8c4b-4fc071ba553f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.error_page.field_ss_error_image
+    - image.style.thumbnail
+    - site_settings.site_setting_entity_type.error_page
+  module:
+    - image
+id: site_setting_entity.error_page.default
+targetEntityType: site_setting_entity
+bundle: error_page
+mode: default
+content:
+  description:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ss_error_image:
+    type: image_image
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  group:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
     - field.field.node.cat.field_weight
+    - field.field.node.cat.rabbit_hole__settings
     - node.type.cat
   module:
     - datetime
@@ -96,3 +97,4 @@ content:
     region: content
 hidden:
   langcode: true
+  rabbit_hole__settings: true

@@ -1,0 +1,10 @@
+uuid: ae150d5e-dace-4f2c-bc86-f6bcb32262de
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.lady_of_shalott
+id: error_page
+label: 'Error page'
+group: lady_of_shalott
+multiple: false

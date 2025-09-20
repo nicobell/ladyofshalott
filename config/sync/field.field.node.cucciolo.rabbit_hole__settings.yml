@@ -1,0 +1,21 @@
+uuid: b36b3ec3-c965-4a2d-90b5-981b6dd2c4a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.rabbit_hole__settings
+    - node.type.cucciolo
+  module:
+    - rabbit_hole
+id: node.cucciolo.rabbit_hole__settings
+field_name: rabbit_hole__settings
+entity_type: node
+bundle: cucciolo
+label: 'Rabbit Hole settings'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: rabbit_hole

@@ -75,8 +75,12 @@
     {{ content.field_description }}
   </div> #}
 
-  <div class="cert-date">
-    {{ content.field_participation_date }}
-  </div>
+  {% if node.field_participation_date.value %}
+    <div class="cert-date">
+      {{ content.field_participation_date }}
+    </div>
+  {% else %}
+    <div class="cert-spacer"></div>
+  {% endif %}
 
 </article>

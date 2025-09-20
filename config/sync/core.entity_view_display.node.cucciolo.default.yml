@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.cucciolo.field_ref_breed
     - field.field.node.cucciolo.field_ref_parents
     - field.field.node.cucciolo.field_weight
+    - field.field.node.cucciolo.rabbit_hole__settings
     - node.type.cucciolo
   module:
     - datetime
@@ -116,3 +117,4 @@ content:
     region: content
 hidden:
   langcode: true
+  rabbit_hole__settings: true

@@ -13,12 +13,14 @@ dependencies:
     - field.field.node.cucciolo.field_ref_breed
     - field.field.node.cucciolo.field_ref_parents
     - field.field.node.cucciolo.field_weight
+    - field.field.node.cucciolo.rabbit_hole__settings
     - image.style.cat_preview
     - node.type.cucciolo
   module:
     - datetime
     - image_widget_crop
     - path
+    - rabbit_hole
     - text
 id: node.cucciolo.default
 targetEntityType: node
@@ -121,6 +123,13 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  rabbit_hole__settings:
+    type: rabbit_hole_default
+    weight: 100
+    region: content
+    settings:
+      advanced: true
     third_party_settings: {  }
   simple_sitemap:
     weight: 4
