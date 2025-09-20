@@ -1,8 +1,12 @@
 .webinars-view {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1rem 2rem;
   margin: 2rem auto 2rem auto;
+}
+
+.webinars-view .webinar-card {
+  height: 100%;
 }
 
 .webinars-view .cert-image {
@@ -10,6 +14,7 @@
   border-top-left-radius: 40px;
   border-bottom-right-radius: 40px;
   overflow: hidden;
+  margin: auto auto 0 auto;
 }
 
 .webinars-view .cert-image img {
@@ -41,7 +46,7 @@
 
 
 .webinars-view .title h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1em;
   position: relative;
   z-index: 1;
@@ -63,9 +68,9 @@
     grid-column: span 2;
   }
 
-  .webinars-view .cert-title {
+  /* .webinars-view .cert-title {
     min-height: 2.5rem;
-  }
+  } */
 }
 
 
