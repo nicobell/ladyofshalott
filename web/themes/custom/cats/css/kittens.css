@@ -1,10 +1,10 @@
-.kittens {
+.kittens-view {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
 
-.kittens .title h2 {
+.kittens-view .title h2 {
   font-size: 3rem;
   text-align: center;
   line-height: 1em;
@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-.kittens .title h2 span {
+.kittens-view .title h2 span {
   margin-right: 0.1em;
   /* font-family: Lobster; */
   color: #af7a5b;
@@ -37,20 +37,20 @@
 }
 
 
-.kittens .gatto-card {
+.kittens-view .gatto-card {
   margin-bottom: 1rem;
 }
 
-.kittens .gatto-immagine {
+.kittens-view .gatto-immagine {
   border-radius: 40px 40px 0 0;
   max-width: 350px;
 }
 
-/* .kittens .gatto-body {
+/* .kittens-view .gatto-body {
   padding: 0 1rem;
 } */
 
-.kittens .gatto-title {
+.kittens-view .gatto-title {
   margin: 1rem 0;
 }
 
@@ -59,7 +59,7 @@
     margin: 4rem 0;
   }
 
-  .kittens .title h2 {
+  .kittens-view .title h2 {
     font-size: 4rem;
   }
 
@@ -69,18 +69,18 @@
     top: 70%;
   }
 
-  .kittens .gatto-card {
+  .kittens-view .gatto-card {
     gap: 2rem
   }
 
-  .kittens .gatto-immagine {
+  .kittens-view .gatto-immagine {
     margin: 0;
     border-radius: 40px;
   }
 }
 
 @media (min-width: 1400px) {
-  .kittens {
+  .kittens-view {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
@@ -89,11 +89,11 @@
     top: 80%;
   }
 
-  .kittens header {
+  .kittens-view header {
       grid-column: span 2;
   }
 
-  .kittens .gatto-card {
+  .kittens-view .gatto-card {
     gap: 1rem;
   }
 }
@@ -103,7 +103,7 @@
     top: 85%;
   }
 
-  .kittens .gatto-card {
+  .kittens-view .gatto-card {
     gap: 2rem;
   }
 }

@@ -26,7 +26,27 @@
         }
         checktofadein();
       });
-      
+    },
+  };
+
+  Drupal.behaviors.showPreview = {
+    attach(context, settings) {
+      if (window.innerWidth >= 576) {
+        const preview = document.querySelector(".cert-preview");
+        const certs = document.querySelectorAll(".webinars-view .views-row .cert-image img");
+
+        preview.addEventListener("click", (event) => {
+          preview.classList.add("hidden");
+        });
+
+        certs.forEach((el) => {
+          el.addEventListener("click", (event) => {
+            const url = event.target.getAttribute("src");
+            preview.querySelector("img").setAttribute("src", url);
+            preview.classList.remove("hidden");
+          });
+        });
+      }
     },
   };
 })(Drupal);

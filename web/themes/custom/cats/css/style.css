@@ -119,3 +119,14 @@ body.toolbar-fixed #toolbar-bar li {
 .cuccioli {
   position: relative;
 }
+
+.cuccioli {
+  margin: 0 auto 2rem auto;
+}
+
+@media(min-width: 1400px) {
+  .cuccioli {
+    margin: 0 auto 4rem auto;
+  }
+}
+

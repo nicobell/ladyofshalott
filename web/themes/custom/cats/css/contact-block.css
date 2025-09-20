@@ -1,7 +1,5 @@
 .contact-block {
-  margin: 2rem auto;
-  /* width: 80%; */
-  /* padding: 2rem 10vw; */
+  margin: 0 auto 2rem auto;
   padding: 1rem;
   display: grid;
   grid-template-areas: 
@@ -65,7 +63,7 @@
 
 @media (min-width: 1400px) {
   .contact-block {
-    margin: 4rem auto;
+    margin: 0 auto 4rem auto;
   }
 }
 

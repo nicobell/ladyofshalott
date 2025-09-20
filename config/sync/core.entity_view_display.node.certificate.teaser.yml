@@ -1,8 +1,9 @@
-uuid: 188f85cd-8027-4d66-840b-cc4d291d943f
+uuid: d29d5125-654e-4ac4-8033-7d4ccfcde77a
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.certificate.field_certificate_copy
     - field.field.node.certificate.field_description
     - field.field.node.certificate.field_participation_date
@@ -11,52 +12,34 @@ dependencies:
   module:
     - datetime
     - image
-    - text
     - user
-id: node.certificate.default
+id: node.certificate.teaser
 targetEntityType: node
 bundle: certificate
-mode: default
+mode: teaser
 content:
   field_certificate_copy:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_description:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 106
+    weight: 0
     region: content
   field_participation_date:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: olivero_medium
     third_party_settings: {  }
-    weight: 102
-    region: content
-  field_ref_organization:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  field_description: true
+  field_ref_organization: true
   langcode: true
+  links: true

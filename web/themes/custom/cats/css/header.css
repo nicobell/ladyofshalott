@@ -55,12 +55,12 @@
 }
 
 .header .menu .menu-link a:hover,
-.header .menu .menu-link a.is-active {
+.header .menu .menu-link.active a {
   color: #fadb9e;
   cursor: pointer;
 }
 
-.header .menu .menu-link a.is-active {
+.header .menu .menu-link.active a {
   font-weight: 500;
 }
 
@@ -84,11 +84,11 @@
 }
 
 .header.scrolled .menu .menu-link a:hover,
-.header.scrolled .menu .menu-link a.is-active {
+.header.scrolled .menu .menu-link.active a {
   color: #af7a5b;
 }
 
-.header.scrolled .menu .menu-link a.is-active {
+.header.scrolled .menu .menu-link.active a {
   font-weight: 500;
 }
 

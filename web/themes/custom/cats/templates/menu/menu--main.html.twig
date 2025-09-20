@@ -38,10 +38,8 @@
     {% endif %}
     {% for item in items %}
 
-      {% if item.in_active_trail %}
+      {% if item.in_active_trail and not ('#' in item.url)  %}
         {% set active_link = 'active' %}
-      {% else %}
-        {% set active_link = 'prova' %}
       {% endif %}
 
       <li{{ item.attributes.addClass('menu-link', active_link) }}>

@@ -1,0 +1,15 @@
+uuid: 2a14eeb7-315c-435f-9497-2aa2f8e6194b
+langcode: en
+status: true
+dependencies: {  }
+name: webinar_style
+label: 'Webinar style'
+effects:
+  985dba64-4db3-4f83-bb66-4d3acf939f5f:
+    uuid: 985dba64-4db3-4f83-bb66-4d3acf939f5f
+    id: image_scale
+    weight: 1
+    data:
+      width: 400
+      height: null
+      upscale: true
