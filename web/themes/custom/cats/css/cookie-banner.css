@@ -74,11 +74,12 @@ div#sliding-popup .eu-cookie-withdraw-tab {
 
 .eu-cookie-compliance-banner .eu-cookie-compliance-buttons {
   display: flex;
-  gap: 1em;
+  flex-direction: column;
   margin-top: 0;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  max-width: unset;
+}
+.eu-cookie-compliance-banner .eu-cookie-compliance-buttons > button:not(:last-child) {
+  margin-top: 0;
 }
 
 .eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-default-button,
@@ -120,8 +121,21 @@ div#sliding-popup .eu-cookie-withdraw-tab {
   }
 }
 
-@media (min-width: 1024px) {
+@media(min-width: 768px) {
+  .eu-cookie-compliance-banner .eu-cookie-compliance-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .eu-cookie-compliance-banner .eu-cookie-compliance-buttons > button:not(:last-child) {
+    margin-top: 1em;
+  }
+}
 
+@media (min-width: 1024px) {
   .eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-close-button,
   .eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-close-button:hover {
     width: 3rem;

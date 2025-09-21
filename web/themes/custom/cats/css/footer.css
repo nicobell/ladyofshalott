@@ -31,7 +31,15 @@ footer .footer-text.author {
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+@media (min-width: 768px) {
+  .cats-footer-menu ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
 
 .cats-footer-menu ul li {
