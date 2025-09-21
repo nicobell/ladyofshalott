@@ -77,8 +77,9 @@ div#sliding-popup .eu-cookie-withdraw-tab {
   flex-direction: column;
   margin-top: 0;
   max-width: unset;
+  gap: 1em;
 }
-.eu-cookie-compliance-banner .eu-cookie-compliance-buttons > button:not(:last-child) {
+.eu-cookie-compliance-banner .eu-cookie-compliance-buttons > button {
   margin-top: 0;
 }
 
@@ -125,14 +126,13 @@ div#sliding-popup .eu-cookie-withdraw-tab {
   .eu-cookie-compliance-banner .eu-cookie-compliance-buttons {
     display: flex;
     flex-direction: row;
-    gap: 1em;
     position: absolute;
     bottom: 0;
     right: 0;
   }
-  .eu-cookie-compliance-banner .eu-cookie-compliance-buttons > button:not(:last-child) {
+  /* .eu-cookie-compliance-banner .eu-cookie-compliance-buttons > button:not(:last-child) {
     margin-top: 1em;
-  }
+  } */
 }
 
 @media (min-width: 1024px) {
