@@ -88,6 +88,7 @@ module:
   pathauto: 1
   content_translation: 10
   views: 10
+  eu_cookie_compliance: 11
   standard: 1000
 theme:
   olivero: 0

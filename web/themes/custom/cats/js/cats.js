@@ -33,7 +33,9 @@
     attach(context, settings) {
       if (window.innerWidth >= 576) {
         const preview = document.querySelector(".cert-preview");
-        const certs = document.querySelectorAll(".webinars-view .views-row .cert-image img");
+        const certs = document.querySelectorAll(
+          ".webinars-view .views-row .cert-image img"
+        );
 
         preview.addEventListener("click", (event) => {
           preview.classList.add("hidden");
@@ -47,6 +49,30 @@
           });
         });
       }
+    },
+  };
+
+  Drupal.behaviors.showCookieNotHome = {
+    attach: function (context) {
+      window.addEventListener("load", () => {
+        let cookies = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("ladyofshalott-categories="));
+
+        if (!cookies || cookies?.split("=")[1].length <= 2)
+          setTimeout(() => {
+            document
+              .getElementById("sliding-popup")
+              .classList.add("frombottom");
+          }, 1500);
+      });
+
+      document
+        .querySelector("#block-cats-footer ul li:last-child span")
+        .addEventListener("click", () => {
+          event.preventDefault();
+          document.getElementById("sliding-popup").classList.add("frombottom");
+        });
     },
   };
 })(Drupal);

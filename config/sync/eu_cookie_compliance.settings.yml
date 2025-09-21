@@ -1,0 +1,86 @@
+_core:
+  default_config_hash: zmkyvoZ03LGqfVeB0mtslC-pkWMOrGIU9lJl9_jqUkc
+langcode: it
+dependencies:
+  config:
+    - filter.format.basic_html
+uuid: 233b0009-07af-4018-a734-4da6256c4cc9
+popup_enabled: true
+popup_clicking_confirmation: false
+popup_scrolling_confirmation: false
+eu_countries: {  }
+eu_only: false
+eu_only_js: false
+popup_position: false
+fixed_top_position: true
+popup_info:
+  value: '<h3>Utilizziamo i cookie su questo sito per migliorare la tua esperienza utente.</h3><p>Cliccando sul pulsante Accetta, acconsenti al loro utilizzo.</p>'
+  format: basic_html
+mobile_popup_info:
+  value: ''
+  format: basic_html
+popup_info_template: new
+popup_agree_button_message: Accept
+popup_more_info_button_message: 'Cookie Policy'
+mobile_breakpoint: 768
+popup_agreed_enabled: false
+popup_hide_agreed: false
+disagree_button_label: 'Rifiuta tutti'
+popup_agreed:
+  value: '<h2>Thank you for accepting cookies</h2><p>You can now hide this message or find out more about cookies.</p>'
+  format: basic_html
+popup_find_more_button_message: 'More info'
+popup_hide_button_message: Hide
+popup_link: /privacy-policy
+popup_link_new_window: true
+popup_height: null
+popup_width: 100%
+popup_delay: 1000
+show_more_info: true
+popup_bg_hex: '423932'
+popup_text_hex: ffffff
+domain: ''
+domains_option: 1
+domains_list: ''
+exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
+exclude_admin_theme: true
+cookie_session: 0
+set_cookie_session_zero_on_disagree: 0
+cookie_lifetime: 90
+use_mobile_message: false
+use_bare_css: false
+use_olivero_css: false
+disagree_do_not_show_popup: false
+reload_page: true
+reload_options: 0
+reload_routes_list: ''
+cookie_name: ladyofshalott
+exclude_uid_1: true
+better_support_for_screen_readers: false
+method: categories
+disabled_javascripts: ''
+automatic_cookies_removal: true
+allowed_cookies: ''
+consent_storage_method: basic
+withdraw_message:
+  value: "<h3>Utilizziamo i cookie su questo sito per migliorare la tua esperienza utente.</h3><p>Hai acconsentito all'utilizzo dei cookie.</p>"
+  format: basic_html
+withdraw_tab_button_label: 'Impostazioni privacy'
+withdraw_action_button_label: 'Ritira il consenso'
+withdraw_enabled: true
+withdraw_button_on_info_popup: true
+save_preferences_button_label: 'Salva selezionati'
+accept_all_categories_button_label: 'Accetta tutti'
+enable_save_preferences_button: true
+domain_all_sites: false
+settings_tab_enabled: false
+containing_element: body
+cookie_policy_version: 1.0.0
+cookie_value_disagreed: '0'
+cookie_value_agreed_show_thank_you: '1'
+cookie_value_agreed: '2'
+accessibility_focus: false
+close_button_action: reject_all_cookies
+reject_button_label: 'Rifiuta tutti'
+reject_button_enabled: true
+close_button_enabled: true

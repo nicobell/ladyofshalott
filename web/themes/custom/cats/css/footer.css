@@ -26,6 +26,38 @@ footer .footer-text.author {
   opacity: .5;
 }
 
+.cats-footer-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.cats-footer-menu ul li {
+  margin: 0;
+}
+
+.cats-footer-menu ul li a,
+.cats-footer-menu ul li span {
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: Outfit;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  transition: all ease 300ms;
+}
+
+.cats-footer-menu ul li a:hover,
+.cats-footer-menu ul li span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #fbc474;
+  transition: all ease 300ms;
+}
+
 @media (min-width: 1200px) {
   footer .footer-container {
     flex-direction: row;

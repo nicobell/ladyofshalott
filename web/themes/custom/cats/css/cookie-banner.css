@@ -1,0 +1,130 @@
+div#sliding-popup {
+  transform: translateY(100%);
+  transition: transform 500ms ease;
+}
+
+div#sliding-popup.frombottom {
+  transform: translateY(0);
+  bottom: 0 !important;
+  transition: transform 500ms ease;
+}
+
+div#sliding-popup .eu-cookie-withdraw-tab {
+  display: none;
+}
+
+.eu-cookie-compliance-banner .popup-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em;
+  width: calc(100% - 2em);
+}
+
+.eu-cookie-compliance-banner #popup-text * {
+  line-height: 1.2em;
+  font-family: Outfit;
+  font-weight: 300;
+  color: white;
+}
+
+.eu-cookie-compliance-banner #popup-text {
+  width: 80%;
+}
+
+.eu-cookie-compliance-banner #popup-text p {
+  font-size: 1rem;
+}
+
+.eu-cookie-compliance-banner #popup-text button {
+  padding: 0 .5em;
+}
+
+.eu-cookie-compliance-banner #popup-text h3 {
+  margin: 1rem 0 .5rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.eu-cookie-compliance-banner .eu-cookie-compliance-categories {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.eu-cookie-compliance-banner .popup-content button {
+  padding: .5rem 1rem;
+  border-radius: 40px 0 40px 40px;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  width: fit-content;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  outline: none;
+  transition: all ease 300ms;
+}
+
+.eu-cookie-compliance-banner .popup-content button:hover {
+  background: #af7a5b;
+  color: white;
+  transition: all ease 300ms;
+}
+
+.eu-cookie-compliance-banner .eu-cookie-compliance-buttons {
+  display: flex;
+  gap: 1em;
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-default-button,
+.eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-save-preferences-button {
+  background: #fbc474;
+  color: #423932;
+  font-weight: 500;
+}
+
+.eu-cookie-compliance-banner .popup-content .eu-cookie-withdraw-button,
+.eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-reject-button {
+  background: #6d4f45;
+  color: white;
+  font-weight: 300;
+}
+
+.eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-close-button,
+.eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-close-button:hover {
+  font-size: 0;
+  width: 2rem;
+  height: 2rem;
+  background: url(../assets/close-w.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+@media (min-width: 576px) {
+  .eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-categories-buttons {
+    margin: 0 0 1rem 0;
+  }
+}
+
+@media(min-width: 600px) {
+  .eu-cookie-compliance-banner .popup-content {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-close-button,
+  .eu-cookie-compliance-banner .popup-content .eu-cookie-compliance-close-button:hover {
+    width: 3rem;
+    height: 3rem;
+  }
+}

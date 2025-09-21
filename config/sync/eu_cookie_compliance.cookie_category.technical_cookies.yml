@@ -1,0 +1,9 @@
+uuid: 5075d937-55a5-4e13-b025-2d0eac03955f
+langcode: en
+status: true
+dependencies: {  }
+id: technical_cookies
+label: 'Cookie tecnici'
+description: ''
+checkbox_default_state: required
+weight: -9

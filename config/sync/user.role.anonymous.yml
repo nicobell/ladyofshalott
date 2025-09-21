@@ -5,18 +5,20 @@ dependencies:
   module:
     - comment
     - contact
+    - eu_cookie_compliance
     - search
     - site_settings
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
-label: 'Utente anonimo'
+label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'display eu cookie compliance popup'
   - 'search content'
   - 'view published site setting entities'

@@ -1,0 +1,9 @@
+uuid: d885416b-14f5-4306-b4f1-2d805df99fc6
+langcode: en
+status: true
+dependencies: {  }
+id: analytics_cookies
+label: 'Cookie statistici'
+description: ''
+checkbox_default_state: unchecked
+weight: -8
