@@ -23,11 +23,7 @@
   scale: 1;
   transition: all ease 500ms;
 }
-.webinars-view .cert-image img:hover {
-  scale: 1.1;
-  cursor: pointer;
-  transition: all ease 500ms;
-}
+
 
 .webinars-view .webinar-card {
   display: flex;
@@ -99,6 +95,12 @@
   .webinars-view .title h2 {
     font-size: 4rem;
   }
+
+  .webinars-view .cert-image img:hover {
+    scale: 1.1;
+    cursor: pointer;
+    transition: all ease 500ms;
+  }
 }
 
 
@@ -137,4 +139,3 @@
 .cert-preview.hidden {
   display: none;
 }
-
