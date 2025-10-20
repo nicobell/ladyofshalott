@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: hero_style
-label: 'Hero style'
+label: 'Hero style (crop 1920:1080)'
 effects:
   35417c90-2bb9-4bd3-8cdb-57caa8bb1b1b:
     uuid: 35417c90-2bb9-4bd3-8cdb-57caa8bb1b1b

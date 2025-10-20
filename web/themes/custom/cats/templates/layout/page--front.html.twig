@@ -61,7 +61,6 @@
 
   <main role="main">
    <section class="content">
-
 			<div class="container">
 				{{ drupal_view('breeds', 'block_1') }}
 			</div>
@@ -71,35 +70,30 @@
 				<div class="banner-img tofadein">
 					{{ site_setting_field('banner_homepage', 'field_ss_banner_image') }}
 				</div>
-
 				<div class="banner-body">
 					<div class="tofadein">
+						<h3 class="big-title lobster white">Chi siamo</h3>
+						<br>
 						{{ site_setting_field('banner_homepage', 'field_ss_banner_text') }}
 					</div>
 				</div>
+			</div>
+
+			<div class="container cuccioli">
+				{% if drupal_view_result('kittens', 'block_1')|length > 0 %}
+						<div class="anchor" id="i-cuccioli"></div>
+						{{ drupal_view('kittens', 'block_1') }}
+					</div>
+				{% endif %}
 			</div>
 
 			<div class="container w-80">
 				{{ drupal_view('webinars', 'block_1') }}
 			</div>
 
-			{# <div class="scacchiera bg-dark">
-				<div class="anchor" id="i-gatti"></div>
-				{{ drupal_view('cats', 'kings') }}
-				{{ drupal_view('cats', 'queens') }}
-			</div> #}
-
-			{% if drupal_view_result('kittens', 'block_1')|length > 0 %}
-				<div class="container cuccioli">
-					<div class="anchor" id="i-cuccioli"></div>
-					{{ drupal_view('kittens', 'block_1') }}
-				</div>
-			{% endif %}
-
-			<div class="contact-block w-80 tofadein"> {# container #}
+			<div class="contact-block w-80 tofadein">
 				{{ drupal_entity('block_content', 1) }}
 			</div>
-
 		</section>
   </main>
 

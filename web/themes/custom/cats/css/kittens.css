@@ -54,6 +54,22 @@
   margin: 1rem 0;
 }
 
+.kittens-view .kittens-button {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: white;
+  background-color: #6d4f45;
+  margin: 0 auto;
+  border-radius: 40px 0 40px 40px;
+  transition: all ease 300ms;
+}
+.kittens-view .kittens-button:hover {
+  background-color: #af7a5b;
+  transition: all ease 300ms;
+}
+
 @media (min-width: 1200px) {
   .yellow {
     margin: 4rem 0;
@@ -77,6 +93,12 @@
     margin: 0;
     border-radius: 40px;
   }
+
+  .kittens-view .kittens-button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    margin: 2rem auto 0 auto;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -89,7 +111,8 @@
     top: 80%;
   }
 
-  .kittens-view header {
+  .kittens-view header,
+  .kittens-view .kittens-button {
       grid-column: span 2;
   }
 

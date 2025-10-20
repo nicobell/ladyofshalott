@@ -85,7 +85,7 @@
     padding: 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .banner-body p {

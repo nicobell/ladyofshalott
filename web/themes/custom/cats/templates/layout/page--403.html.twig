@@ -54,7 +54,8 @@
     {{ page.header }}
   </header>
 
-	<section class="error-hero" style="background-image: url( {{ file_url(hero_url.entity.uri.value) }} );"></section>
+	{# <section class="error-hero" style="background-image: url( {{ file_url(hero_url.entity.uri.value) }} );"></section> #}
+  <section class="error-hero" style="background-image: url( {{ hero_url.entity.uri.value | image_style('banner') }} );"></section>
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}

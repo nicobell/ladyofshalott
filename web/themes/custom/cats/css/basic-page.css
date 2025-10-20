@@ -12,7 +12,7 @@
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: 2.75rem;
   position: relative;
   z-index: 1;
 }
@@ -35,6 +35,12 @@
   border-top-right-radius: 40px;
   translate: -50% 0;
   z-index: 0;
+}
+
+@media (min-width: 576px) {
+  .page-title {
+    font-size: 3rem;
+  }
 }
 
 @media (min-width: 1200px) {

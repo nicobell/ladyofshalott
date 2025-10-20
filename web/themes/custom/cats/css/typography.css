@@ -128,6 +128,10 @@ h6 {
 
 /* COLORS */
 
+.white {
+  color: white;
+}
+
 .lighter {
   color: #fadb9e;
 }
@@ -146,6 +150,10 @@ h6 {
 
 .darker {
   color: #423932;
+}
+
+.bg-white {
+  background-color: white;
 }
 
 .bg-lighter {

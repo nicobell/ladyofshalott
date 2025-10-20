@@ -1,0 +1,10 @@
+uuid: a84d98da-7b78-492f-9d7f-f0ce8963a960
+langcode: it
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.lady_of_shalott
+id: chisiamo_homepage
+label: 'Chi siamo Homepage'
+group: lady_of_shalott
+multiple: false

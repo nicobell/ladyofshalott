@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: cat_preview
-label: 'Cat preview'
+label: 'Cat preview (1:1 + 350 x 350)'
 effects:
   af76b985-0161-4f2f-8e22-ce1f607f73df:
     uuid: af76b985-0161-4f2f-8e22-ce1f607f73df

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: webinar_style
-label: 'Webinar style'
+label: 'Webinar style (400 x auto)'
 effects:
   985dba64-4db3-4f83-bb66-4d3acf939f5f:
     uuid: 985dba64-4db3-4f83-bb66-4d3acf939f5f

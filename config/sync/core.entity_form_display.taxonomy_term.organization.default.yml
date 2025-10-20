@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.organization.field_link
     - field.field.taxonomy_term.organization.field_logo
-    - image.style.thumbnail
+    - image.style.medium
     - taxonomy.vocabulary.organization
   module:
     - image
@@ -18,7 +18,7 @@ mode: default
 content:
   field_link:
     type: link_default
-    weight: 1
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
@@ -26,11 +26,11 @@ content:
     third_party_settings: {  }
   field_logo:
     type: image_image
-    weight: 2
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: medium
     third_party_settings: {  }
   name:
     type: string_textfield

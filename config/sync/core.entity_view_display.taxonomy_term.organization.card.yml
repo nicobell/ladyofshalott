@@ -6,22 +6,39 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.card
     - field.field.taxonomy_term.organization.field_link
     - field.field.taxonomy_term.organization.field_logo
+    - image.style.medium
     - taxonomy.vocabulary.organization
   module:
-    - text
+    - image
+    - link
 id: taxonomy_term.organization.card
 targetEntityType: taxonomy_term
 bundle: organization
 mode: card
 content:
-  description:
-    type: text_default
+  field_link:
+    type: link_separate
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  field_link: true
-  field_logo: true
+  description: true
   langcode: true

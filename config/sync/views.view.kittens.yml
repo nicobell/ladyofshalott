@@ -177,7 +177,12 @@ display:
           empty: false
           content: 'I nostri <span>cuccioli</span>'
           tokenize: false
-      footer: {  }
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -260,6 +265,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        footer: false
       display_description: ''
       header:
         area_text_custom:
@@ -272,6 +278,18 @@ display:
           plugin_id: text_custom
           empty: false
           content: 'Cuccioli disponibili'
+          tokenize: false
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: 'Vedi le cucciolate precedenti'
           tokenize: false
       display_extenders:
         metatag_display_extender:
@@ -359,8 +377,10 @@ display:
         filters: false
         filter_groups: false
         header: false
+        footer: false
       display_description: ''
       header: {  }
+      footer: {  }
       display_extenders:
         metatag_display_extender:
           metatags: {  }

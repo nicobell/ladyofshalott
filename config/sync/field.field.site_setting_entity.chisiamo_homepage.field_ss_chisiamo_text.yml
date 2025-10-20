@@ -1,0 +1,24 @@
+uuid: 9860aa6c-7ec7-4209-a445-b11c5541f80b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_ss_chisiamo_text
+    - filter.format.restricted_html
+    - site_settings.site_setting_entity_type.chisiamo_homepage
+  module:
+    - text
+id: site_setting_entity.chisiamo_homepage.field_ss_chisiamo_text
+field_name: field_ss_chisiamo_text
+entity_type: site_setting_entity
+bundle: chisiamo_homepage
+label: 'Testo Chi siamo'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - restricted_html
+field_type: text_long

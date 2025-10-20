@@ -1,0 +1,36 @@
+uuid: 2258f9da-b090-4610-927e-5aafce5473cb
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.chisiamo_homepage.field_ss_chisiamo_text
+    - field.field.site_setting_entity.chisiamo_homepage.field_ss_chisiamo_title
+    - site_settings.site_setting_entity_type.chisiamo_homepage
+  module:
+    - text
+id: site_setting_entity.chisiamo_homepage.default
+targetEntityType: site_setting_entity
+bundle: chisiamo_homepage
+mode: default
+content:
+  field_ss_chisiamo_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ss_chisiamo_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  user_id: true

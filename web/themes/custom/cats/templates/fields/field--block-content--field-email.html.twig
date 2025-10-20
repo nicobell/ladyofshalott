@@ -52,7 +52,9 @@
 {% endif %}
 
 {% for item in items %}
-  <p{{ attributes }}>{{ item.content }}</p>
+  <p{{ attributes }}>
+    <a href="mailto:{{item.content}}">{{ item.content }}</a>
+  </p>
 {% endfor %}
 
 </div>

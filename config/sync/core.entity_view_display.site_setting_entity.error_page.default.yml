@@ -4,55 +4,29 @@ status: true
 dependencies:
   config:
     - field.field.site_setting_entity.error_page.field_ss_error_image
+    - image.style.banner
     - site_settings.site_setting_entity_type.error_page
   module:
     - image
-    - user
 id: site_setting_entity.error_page.default
 targetEntityType: site_setting_entity
 bundle: error_page
 mode: default
 content:
-  description:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_ss_error_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: banner
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  group:
-    type: entity_reference_entity_id
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: -4
-    region: content
-  user_id:
-    type: author
-    label: hidden
-    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  description: true
+  group: true
   langcode: true
+  name: true
+  user_id: true

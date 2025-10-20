@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: cat_style
-label: 'Cat style'
+label: 'Cat style (1:1)'
 effects:
   f9e4c4e5-9c7d-456b-a7cb-514a3e63e12f:
     uuid: f9e4c4e5-9c7d-456b-a7cb-514a3e63e12f

@@ -1,0 +1,15 @@
+uuid: 1ec9a969-450d-4489-b637-19ae83ebd79e
+langcode: it
+status: true
+dependencies: {  }
+name: banner
+label: 'Banner (1920 x 500)'
+effects:
+  ea5bae0f-1c33-49ae-8a80-7cea3ec199b7:
+    uuid: ea5bae0f-1c33-49ae-8a80-7cea3ec199b7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 500
+      anchor: center-center

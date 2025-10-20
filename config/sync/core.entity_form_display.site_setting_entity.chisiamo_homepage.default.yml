@@ -1,0 +1,75 @@
+uuid: 4c6e23ad-c1e5-45fb-8520-6a7a863c1a05
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.chisiamo_homepage.field_ss_chisiamo_text
+    - field.field.site_setting_entity.chisiamo_homepage.field_ss_chisiamo_title
+    - site_settings.site_setting_entity_type.chisiamo_homepage
+  module:
+    - text
+id: site_setting_entity.chisiamo_homepage.default
+targetEntityType: site_setting_entity
+bundle: chisiamo_homepage
+mode: default
+content:
+  description:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ss_chisiamo_text:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ss_chisiamo_title:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  group:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
