@@ -68,19 +68,19 @@
       {{ label }}
     </h4>
   </div>
-  
+
   {% set has_gallery = content.field_gallery['#items']|length > 0 %}
   {% set swiper_id = 'swiper-' ~ node.id %}
 
   {% if has_gallery %}
   <div class="gatto-immagine">
-    <div class="swiper " id="{{ swiper_id }}">
+    <div class="swiper" id="{{ swiper_id }}">
       <div class="swiper-wrapper">
-        {# Main photo come prima slide #}
+        
         <div class="swiper-slide">
           {{ content.field_main_photo }}
         </div>
-        {# Gallery images #}
+
         {% for i in 0..(content.field_gallery['#items']|length - 1) %}
           <div class="swiper-slide">
             {{ content.field_gallery[i] }}

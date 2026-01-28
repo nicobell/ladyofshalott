@@ -50,6 +50,17 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_gallery:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: cat_style
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_main_photo:
     type: image
     label: hidden
@@ -79,7 +90,6 @@ content:
     region: content
 hidden:
   field_age: true
-  field_gallery: true
   field_gender: true
   langcode: true
   links: true
