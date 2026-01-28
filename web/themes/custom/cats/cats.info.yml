@@ -9,6 +9,7 @@ libraries:
   - core/drupal
   - core/drupalSettings
   - cats/theme
+  - cats/swiper-js
   
 regions:
   header: "Header"

@@ -1,0 +1,38 @@
+uuid: ea4621a1-b10d-4362-ba31-4264b1b038a4
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery
+    - node.type.cat
+  module:
+    - image
+id: node.cat.field_gallery
+field_name: field_gallery
+entity_type: node
+bundle: cat
+label: Gallery
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: cats/gallery
+  file_extensions: 'png heic jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

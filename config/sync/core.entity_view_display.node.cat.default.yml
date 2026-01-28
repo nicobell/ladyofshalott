@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.cat.field_birth_date
     - field.field.node.cat.field_color
     - field.field.node.cat.field_description
+    - field.field.node.cat.field_gallery
     - field.field.node.cat.field_gender
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
@@ -55,6 +56,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_gallery:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_gender:
     type: list_default

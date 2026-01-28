@@ -63,9 +63,37 @@
 
 <article{{ attributes.addClass('gatto-card', 'tofadein') }}>
 
+  {% set has_gallery = content.field_gallery['#items']|length > 0 %}
+  {% set swiper_id = 'swiper-' ~ node.id %}
+
+  {% if has_gallery %}
+  <div class="gatto-immagine">
+    <div class="swiper" id="{{ swiper_id }}">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          {{ content.field_main_photo }}
+        </div>
+
+        {% for i in 0..(content.field_gallery['#items']|length - 1) %}
+          <div class="swiper-slide">
+            {{ content.field_gallery[i] }}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="swiper-pagination" id="{{ swiper_id }}-pagination"></div>
+      <div class="swiper-button-next" id="{{ swiper_id }}-button-next"></div>
+      <div class="swiper-button-prev" id="{{ swiper_id }}-button-prev"></div>
+    </div>
+  </div>
+  {% else %}
+
+  {# Nessuna gallery = solo main photo #}
   <div class="gatto-immagine">
     {{ content.field_main_photo }}
   </div>
+  {% endif %}
 
   <div class="gatto-body">
     <h4 class="gatto-title big-title darker">

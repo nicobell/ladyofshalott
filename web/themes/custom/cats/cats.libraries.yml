@@ -19,3 +19,13 @@ theme:
       css/contact-block.css: {}
       css/hp-webinars.css: {}
       css/cookie-banner.css: {}
+
+swiper-js:
+  license:
+    name: Swiper.js
+  css:
+    theme:
+      libs/swiper-js/swiper-bundle.min.css: {}
+  js:
+    libs/swiper-js/swiper-bundle.min.js: {}
+    

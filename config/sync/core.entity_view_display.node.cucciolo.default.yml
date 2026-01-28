@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.cucciolo.field_birth_date
     - field.field.node.cucciolo.field_color
     - field.field.node.cucciolo.field_description
+    - field.field.node.cucciolo.field_gallery
     - field.field.node.cucciolo.field_gender
     - field.field.node.cucciolo.field_is_available
     - field.field.node.cucciolo.field_main_photo
@@ -57,6 +58,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_gallery:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_gender:
     type: list_default

@@ -75,6 +75,31 @@
         });
     },
   };
+
+  Drupal.behaviors.gallerySwiper = {
+    attach: function (context) {
+      document.querySelectorAll('.swiper').forEach((swiperEl) => {
+        new Swiper(swiperEl, {
+          direction: 'horizontal',
+          pagination: {
+            el: swiperEl.querySelector(".swiper-pagination"),
+            clickable: true,
+            //dynamicBullets: true
+          },
+          navigation: {
+            nextEl: swiperEl.querySelector(".swiper-button-next"),
+            prevEl: swiperEl.querySelector(".swiper-button-prev"),
+          },
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 0,
+          loop: true,
+          lazy: true,
+        });
+      });
+    },
+  };
+
 })(Drupal);
 
 function checktofadein() {

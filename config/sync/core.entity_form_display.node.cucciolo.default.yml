@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.cucciolo.field_birth_date
     - field.field.node.cucciolo.field_color
     - field.field.node.cucciolo.field_description
+    - field.field.node.cucciolo.field_gallery
     - field.field.node.cucciolo.field_gender
     - field.field.node.cucciolo.field_is_available
     - field.field.node.cucciolo.field_main_photo
@@ -54,6 +55,22 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_gallery:
+    type: image_widget_crop
+    weight: 18
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: cat_preview
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - cat_profile
+      crop_types_required:
+        - cat_profile
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
     third_party_settings: {  }
   field_gender:
     type: options_select

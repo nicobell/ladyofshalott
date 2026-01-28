@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.cat.field_birth_date
     - field.field.node.cat.field_color
     - field.field.node.cat.field_description
+    - field.field.node.cat.field_gallery
     - field.field.node.cat.field_gender
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
@@ -78,6 +79,7 @@ content:
     region: content
 hidden:
   field_age: true
+  field_gallery: true
   field_gender: true
   langcode: true
   links: true

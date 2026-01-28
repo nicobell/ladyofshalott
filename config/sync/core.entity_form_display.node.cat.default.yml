@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.cat.field_birth_date
     - field.field.node.cat.field_color
     - field.field.node.cat.field_description
+    - field.field.node.cat.field_gallery
     - field.field.node.cat.field_gender
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
@@ -52,6 +53,22 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_gallery:
+    type: image_widget_crop
+    weight: 18
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: cat_preview
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - cat_profile
+      crop_types_required:
+        - cat_profile
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
     third_party_settings: {  }
   field_gender:
     type: options_select
@@ -115,7 +132,7 @@ content:
     third_party_settings: {  }
   rabbit_hole__settings:
     type: rabbit_hole_default
-    weight: 100
+    weight: 19
     region: content
     settings:
       advanced: true
