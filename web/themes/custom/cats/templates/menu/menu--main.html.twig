@@ -26,9 +26,9 @@
   We call a macro which calls itself to render the full tree.
   https://twig.symfony.com/doc/3.x/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
+{{ menus.menu_links(items, attributes, 0, has_kittens) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level, has_kittens) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
@@ -36,19 +36,27 @@
     {% else %}
       <ul>
     {% endif %}
+
     {% for item in items %}
 
-      {% if item.in_active_trail %} {# and not ('#' in item.url) #}
+      {% if item.in_active_trail %}
+        {% set active_link = 'active' %}
+      {% elseif ('/cucciolate-precedenti' in path('<current>')) and ('I Cuccioli' in item.title) and not has_kittens %}
         {% set active_link = 'active' %}
       {% else %}
         {% set active_link = '' %}
       {% endif %}
 
-
       <li{{ item.attributes.addClass('menu-link', active_link) }}>
-        {{ link(item.title, item.url) }}
+      
+        {% if ('i-cuccioli' in item.url.options.fragment) and not has_kittens %}
+          <a href="/cucciolate-precedenti">{{ item.title }}</a>
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
+
         {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, has_kittens) }}
         {% endif %}
       </li>
     {% endfor %}
