@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\TranslatableInterface;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\site_settings\Entity\SiteSettingEntity;
 use Drupal\site_settings\SiteSettingEntityInterface;
 use Drupal\site_settings\SiteSettingsLoaderPluginManager;
@@ -29,6 +30,7 @@ class TwigExtension extends AbstractExtension {
   public function __construct(
     protected EntityTypeManagerInterface $entityTypeManager,
     protected SiteSettingsLoaderPluginManager $pluginManager,
+    protected LanguageManagerInterface $languageManager,
   ) {
   }
 
@@ -199,7 +201,8 @@ class TwigExtension extends AbstractExtension {
       /** @var \Drupal\site_settings\SiteSettingEntityInterface $site_setting */
       $site_setting = reset($site_settings);
       if ($site_setting->hasField($field_name)) {
-        if ($langcode && $site_setting->hasTranslation($langcode)) {
+        $langcode = $langcode ?? $this->languageManager->getCurrentLanguage()->getId();
+        if ($site_setting->hasTranslation($langcode)) {
           $site_setting = $site_setting->getTranslation($langcode);
         }
         if ($check_access && !$site_setting->access('view', NULL, FALSE)) {
@@ -262,9 +265,9 @@ class TwigExtension extends AbstractExtension {
 
         // Return the entity in the specified language code if exists and
         // allowed.
+        $langcode = $langcode ?? $this->languageManager->getCurrentLanguage()->getId();
         if (
-          $langcode
-          && $entity instanceof TranslatableInterface
+          $entity instanceof TranslatableInterface
           && $entity->language()->getId() !== $langcode
           && $entity->hasTranslation($langcode)
         ) {
@@ -301,7 +304,6 @@ class TwigExtension extends AbstractExtension {
       foreach ($site_settings as $key => $site_setting) {
         /** @var \Drupal\site_settings\SiteSettingEntityInterface $site_setting */
         if (!$site_setting->access('view', NULL, FALSE)) {
-          var_dump('no access');
           unset($site_settings[$key]);
         }
       }

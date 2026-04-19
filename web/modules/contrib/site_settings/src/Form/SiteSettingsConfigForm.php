@@ -156,6 +156,19 @@ class SiteSettingsConfigForm extends ConfigFormBase {
       '#default_value' => $config->get('show_groups_in_menu'),
     ];
 
+    // Display settings.
+    $form['display_settings'] = [
+      '#type' => 'details',
+      '#open' => TRUE,
+      '#title' => $this->t('Display settings'),
+    ];
+    $form['display_settings']['edit_form_on_canonical_route'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Show the Site Settings edit form on the view canonical route'),
+      '#description' => $this->t('When enabled, no canonical detail page will be rendered for site setting entities, but users with sufficient permissions will instead be shown the edit form. This is the typically use case as Site Settings are normally intended to be output via Twig functions or loaded in code to control other behavior or labels.'),
+      '#default_value' => $config->get('edit_form_on_canonical_route'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -188,7 +201,11 @@ class SiteSettingsConfigForm extends ConfigFormBase {
       ->set('hide_group', $form_state->getValue('hide_group'))
       ->set('simple_summary', $form_state->getValue('simple_summary'))
       ->set('show_groups_in_menu', $form_state->getValue('show_groups_in_menu'))
+      ->set('edit_form_on_canonical_route', $form_state->getValue('edit_form_on_canonical_route'))
       ->save();
+
+    // @todo Clear appropriate caches automatically based on changes.
+    $this->messenger()->addWarning($this->t('You may need to clear the cache for some settings changes to immediately take effect'));
   }
 
   /**

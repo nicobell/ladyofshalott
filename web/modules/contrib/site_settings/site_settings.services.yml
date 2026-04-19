@@ -16,7 +16,7 @@ services:
 
   site_settings.twig_extension:
     class: Drupal\site_settings\Twig\TwigExtension
-    arguments: ['@entity_type.manager', '@plugin.manager.site_settings_loader']
+    arguments: ['@entity_type.manager', '@plugin.manager.site_settings_loader', '@language_manager']
     tags:
       - { name: twig.extension }
 

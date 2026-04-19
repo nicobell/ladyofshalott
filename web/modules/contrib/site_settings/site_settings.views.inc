@@ -18,3 +18,12 @@ function site_settings_views_data() {
   ];
   return $data;
 }
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function site_settings_views_data_alter(array &$data) {
+  if (isset($data['site_setting_entity_field_data']['group']['filter']['id'])) {
+    $data['site_setting_entity_field_data']['group']['filter']['id'] = 'entity_reference';
+  }
+}

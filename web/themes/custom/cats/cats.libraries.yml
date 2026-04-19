@@ -19,6 +19,8 @@ theme:
       css/contact-block.css: {}
       css/hp-webinars.css: {}
       css/cookie-banner.css: {}
+      css/accordion.css: {}
+      css/paws.css: {}
 
 swiper-js:
   license:

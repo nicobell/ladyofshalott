@@ -23,7 +23,7 @@ use Drupal\user\UserInterface;
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\site_settings\SiteSettingEntityListBuilder",
  *     "views_data" = "Drupal\site_settings\Entity\SiteSettingEntityViewsData",
- *
+ *     "translation" = "Drupal\site_settings\SiteSettingEntityTranslationHandler",
  *     "form" = {
  *       "default" = "Drupal\site_settings\Form\SiteSettingEntityForm",
  *       "add" = "Drupal\site_settings\Form\SiteSettingEntityForm",
@@ -289,8 +289,9 @@ class SiteSettingEntity extends EditorialContentEntityBase implements SiteSettin
       ->setDisplayConfigurable('view', TRUE);
 
     // Override parent field definition for status field.
-    $fields['status']->setLabel(t('Publishing status'))
-      ->setDescription(t('A boolean indicating whether the Site Setting is published.'));
+    $fields['status']
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDefaultValue(TRUE);
 
     // Override parent field definition for langcode field.
     $fields['langcode']->setLabel(t('Language code'))

@@ -1,0 +1,29 @@
+uuid: 12b1c2e0-d91a-4cd9-acea-766ce19f7620
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_ss_ref_banners
+    - node.type.banner
+    - site_settings.site_setting_entity_type.banner_homepage
+id: site_setting_entity.banner_homepage.field_ss_ref_banners
+field_name: field_ss_ref_banners
+entity_type: site_setting_entity
+bundle: banner_homepage
+label: Banners
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      banner: banner
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

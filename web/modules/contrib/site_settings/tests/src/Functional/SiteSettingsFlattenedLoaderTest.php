@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\site_settings\Functional;
 
-use Drupal\site_settings_sample_data\Entity\TestMultipleEntriesSiteSetting;
 use Drupal\Tests\BrowserTestBase;
+use Drupal\site_settings_sample_data\Entity\TestMultipleEntriesSiteSetting;
 
 /**
  * Tests the loading of Site Settings.

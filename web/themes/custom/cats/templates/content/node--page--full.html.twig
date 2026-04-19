@@ -85,12 +85,42 @@
 
   </div>
 
+  {% set kings_l = drupal_view_result('cats', 'kings_nd')|length %}
+  {% set queens_l = drupal_view_result('cats', 'queens_nd')|length %}
+
   {% if current_path == 'i-nostri-gatti' %}
-    <div class="scacchiera bg-dark">
+    <div class="scacchiera">
       <div class="anchor" id="i-gatti"></div>
       {{ drupal_view('cats', 'kings') }}
       {{ drupal_view('cats', 'queens') }}
+
+      <img class="paw" id="paw-1" src="/themes/custom/cats/assets/paw-cats.svg" alt="paw icon">
+      <img class="paw" id="paw-2" src="/themes/custom/cats/assets/paw-cats.svg" alt="paw icon">
+      <img class="paw" id="paw-3" src="/themes/custom/cats/assets/paw-cats.svg" alt="paw icon">
+      <img class="paw" id="paw-4" src="/themes/custom/cats/assets/paw-cats.svg" alt="paw icon">
     </div>
+
+    {% if kings_l + queens_l > 0 %}
+      <div class="accordion-cats">
+        <div class="anchor" id="accordion-anchor"></div>
+
+        <button class="large-button" id="accordion-cats-button">
+          <span class="closed">{{ site_setting_field('cats_archive', 'field_ss_open_button') }}</span>
+          <span class="expanded">{{ site_setting_field('cats_archive', 'field_ss_closed_button') }}</span>
+        </button>
+      
+        <div class="scacchiera">
+
+          <img class="paw" id="paw-5" src="/themes/custom/cats/assets/paw-accordion.svg" alt="paw icon">
+          <img class="paw" id="paw-6" src="/themes/custom/cats/assets/paw-accordion.svg" alt="paw icon">
+          <img class="paw" id="paw-7" src="/themes/custom/cats/assets/paw-accordion.svg" alt="paw icon">
+          <img class="paw" id="paw-8" src="/themes/custom/cats/assets/paw-accordion.svg" alt="paw icon">
+
+          {{ drupal_view('cats', 'kings_nd') }}
+          {{ drupal_view('cats', 'queens_nd') }}
+        </div>
+      </div>
+    {% endif %}
   {% endif %}
 
   {% if current_path == 'cucciolate-precedenti' %}

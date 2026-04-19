@@ -1,0 +1,73 @@
+uuid: 51169ae4-62e0-47f6-a0a1-e5af2cb4a816
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.cats_archive.field_ss_closed_button
+    - field.field.site_setting_entity.cats_archive.field_ss_open_button
+    - site_settings.site_setting_entity_type.cats_archive
+id: site_setting_entity.cats_archive.default
+targetEntityType: site_setting_entity
+bundle: cats_archive
+mode: default
+content:
+  description:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ss_closed_button:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ss_open_button:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  group:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

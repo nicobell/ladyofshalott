@@ -1,0 +1,64 @@
+.accordion-cats {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.accordion-cats .kings {
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+  border-top-right-radius: 0;
+}
+
+.accordion-cats .kings,
+.accordion-cats .queens {
+  padding: 4rem 2rem 4rem 2rem;
+}
+
+@media (min-width: 1200px) {
+  .accordion-cats .kings,
+  .accordion-cats .queens {
+    padding: 8rem 2rem 4rem 2rem;
+  }
+}
+
+#accordion-cats-button {
+  margin: 1rem auto;
+  justify-self: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1200px) {
+  #accordion-cats-button {
+    margin: 1rem auto 1rem 55%;
+  }
+}
+
+.accordion-cats.expanded #accordion-cats-button .closed {
+  display: none;
+}
+.accordion-cats:not(.expanded) #accordion-cats-button .closed {
+  display: block;
+}
+
+.accordion-cats.expanded #accordion-cats-button .expanded {
+  display: block;
+}
+.accordion-cats:not(.expanded) #accordion-cats-button .expanded {
+  display: none;
+}
+
+.accordion-cats .scacchiera {
+  height: 0;
+  overflow: hidden;
+  transition: all 500ms ease;
+}
+
+.accordion-cats.expanded .scacchiera {
+  margin-bottom: -6rem;
+  height: auto;
+  transition: all 500ms ease;
+}
+
+
+

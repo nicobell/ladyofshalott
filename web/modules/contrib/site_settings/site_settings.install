@@ -502,6 +502,63 @@ function site_settings_update_10011(&$sandbox) {
 }
 
 /**
+ * Allow published status to be changed.
+ */
+function site_settings_update_10012() {
+  $entity_definition_update_manager = \Drupal::service('entity.definition_update_manager');
+  $field_definition = $entity_definition_update_manager->getFieldStorageDefinition('status', 'site_setting_entity');
+  $field_definition->setDisplayOptions('form', [
+    'type'     => 'boolean_checkbox',
+    'settings' => [
+      'display_label' => TRUE,
+      'default_value' => TRUE,
+    ],
+    'weight'   => 9,
+  ])
+    ->setDisplayConfigurable('form', TRUE);
+  $entity_definition_update_manager->updateFieldStorageDefinition($field_definition);
+}
+
+/**
+ * Add new 'edit_form_on_canonical_route' configuration.
+ */
+function site_settings_update_10013(): void {
+  $config = \Drupal::service('config.factory')->getEditable('site_settings.config');
+  $edit_form_on_canonical_route = $config->get('edit_form_on_canonical_route');
+  if ($edit_form_on_canonical_route === NULL) {
+    $config->set('edit_form_on_canonical_route', TRUE);
+  }
+  $config->save();
+}
+
+/**
+ * Update the site settings list group filter.
+ */
+function site_settings_update_10014() {
+
+  // Check that the group filter is relatively untouched, otherwise leave as is.
+  $config = \Drupal::configFactory()->getEditable('views.view.site_settings');
+  $group_filter = $config->get('display.default.display_options.filters.group');
+  if (
+    $group_filter
+    && !empty($group_filter['expose'])
+    && isset($group_filter['expose']['label'])
+    && $group_filter['expose']['label'] === 'Group'
+    && $group_filter['plugin_id'] === 'string'
+  ) {
+
+    // Update the group filter to work now that we opt-in to the new core
+    // entity reference filter in 10.4+. See site_settings_views_data_alter().
+    $group_filter['operator'] = 'or';
+    $group_filter['value'] = NULL;
+
+    // Resave the configuration.
+    $config->set('display.default.display_options.filters.group', $group_filter);
+    $config->save();
+  }
+}
+
+/**
  * Implements hook_uninstall().
  */
 function site_settings_uninstall() {

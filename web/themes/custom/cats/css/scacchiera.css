@@ -1,10 +1,12 @@
 .scacchiera {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .kings,
 .queens {
+  position: relative;
   padding: 2rem 1rem 4rem 1rem;
   display: flex;
   flex-direction: column;
@@ -58,6 +60,11 @@
 } */
 
 /* variazioni KINGS */
+.kings {
+  background-color: #6d4f45;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
 .kings header h2,
 .kings .gatto-title,
 .kings .gatto-descrizione *,
@@ -88,10 +95,15 @@
     width: 50%;
   }
 
+  .kings {
+    border-top-right-radius: 40px;
+  }
+
   .kings,
   .queens {
+    height: 100%;
     gap: 2rem;
-    padding: 2rem 2rem 4rem 2rem;
+    padding: 2rem 2rem 8rem 2rem;
   }
 
   .kings header h2,
@@ -103,9 +115,10 @@
 
 @media (min-width: 1600px) {
   .kings {
-    padding-left: calc(10vw + 1rem);
+    padding-left: calc(10vw + 1rem) !important;
   }
+
   .queens {
-    padding-right: calc(10vw + 1rem);
+    padding-right: calc(10vw + 1rem) !important;
   }
 }

@@ -1,0 +1,16 @@
+uuid: a7f8122b-07b1-475f-a8c1-31fe5973c4e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.banner
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.banner
+target_entity_type_id: node
+target_bundle: banner
+default_langcode: site_default
+language_alterable: true

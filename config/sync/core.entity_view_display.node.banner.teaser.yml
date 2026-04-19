@@ -1,0 +1,42 @@
+uuid: 4fa0d539-00fa-467e-b803-84fd42078115
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.banner.field_banner_image
+    - field.field.node.banner.field_banner_text
+    - field.field.node.banner.field_is_show_title
+    - image.style.thumbnail
+    - node.type.banner
+  module:
+    - image
+    - text
+    - user
+id: node.banner.teaser
+targetEntityType: node
+bundle: banner
+mode: teaser
+content:
+  field_banner_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_banner_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_is_show_title: true
+  langcode: true
+  links: true

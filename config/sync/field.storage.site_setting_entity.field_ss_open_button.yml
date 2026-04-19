@@ -1,0 +1,21 @@
+uuid: 2b758635-3b94-4b37-a6e1-0f9b46dca294
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_ss_open_button
+field_name: field_ss_open_button
+entity_type: site_setting_entity
+type: string
+settings:
+  max_length: 32
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

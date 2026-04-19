@@ -469,8 +469,8 @@ display:
           entity_type: site_setting_entity
           entity_field: group
           plugin_id: string
-          operator: contains
-          value: ''
+          operator: or
+          value: null
           group: 1
           exposed: true
           expose:

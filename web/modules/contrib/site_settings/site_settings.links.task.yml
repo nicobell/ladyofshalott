@@ -1,12 +1,12 @@
 # Site Setting entity.
 entity.site_setting_entity.edit_form:
   route_name: entity.site_setting_entity.edit_form
-  base_route: entity.site_setting_entity.canonical
+  base_route: entity.site_setting_entity.edit_form
   title: Edit
 
 entity.site_setting_entity.delete_form:
   route_name: entity.site_setting_entity.delete_form
-  base_route: entity.site_setting_entity.canonical
+  base_route: entity.site_setting_entity.edit_form
   title: Delete
   weight: 10
 

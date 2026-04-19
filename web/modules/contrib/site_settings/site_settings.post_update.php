@@ -296,3 +296,10 @@ function site_settings_post_update_add_missing_index_and_revisioning(&$sandbox) 
   // status field is revisionable now.
   site_settings_post_update_add_status_type_index($sandbox);
 }
+
+/**
+ * Add language manager to Site Settings twig extension service.
+ */
+function site_settings_post_update_add_language_manager() {
+  // Empty update to cause a cache rebuild so that the container is rebuilt.
+}
