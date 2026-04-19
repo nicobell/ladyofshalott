@@ -18,13 +18,11 @@ dependencies:
     - block_content
     - content_translation
     - contextual
-    - file
     - filter
     - help
     - metatag
     - node
-    - path
-    - search
+    - shortcut
     - site_settings
     - system
     - taxonomy
@@ -42,18 +40,14 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access help pages'
+  - 'access shortcuts'
   - 'access site settings overview'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
   - 'add site setting entities'
-  - 'administer content types'
   - 'administer menu'
   - 'administer meta tags'
-  - 'administer nodes'
-  - 'administer site setting entities'
-  - 'administer taxonomy'
-  - 'administer url aliases'
   - 'create banner content'
   - 'create cat content'
   - 'create certificate content'
@@ -62,8 +56,6 @@ permissions:
   - 'create page content'
   - 'create terms in breed'
   - 'create terms in organization'
-  - 'create url aliases'
-  - 'delete all taxonomy revisions'
   - 'delete any banner content'
   - 'delete any cat content'
   - 'delete any certificate content'
@@ -74,9 +66,7 @@ permissions:
   - 'delete own cat content'
   - 'delete own certificate content'
   - 'delete own cucciolo content'
-  - 'delete own files'
   - 'delete own page content'
-  - 'delete site setting entities'
   - 'delete terms in breed'
   - 'delete terms in organization'
   - 'edit any banner content'
@@ -93,8 +83,6 @@ permissions:
   - 'edit site setting entities'
   - 'edit terms in breed'
   - 'edit terms in organization'
-  - 'revert all taxonomy revisions'
-  - 'search content'
   - 'translate banner node'
   - 'translate block_content'
   - 'translate breed taxonomy_term'
@@ -102,24 +90,14 @@ permissions:
   - 'translate certificate node'
   - 'translate cucciolo node'
   - 'translate editable entities'
+  - 'translate organization taxonomy_term'
   - 'translate page node'
   - 'update content translations'
-  - 'use advanced search'
   - 'use text format basic_html'
   - 'use text format full_html'
   - 'use text format restricted_html'
-  - 'view all revisions'
-  - 'view all site setting entity revisions'
-  - 'view all taxonomy revisions'
-  - 'view banner revisions'
-  - 'view cat revisions'
-  - 'view certificate revisions'
-  - 'view cucciolo revisions'
   - 'view own unpublished content'
-  - 'view page revisions'
   - 'view published site setting entities'
-  - 'view term revisions in breed'
-  - 'view term revisions in organization'
   - 'view the administration theme'
   - 'view unpublished site setting entities'
   - 'view user email addresses'

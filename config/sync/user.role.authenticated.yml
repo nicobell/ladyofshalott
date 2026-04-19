@@ -4,9 +4,6 @@ status: true
 dependencies:
   module:
     - eu_cookie_compliance
-    - file
-    - search
-    - shortcut
     - site_settings
     - system
 _core:
@@ -17,8 +14,5 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
-  - 'access shortcuts'
-  - 'delete own files'
   - 'display eu cookie compliance popup'
-  - 'search content'
   - 'view published site setting entities'
