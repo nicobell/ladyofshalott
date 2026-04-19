@@ -38,19 +38,19 @@
 #paw-2 {
   left: 43%;
   rotate: 21deg;
-  bottom: 2%;
+  bottom: 1rem;
 }
 
 #paw-3 {
   left: 40%;
   rotate: 12deg;
-  bottom: 11%;
+  bottom: 7rem;
 }
 
 #paw-4 {
   left: 39%;
   rotate: 44deg;
-  bottom: -9%;
+  bottom: -5.5rem;
 }
 
 /* ----------------------------------- */
@@ -65,23 +65,22 @@
 #paw-5 {
   right: 7%;
   rotate: -20deg;
-  top: 0;
 }
 
 #paw-6 {
   right: 4.2%;
   rotate: -29deg;
-  top: 7%;
+  top: 6rem;
 }
 
 #paw-7 {
   right: -2%;
   rotate: -28deg;
-  top: 13%;
+  top: 10rem;
 }
 
 #paw-8 {
   right: -1%;
   rotate: -18deg;
-  top: 3%;
+  top: 1.5rem;
 }
