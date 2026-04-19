@@ -3,8 +3,7 @@ langcode: it
 status: true
 dependencies:
   module:
-    - comment
-    - contact
+    - eu_cookie_compliance
     - file
     - search
     - shortcut
@@ -17,12 +16,9 @@ label: 'Utente autenticato'
 weight: 1
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access shortcuts'
-  - 'access site-wide contact form'
   - 'delete own files'
-  - 'post comments'
+  - 'display eu cookie compliance popup'
   - 'search content'
-  - 'skip comment approval'
   - 'view published site setting entities'

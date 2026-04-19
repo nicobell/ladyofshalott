@@ -57,3 +57,4 @@ hidden:
   description: true
   field_ss_banner_image: true
   field_ss_banner_text: true
+  status: true
