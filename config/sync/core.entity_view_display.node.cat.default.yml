@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.cat.field_description
     - field.field.node.cat.field_gallery
     - field.field.node.cat.field_gender
+    - field.field.node.cat.field_is_available
     - field.field.node.cat.field_main_photo
     - field.field.node.cat.field_ref_breed
     - field.field.node.cat.field_weight
@@ -74,6 +75,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_is_available:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_main_photo:
     type: image

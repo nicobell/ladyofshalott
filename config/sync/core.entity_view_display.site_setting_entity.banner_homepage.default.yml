@@ -5,35 +5,26 @@ dependencies:
   config:
     - field.field.site_setting_entity.banner_homepage.field_ss_banner_image
     - field.field.site_setting_entity.banner_homepage.field_ss_banner_text
+    - field.field.site_setting_entity.banner_homepage.field_ss_ref_banners
     - site_settings.site_setting_entity_type.banner_homepage
-  module:
-    - image
-    - text
 id: site_setting_entity.banner_homepage.default
 targetEntityType: site_setting_entity
 bundle: banner_homepage
 mode: default
 content:
-  field_ss_banner_image:
-    type: image
-    label: hidden
+  field_ss_ref_banners:
+    type: entity_reference_entity_view
+    label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_ss_banner_text:
-    type: text_default
-    label: hidden
-    settings: {  }
+      view_mode: token
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   description: true
+  field_ss_banner_image: true
+  field_ss_banner_text: true
   group: true
   langcode: true
   name: true

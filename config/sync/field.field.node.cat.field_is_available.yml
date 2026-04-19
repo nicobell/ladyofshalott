@@ -1,0 +1,23 @@
+uuid: a9056b42-a42c-473d-b5ac-3962b6a3d752
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_available
+    - node.type.cat
+id: node.cat.field_is_available
+field_name: field_is_available
+entity_type: node
+bundle: cat
+label: 'È disponibile'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Sì
+  off_label: 'No'
+field_type: boolean

@@ -31,6 +31,7 @@
         "drupal/geolocation": "^3.14",
         "drupal/google_analytics": "^4.0",
         "drupal/image_widget_crop": "^3.0",
+        "drupal/inline_entity_form": "^3.0@RC",
         "drupal/login_destination": "^2.0@beta",
         "drupal/metatag": "^2.1",
         "drupal/pathauto": "^1.13",

@@ -1,0 +1,10 @@
+uuid: 6ac5cf3b-51e6-48a3-be56-16e25174733a
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.lady_of_shalott
+id: cats_archive
+label: 'Archivio Gatti'
+group: lady_of_shalott
+multiple: false

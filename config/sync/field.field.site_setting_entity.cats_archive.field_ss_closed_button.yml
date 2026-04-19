@@ -1,0 +1,19 @@
+uuid: 6d5df8cc-ffec-4db4-80e1-52dd4f1dce5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_ss_closed_button
+    - site_settings.site_setting_entity_type.cats_archive
+id: site_setting_entity.cats_archive.field_ss_closed_button
+field_name: field_ss_closed_button
+entity_type: site_setting_entity
+bundle: cats_archive
+label: 'Accordion chiuso'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

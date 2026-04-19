@@ -50,21 +50,22 @@
 
 <div class="layout-container">
 
-  <header class="header" role="banner">
-    {{ page.header }}
-  </header>
+	<header class="header" role="banner">
+		{{ page.header }}
+	</header>
 
 	<section class="hero" style="background-image: url( {{ hero_url | image_style('hero_style') }} );">
 		<h1 class="fadein lobster">Lady of Shalott</h1>
 		<h3 class="fadein lighter">Scottish & Highland</h3>
 	</section>
 
-  <main role="main">
-   <section class="content">
+	<main role="main">
+		<section class="content">
 			<div class="container">
 				{{ drupal_view('breeds', 'block_1') }}
 			</div>
 
+			{# 
 			<div class="banner bg-dark">
 				<div class="anchor" id="chi-siamo"></div>
 				<div class="banner-img tofadein">
@@ -77,15 +78,34 @@
 						{{ site_setting_field('banner_homepage', 'field_ss_banner_text') }}
 					</div>
 				</div>
-			</div>
+			</div> 
+			#}
+
+			{% set field = site_setting_field('banner_homepage', 'field_ss_ref_banners') %}
+			{% set items = field['#items'] %}
+
+			{% for item in items %}
+				{% if loop.index0 % 2 == 0 %}
+					<article class="banner bg-dark tofadein">
+						{% if loop.index0 == 0 %}
+							<div class="anchor" id="chi-siamo"></div>
+						{% endif %}
+				{% else %}
+					<article class="banner bg-darker tofadein">
+				{% endif %}
+
+					{% set node = item.entity %}
+					{{ drupal_entity('node', node.id(), 'default') }}
+				</article>
+			{% endfor %}
 
 			<div class="container cuccioli">
 				{% if drupal_view_result('kittens', 'block_1')|length > 0 %}
-						<div class="anchor" id="i-cuccioli"></div>
+					<div class="anchor" id="i-cuccioli"></div>
 						{{ drupal_view('kittens', 'block_1') }}
 					</div>
 				{% endif %}
-			</div>
+			</article>
 
 			<div class="container w-80">
 				{{ drupal_view('webinars', 'block_1') }}
@@ -95,19 +115,20 @@
 				{{ drupal_entity('block_content', 1) }}
 			</div>
 		</section>
-  </main>
+	</main>
 
 	{# {{ page.footer }} #}
 	<footer class="bg-darker">
 		<section class="container footer-container">
 			<p class="footer-title">© Lady of Shalott</p>
 			{{ page.footer }}
-			<p class="author footer-text">crafted by <a target="_blank" href="https://github.com/nicobell">github/nicobell</a></p>
+			<p class="author footer-text">crafted by
+				<a target="_blank" href="https://github.com/nicobell">github/nicobell</a>
+			</p>
 		</section>
 	</footer>
 
 	<div class="hidden cert-preview">
 		<img src="" alt="">
 	</div>
-
 </div>
