@@ -476,10 +476,10 @@ class FlattenedSiteSettingsLoader extends SiteSettingsLoaderBase implements Site
    * @param string $field_type
    *   The field type to render.
    *
-   * @return \Drupal\Component\Render\MarkupInterface
+   * @return \Drupal\Component\Render\MarkupInterface|string
    *   The rendered html markup.
    */
-  protected function renderDefault(FieldItemListInterface $field, string $field_type): MarkupInterface {
+  protected function renderDefault(FieldItemListInterface $field, string $field_type): MarkupInterface|string {
     $view_builder = $this->entityTypeManager->getViewBuilder('site_setting_entity');
     $build = $view_builder->viewField($field, [
       'type' => $field_type,

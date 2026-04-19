@@ -193,6 +193,26 @@ class SiteSettingsUiTest extends BrowserTestBase {
   }
 
   /**
+   * Test site settings edit form on canonical page.
+   */
+  public function testSiteSettingsEditFormCanonical() {
+
+    // Open the site settings canonical page and expect to see the edit form.
+    $this->drupalGet('admin/structure/site_setting_entity/11');
+    $this->assertSession()->elementExists('css', 'form.site-setting-entity-test-boolean-edit-form');
+
+    // Change to allow the canonical route.
+    $config = \Drupal::configFactory()->getEditable('site_settings.config');
+    $config->set('edit_form_on_canonical_route', FALSE);
+    $config->save();
+    drupal_flush_all_caches();
+
+    // No more edit form expected.
+    $this->drupalGet('admin/structure/site_setting_entity/11');
+    $this->assertSession()->elementNotExists('css', 'form.site-setting-entity-test-boolean-edit-form');
+  }
+
+  /**
    * Test site settings create new type and add a setting to that.
    */
   public function testSiteSettingsCreateNewTypeAndSetting() {
@@ -213,20 +233,17 @@ class SiteSettingsUiTest extends BrowserTestBase {
 
     // Add field.
     $this->drupalGet('admin/structure/site_setting_entity_type/testsitesettingscreatenew/fields/add-field');
-    $params = [
-      'new_storage_type' => 'plain_text',
-    ];
-    $this->submitForm($params, 'Continue');
+    $this->clickLink('Plain text');
     $params = [
       'label' => 'testSiteSettingsCreateNewTypeAndSettingLabel',
       'field_name' => 'testing_again',
-      'group_field_options_wrapper' => 'string',
+      'field_options_wrapper' => 'string',
     ];
     $this->submitForm($params, 'Continue');
 
     // Save field settings.
     $params = [];
-    $this->submitForm($params, 'Save settings');
+    $this->submitForm($params, 'Save');
     $session = $this->assertSession();
 
     // Ensure we saved correctly.
@@ -275,6 +292,12 @@ class SiteSettingsUiTest extends BrowserTestBase {
     $session = $this->assertSession();
     $session->elementTextContains('css', '#site-setting-11', 'testSiteSettingsUpdateGroupLabel');
     $session->elementTextContains('css', '#site-setting-12', 'testSiteSettingsUpdateGroupLabel');
+
+    // Ensure boolean exists before filtering by Group for test reliability.
+    // Filter by Group then expect it to be gone.
+    $session->elementExists('css', '#site-setting-11');
+    $this->submitForm(['group' => 'Images (images)'], 'Apply');
+    $session->elementNotExists('css', '#site-setting-11');
   }
 
   /**
@@ -299,10 +322,10 @@ class SiteSettingsUiTest extends BrowserTestBase {
     // Check that the menu tree item leads to a filtered collection.
     /** @var \Drupal\Core\Menu\MenuLinkTreeElement $boolean_link */
     $boolean_link = $site_settings_collection->subtree['site_settings.setting_menu_links:entity.site_setting_group.boolean.collection'];
-    $this->assertStringEndsWith('admin/content/site-settings?group=boolean', $boolean_link->link->getUrlObject()->toString());
+    $this->assertStringEndsWith('admin/content/site-settings?group=Boolean', $boolean_link->link->getUrlObject()->toString());
     $this->drupalGet('admin/content/site-settings', [
       'query' => [
-        'group' => 'boolean',
+        'group' => 'Boolean',
       ],
     ]);
 

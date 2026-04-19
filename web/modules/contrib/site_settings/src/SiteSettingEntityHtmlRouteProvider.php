@@ -2,8 +2,12 @@
 
 namespace Drupal\site_settings;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -14,6 +18,28 @@ use Symfony\Component\Routing\RouteCollection;
  * @see Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider
  */
 class SiteSettingEntityHtmlRouteProvider extends AdminHtmlRouteProvider {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(
+    EntityTypeManagerInterface $entity_type_manager,
+    EntityFieldManagerInterface $entity_field_manager,
+    private readonly ConfigFactoryInterface $configFactory,
+  ) {
+    parent::__construct($entity_type_manager, $entity_field_manager);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function createInstance(ContainerInterface $container, EntityTypeInterface $entity_type) {
+    return new static(
+      $container->get('entity_type.manager'),
+      $container->get('entity_field.manager'),
+      $container->get('config.factory')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -39,6 +65,34 @@ class SiteSettingEntityHtmlRouteProvider extends AdminHtmlRouteProvider {
     }
 
     return $collection;
+  }
+
+  /**
+   * Gets the canonical route.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type.
+   *
+   * @return \Symfony\Component\Routing\Route|null
+   *   The generated route, if available.
+   */
+  protected function getCanonicalRoute(EntityTypeInterface $entity_type): ?Route {
+    $route = parent::getCanonicalRoute($entity_type);
+    // If configured, replace site setting entity canonical route with the edit
+    // form.
+    if ($route && $this->configFactory->get('site_settings.config')->get('edit_form_on_canonical_route')) {
+      $defaults = $route->getDefaults();
+      // Remove default entity view routing setting.
+      if (isset($defaults['_entity_view'])) {
+        unset($defaults['_entity_view']);
+        $defaults['_entity_form'] = "site_setting_entity.edit";
+      }
+      // Replace with edit form routing.
+      $route->setDefaults($defaults);
+      // Replace requirements with entity update permissions.
+      $route->setRequirement('_entity_access', "site_setting_entity.update");
+    }
+    return $route;
   }
 
   /**

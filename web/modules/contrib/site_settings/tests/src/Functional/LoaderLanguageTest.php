@@ -3,6 +3,7 @@
 namespace Drupal\Tests\site_settings\Functional;
 
 use Drupal\Tests\BrowserTestBase;
+use Drupal\Tests\language\Traits\LanguageTestTrait;
 
 /**
  * Tests site settings translation.
@@ -10,6 +11,8 @@ use Drupal\Tests\BrowserTestBase;
  * @group site_settings
  */
 class LoaderLanguageTest extends BrowserTestBase {
+
+  use LanguageTestTrait;
 
   /**
    * {@inheritdoc}
@@ -28,6 +31,22 @@ class LoaderLanguageTest extends BrowserTestBase {
     'content_translation',
     'user',
   ];
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp(): void {
+    parent::setUp();
+
+    // Set path prefixes for both languages.
+    $this->config('language.negotiation')->set('url', [
+      'source' => 'path_prefix',
+      'prefixes' => [
+        'en' => 'en',
+        'fr' => 'fr',
+      ],
+    ])->save();
+  }
 
   /**
    * Test that site settings are translatable.
@@ -54,6 +73,33 @@ class LoaderLanguageTest extends BrowserTestBase {
     $site_settings_translated = $site_settings_loader->loadAll(TRUE, 'fr');
     $this->assertSame('FR ' . $original_value, $site_settings_translated['other']['test_plain_text']);
     $plugin_manager->setActiveLoaderPlugin('full');
+
+    // Test translations in Twig output.
+    $languages = $this->container->get('language_manager')->getLanguages();
+    // First, check the Twig output in English.
+    $this->drupalGet('site_settings_sample_data/test_full_site_settings_loader_twig_extension');
+    $session = $this->assertSession();
+    $session->pageTextContains('Test plain text value');
+    $session->elementTextContains(
+      'css',
+      '#render-field',
+      'Test plain text value'
+    );
+
+    $this->container->get('language_manager')->reset();
+    $this->rebuildContainer();
+    drupal_flush_all_caches();
+
+    // Then, check the Twig output in French.
+    $this->drupalGet('site_settings_sample_data/test_full_site_settings_loader_twig_extension', [
+      'language' => $languages['fr'],
+    ]);
+    $session = $this->assertSession();
+    $session->elementTextContains(
+      'css',
+      '#render-field',
+      'FR Test plain text value'
+    );
   }
 
 }

@@ -26,6 +26,9 @@ site_settings.config:
     show_groups_in_menu:
       type: boolean
       label: 'Automatically show Groups in the admin menu'
+    edit_form_on_canonical_route:
+      type: boolean
+      label: 'Show the Site Settings edit form on the view canonical route'
 
 block.settings.simple_site_settings_block:
   type: block_settings

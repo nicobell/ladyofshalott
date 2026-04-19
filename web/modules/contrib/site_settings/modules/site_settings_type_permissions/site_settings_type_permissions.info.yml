@@ -7,7 +7,7 @@ package: Custom
 dependencies:
   - site_settings:site_settings
 
-# Information added by Drupal.org packaging script on 2025-02-24
-version: '2.0.2'
+# Information added by Drupal.org packaging script on 2026-01-14
+version: '2.0.6'
 project: 'site_settings'
-datestamp: 1740428893
+datestamp: 1768424611

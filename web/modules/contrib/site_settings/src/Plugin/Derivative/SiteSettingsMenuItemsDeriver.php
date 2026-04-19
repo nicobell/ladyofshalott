@@ -67,7 +67,7 @@ class SiteSettingsMenuItemsDeriver extends DeriverBase implements ContainerDeriv
         'route_name' => 'entity.site_setting_entity.collection',
         'options' => [
           'query' => [
-            'group' => $group->id(),
+            'group' => $group->label(),
           ],
         ],
       ] + $base_plugin_definition;

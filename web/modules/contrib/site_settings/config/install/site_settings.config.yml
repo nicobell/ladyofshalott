@@ -6,3 +6,4 @@ hide_advanced: true
 hide_group: true
 simple_summary: true
 show_groups_in_menu: true
+edit_form_on_canonical_route: true

@@ -12,7 +12,7 @@ entity_type: site_setting_entity
 bundle: banner_homepage
 label: Banners
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
